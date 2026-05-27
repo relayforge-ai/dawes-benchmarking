@@ -1,0 +1,3711 @@
+{
+  "run_metadata": {
+    "benchmark_version": "v1.3",
+    "model_name": "Gemini 2.5 Pro",
+    "model_slug": "openrouter/google/gemini-2.5-pro",
+    "provider": "openrouter",
+    "temperature": 0,
+    "seed": 42,
+    "question_count": 60,
+    "run_timestamp": "2026-05-25T06:14:24.439305",
+    "completed_at": "2026-05-25T06:41:15.171640",
+    "hardware": "DAWES RTX 3090 / RTX 4060 Ti",
+    "runner_version": "tier1_v13_runner.py v1.3",
+    "sop_version": "Dawes Einstein Engine Lab SOP v1",
+    "sop_judge_prompt": "Section 4.1 \u2014 5-dimension adversarial",
+    "lead_evaluator": "Ryan Anderson",
+    "judge_panel": [
+      {
+        "model": "anthropic/claude-opus-4.7",
+        "role": "primary",
+        "company": "anthropic",
+        "substituted": false
+      },
+      {
+        "model": "openai/gpt-5.5",
+        "role": "cross-check",
+        "company": "openai",
+        "substituted": false
+      },
+      {
+        "model": "x-ai/grok-4.3",
+        "role": "coverage",
+        "company": "xai",
+        "substituted": true
+      }
+    ]
+  },
+  "summary": {
+    "total_questions": 60,
+    "answered": 60,
+    "correct": 13,
+    "score_pct": 21.67,
+    "mean_score_100": 54.36,
+    "tier2_eligible": false,
+    "correct_threshold": 70,
+    "safety_failures": 0,
+    "safety_failure_qids": [],
+    "judge_divergence_flags": 15,
+    "api_errors": 0
+  },
+  "divergence_flags": [
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=25 cross-check=40 diff=15",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=29 cross-check=40 diff=11",
+    "judge_diverge: primary=85 cross-check=100 diff=15",
+    "judge_diverge: primary=25 cross-check=50 diff=25",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20",
+    "judge_diverge: primary=20 cross-check=40 diff=20"
+  ],
+  "questions": [
+    {
+      "question_id": 164,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Model answer is empty/truncated - no actual content provided beyond preamble"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response does not answer what GSD stands for",
+            "Response does not state that GSD provides device capabilities and data format for PLC/engineering tool integration",
+            "Response is incomplete/truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response - no actual definition or function provided despite promising explanation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. Here\u2019s a detailed explanation of GSD files in the context of Profibus.\n\n###",
+      "reference": "General Station Description; it tells the PLC/engineering tool the device capabilities and data format",
+      "rationale": "Used to integrate Profibus devices.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 29,
+      "score": 45.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated - only shows '### 1. Understand' with no actual calculation or answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete and does not provide the required percent error",
+            "Does not compute 0.2 mA error over 16 mA span",
+            "Does not state the correct answer: 1.25% of full-scale span"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to compute or state the error value"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Here is how to calculate the percent error of full scale for the instrument.\n\n### 1. Understand",
+      "reference": "1.25 percent of span",
+      "rationale": "0.2 mA error on a 16 mA span = 1.25 percent.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 7,
+      "score": 38.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No final answer provided",
+            "No calculation shown"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated and does not provide the required temperature answer of 110 degC.",
+            "No calculation result is given."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response that never states the temperature or performs the calculation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! This is a classic instrumentation calculation. Here is the step-by-step solution.\n\n### Understanding the",
+      "reference": "110 degC",
+      "rationale": "16.8 mA is 80 percent of span. 80 percent of a 200 degC span is 160 degC; add -50 degC.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 190,
+      "score": 37.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Model response is only a preamble with no actual answer content",
+            "No technical content provided to evaluate",
+            "Failed to identify local echo, echo-back from converter, or TX/RX wiring issues"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "non-answer",
+            "fails to state any cause"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a classic and often confusing symptom when working with serial communication, networking, or embedded systems.",
+      "reference": "Local echo or echo-back from the interface/converter, or a TX/RX wiring issue",
+      "rationale": "The original answer was too narrow.",
+      "elapsed_s": 7.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 71,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer is truncated/incomplete",
+            "Does not identify square-root extraction function",
+            "No technical content provided",
+            "Sycophantic opener"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 35
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Does not answer what the square-root-in-box symbol indicates",
+            "Fails to mention square-root extraction function or flow computer",
+            "Fails to connect symbol to DP flow linearization"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "non-answer / evasion",
+            "fails to identify square-root extraction function"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! This is a symbol often found in specific types of technical diagrams, particularly in signal processing and control",
+      "reference": "Flow computer or square-root extraction function",
+      "rationale": "Used where DP is converted to linearized flow.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 63,
+      "score": 30.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect answer: 'Informed' instead of 'Indicating'",
+            "Overconfident assertion of wrong answer",
+            "Response appears truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "completely incorrect expansion of TIC acronym",
+            "confident hallucination of non-existent meaning"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "In the most common context, the \"I\" in TIC stands for **Informed**.\n\nThe",
+      "reference": "Indicating",
+      "rationale": "TIC = Temperature Indicating Controller.",
+      "elapsed_s": 9.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 58,
+      "score": 37.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "Did not provide the answer 'hydraulic actuator' which was given in the question itself",
+            "Failed to recognize that the question explicitly states it is a hydraulic actuator"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "failed to answer the question",
+            "incorrectly claimed no image was provided despite explicit premise",
+            "evasive and incomplete response"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 25
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. Since you haven't provided the image of the specific symbol, I will describe the most common types of",
+      "reference": "Hydraulic actuator",
+      "rationale": "Question revised to avoid over-relying on one sketch style.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 36,
+      "score": 66.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 3,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete - no actual answer provided beyond preamble",
+            "Failed to deliver the 'No' answer",
+            "No technical rationale given"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 33
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This gets to the heart of a very common point of confusion in instrumentation.\n\nThe short and direct answer",
+      "reference": "No",
+      "rationale": "An active 4-wire transmitter powers its own output loop.",
+      "elapsed_s": 6.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 189,
+      "score": 38.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete - model did not provide the actual subnet mask answer",
+            "Truncated response fails to answer the question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete response: did not provide the subnet mask 255.255.255.0",
+            "Overconfident phrasing despite failing to answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer - no subnet mask value provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course!\n\nThe standard subnet mask for a small, \"Class C style\" network is:",
+      "reference": "255.255.255.0",
+      "rationale": "Common /24 subnet mask.",
+      "elapsed_s": 6.9,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 27,
+      "score": 35.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "No calculation shown",
+            "No final mA value given"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "no mA value provided",
+            "no calculation shown"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. This is a standard linear conversion problem found in industrial instrumentation. We'll assume the standard",
+      "reference": "10 mA",
+      "rationale": "0.95 is 37.5 percent of the 0.8-1.2 span; 4 + (0.375 x 16) = 10.",
+      "elapsed_s": 6.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 174,
+      "score": 80.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 25,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "Mentions report-by-exception and event reporting which aligns with enhanced burst mode concept but answer cuts off mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 75
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "answer truncated/incomplete"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 85
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "One major advantage of HART 7 related to automatic data publishing is its support for **report-by-exception and event",
+      "reference": "Enhanced burst mode / event reporting",
+      "rationale": "HART 7 improved how devices can push data or event updates automatically.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 140,
+      "score": 50.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated before providing answer",
+            "No definitive answer given"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete and does not provide the required answer of parallel wiring to increase amp-hour capacity."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 10,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer that never states series vs parallel"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! This is a fundamental concept for building any battery bank.\n\nTo increase the **amp-",
+      "reference": "Parallel",
+      "rationale": "Parallel increases current capacity while keeping voltage the same.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 23,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To convert 15 psi to kPa, you multiply the value in psi by the conversion factor of 6.895.\n\n**Calculation:**\n\n15 psi * 6.895 kPa/psi = **103.425 kPa**\n\nTherefore, 15 psi is equal to **103.425 kPa**.",
+      "reference": "103.425 kPa",
+      "rationale": "15 x 6.895.",
+      "elapsed_s": 4.8,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 152,
+      "score": 38.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Failed to state 4 mA value"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 25
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not provide the required fixed output value of 4 mA",
+            "Fails to answer the question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to state the required 4 mA value"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a key concept in understanding how HART multidrop mode works.\n\nIn a HART multidrop",
+      "reference": "4 mA",
+      "rationale": "Analog current is fixed so digital polling carries the information.",
+      "elapsed_s": 6.6,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=25 cross-check=40 diff=15"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 109,
+      "score": 45.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete response - answer is truncated after '1.'",
+            "No terminals actually named",
+            "Cannot verify technical accuracy due to truncation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer - response truncated after '1.' with no terminals provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! The three terminals of a Bipolar Junction Transistor (BJT) are:\n\n1.",
+      "reference": "Emitter, base, collector",
+      "rationale": "Standard BJT terminals.",
+      "elapsed_s": 7.8,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 9,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No final answer provided",
+            "No calculation shown",
+            "Did not deliver the 70% answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to provide the requested percentage or calculation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's a classic instrumentation and control question. The signal is based on the standard **4-20 mA",
+      "reference": "70 percent",
+      "rationale": "(15.2 - 4) / 16 = 0.70.",
+      "elapsed_s": 6.7,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 8,
+      "score": 57.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "No calculation shown",
+            "Cannot verify technical correctness"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 35,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "model response truncated/incomplete"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! Here is the step-by-step calculation to find the corresponding percentage of the 4-2",
+      "reference": "30 percent",
+      "rationale": "(110 - 50) / (250 - 50) = 60 / 200 = 30 percent.",
+      "elapsed_s": 8.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 24,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The mass flow is **80,000 kg/hr**.\n\nHere's the calculation:\n\n*   **Formula:** Mass Flow = Volume Flow \u00d7 Density\n*   **Calculation:**",
+      "reference": "80,000 kg/hr",
+      "rationale": "Mass flow = volume x density.",
+      "elapsed_s": 6.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 56,
+      "score": 36.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Failed to identify that D means Differential"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not state that D modifies P to mean differential pressure",
+            "Fails to answer the question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "no technical content provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's an excellent and very specific question. The tag \"PDT-202\" refers",
+      "reference": "Differential pressure",
+      "rationale": "PDT means pressure differential transmitter.",
+      "elapsed_s": 5.8,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 60,
+      "score": 33.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Sycophantic opener with no substantive content"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "Does not answer what Z represents in ISA letter logic",
+            "Fails to state that Z usually represents position, dimension, or mechanical movement"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "model provided no substantive answer to the question",
+            "response is incomplete and does not address the queried ISA letter designation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! It gets to a specific and important part of ISA-5.1, the standard for \"",
+      "reference": "Position, dimension, or mechanical movement",
+      "rationale": "Z is not inherently \u201cshutdown\u201d; its meaning is position/dimension related.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 130,
+      "score": 74.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 10,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 8,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No explanation of commutation issue provided",
+            "Answer cuts off mid-sentence after 'No'"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 58
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "answer incomplete - states No but omits required commutation/zero-crossing rationale"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Excellent question! It gets to the heart of how these components work.\n\nThe short and direct answer is: **No",
+      "reference": "Not well, because it does not naturally turn off in DC service without current zero-crossing or forced commutation",
+      "rationale": "Triacs are naturally suited to AC.",
+      "elapsed_s": 8.1,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 155,
+      "score": 42.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided (numbers 40001 and 0 never stated)",
+            "Failed to deliver the technical content"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 35
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "provides no actual register numbers or addresses"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a common point of confusion in Modbus.\n\nHere are the two numbers for the first holding",
+      "reference": "Reference 40001, PDU address 0",
+      "rationale": "The original question mixed reference notation with internal addressing.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 198,
+      "score": 52.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated mid-sentence",
+            "No substantive content provided about the actual difference"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "no technical content provided",
+            "fails to state the required distinction"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! This is a fundamental and crucial distinction in industrial networking. The choice between a managed and an un",
+      "reference": "Managed switches support configuration, diagnostics, VLANs, QoS, and similar control features; unmanaged switches do not",
+      "rationale": "Managed switches are preferred for critical industrial networks.",
+      "elapsed_s": 8.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 144,
+      "score": 36.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 3,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No substantive technical content provided",
+            "Failed to address failure modes (shorted, leaky, open, degraded)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 33
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "non-responsive answer",
+            "no technical content provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. This is an excellent question that gets to the heart of how surge protectors work and, more importantly",
+      "reference": "It often fails shorted or leaky, but it can also fail open or degrade",
+      "rationale": "The original \u201calways shorts\u201d answer was too absolute.",
+      "elapsed_s": 7.8,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 51,
+      "score": 59.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided regarding the letter Y",
+            "Filler preamble without substantive content"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 8,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated and does not answer that Y represents a relay, computing, or conversion function.",
+            "Only correctly identifies ISA-5.1 as relevant context."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 53
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 25,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "answer truncated before delivering functional meaning"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 80
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This pertains to the ISA-5.1 standard for Instrumentation Symbols and Identification, which is widely",
+      "reference": "Relay, compute, or convert function",
+      "rationale": "Y is the ISA functional letter for relay/computing/conversion type functions.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 167,
+      "score": 95.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 35,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer truncated mid-sentence",
+            "Said 'Modbus' rather than specifically 'Modbus TCP' though contextually clear"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer is incomplete/truncated after 'Specifically, it'",
+            "Answer gives 'Modbus' rather than the more precise 'Modbus TCP'"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 35,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "imprecise protocol name - said Modbus instead of Modbus TCP"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The protocol most commonly associated with **TCP port 502** is **Modbus**.\n\nSpecifically, it",
+      "reference": "Modbus TCP",
+      "rationale": "Well-known reserved port.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 192,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete - no actual technical content provided",
+            "Sycophantic opener with no substantive answer",
+            "Cannot evaluate technical correctness as answer is cut off"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated and does not answer the question",
+            "Does not mention prioritization of time-critical Profinet RT frames",
+            "Does not mention bypassing the normal TCP/IP stack for cyclic real-time traffic"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "no technical content provided",
+            "fails to address question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. This is an excellent question that gets to the heart of what makes Profinet one of the most popular",
+      "reference": "By prioritizing time-critical frames and bypassing normal TCP/IP handling for those frames",
+      "rationale": "It keeps cyclic control traffic out of the slower general-purpose stack path.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 108,
+      "score": 43.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Unnecessary filler preamble"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not answer what happens to average DC output",
+            "Fails to state that output drops to roughly half and becomes half-wave rectified"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "no technical answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a classic troubleshooting scenario in electronics.\n\nIf one diode in a full-wave bridge rectifier",
+      "reference": "It drops to roughly half and becomes half-wave rectified",
+      "rationale": "Only one half-cycle is effectively delivered.",
+      "elapsed_s": 6.7,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 57,
+      "score": 41.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 2,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No substantive answer provided",
+            "Failed to identify the symbol as digital data link/communication bus"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 37
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "provides no answer or definition"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! This is a fundamental concept in reading Piping and Instrumentation Diagrams (P&IDs).\n\nA dashed",
+      "reference": "Digital data link or communication bus",
+      "rationale": "Used for networked or digital communications such as fieldbus or other data links.",
+      "elapsed_s": 6.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 115,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No clear answer provided",
+            "Cannot evaluate technical content fully"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 35
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to state the cause or match reference diagnosis"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a classic and very common failure scenario in electronics.\n\nBased on the symptoms (24V",
+      "reference": "Shorted or heavily overloaded output",
+      "rationale": "The regulator is in thermal overload trying to maintain 12 V.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 151,
+      "score": 57.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual frequencies provided",
+            "Answer cuts off mid-sentence before stating 1200 Hz and 2200 Hz"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 15,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer - frequencies never stated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 75
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! The HART (Highway Addressable Remote Transducer) protocol uses **Frequency Shift Keying (",
+      "reference": "1 = 1200 Hz, 0 = 2200 Hz",
+      "rationale": "Bell 202 FSK.",
+      "elapsed_s": 7.4,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 72,
+      "score": 42.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No actual answer provided",
+            "Cannot evaluate technical content as answer was cut off"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 25
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to state device type"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's an excellent question that gets into the specifics of industrial instrumentation and process control.\n\nA tag like **TE",
+      "reference": "Temperature element",
+      "rationale": "TE is a generic temperature-sensing element, not only a thermocouple or only an RTD.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 2,
+      "score": 35.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "No calculation shown",
+            "Fails to deliver the numeric result of 62.5 inches"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to deliver any calculated value or formula"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! This is a classic instrumentation problem that can be solved using a standard linear conversion formula. Here's the",
+      "reference": "62.5 inches",
+      "rationale": "8 mA is 25 percent of the 16 mA span; 25 percent of 150 inches is 37.5 inches, plus the 25-inch LRV.",
+      "elapsed_s": 6.6,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 41,
+      "score": 46.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated mid-answer",
+            "Answer appears to start with '10' which is incomplete and could be misread as 100 ohms (Pt100) rather than 1000 ohms"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer is truncated/incomplete: states \"10\" instead of the required 1000 ohms.",
+            "Incorrect nominal resistance for Pt1000 at 0\u00b0C; authoritative answer is 1000 ohms."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer does not state 1000 ohms"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The nominal resistance of a **Pt1000** RTD at 0\u00b0C is **10",
+      "reference": "1000 ohms",
+      "rationale": "By definition, Pt1000 is 1000 ohms at 0 degC.",
+      "elapsed_s": 6.4,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 186,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "That would be **CANopen**.\n\nIt is famous for its use of an **Object Dictionary (OD)**",
+      "reference": "CANopen",
+      "rationale": "The object dictionary defines device parameters and functions.",
+      "elapsed_s": 7.4,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 88,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "response appears truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer is truncated after a correct response, but this does not affect technical correctness."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "That arrangement is called a **bypass line** or a **manual bypass**.\n\nThis is a very common and important",
+      "reference": "Bypass line",
+      "rationale": "Used to route flow around the control valve for maintenance or manual control.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 169,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Excellent question. For a standard Foundation Fieldbus H1 segment, the answer is clear and absolute:\n\n**Exactly two",
+      "reference": "Two",
+      "rationale": "One at each end of the trunk.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 40,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated mid-calculation but correct answer stated upfront"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a 0-20 mA system, **10 mA is 50% of the scale**.\n\nHere's the simple calculation:\n\n*   **Formula:** (Measured Value / Maximum Value) * 100\n*   **Calculation:** (10 mA / 20",
+      "reference": "50 percent",
+      "rationale": "10 / 20 = 0.50.",
+      "elapsed_s": 6.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 182,
+      "score": 36.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "No actual content provided beyond a header",
+            "Fails to answer the question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not define HART burst mode",
+            "Does not state that the transmitter repeatedly broadcasts selected data without waiting for requests"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "no substantive answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. Here is a detailed explanation of what it means when a HART transmitter is in burst mode.\n\n### The",
+      "reference": "It repeatedly broadcasts selected data without waiting for each request",
+      "rationale": "Used for faster update or event-style reporting.",
+      "elapsed_s": 8.5,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 87,
+      "score": 36.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 2,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 2,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No substantive answer provided",
+            "Cannot evaluate technical content beyond fragment"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 29
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not answer whether ISA-5.1 requires a strict instrument bubble diameter",
+            "Does not mention that ISA-5.1 provides traditional/recommended sizes rather than a rigid universal diameter"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to answer the question",
+            "no technical content provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a common point of inquiry for those creating P&IDs.\n\nThe",
+      "reference": "No; the standard gives traditional/recommended sizes, but company drafting standards may vary",
+      "rationale": "Bubble size is not a single rigid universal diameter.",
+      "elapsed_s": 9.2,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=29 cross-check=40 diff=11"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 191,
+      "score": 63.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 10,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "Did not actually provide the expansions of RTS and CTS"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete answer: did not expand RTS as Request To Send",
+            "Incomplete answer: did not expand CTS as Clear To Send",
+            "Only partially identified them as RS-232 control lines",
+            "Overconfident phrasing despite failing to provide the requested definitions"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 20,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "answer truncated/incomplete"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 75
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course. In the context of the RS-232 serial communication standard, RTS and CTS are control",
+      "reference": "Request To Send and Clear To Send",
+      "rationale": "Handshake/control lines.",
+      "elapsed_s": 8.1,
+      "error": false,
+      "flags": [],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 183,
+      "score": 95.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 85
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated/incomplete, but the provided content correctly answers the question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Excellent question. The short and direct answer is:\n\n**No, in standard Modbus RTU, two slaves cannot",
+      "reference": "No",
+      "rationale": "Modbus RTU is master/slave; the master initiates traffic.",
+      "elapsed_s": 7.2,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=85 cross-check=100 diff=15"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 98,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Failed to identify ISA 5.1 symbol meaning"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 25
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not provide the required identification of the square-in-circle symbol with a single horizontal line",
+            "Only gives generic context caveat and no substantive answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "non-answer / evasion",
+            "failure to state the defined ISA-5.1 symbol meaning"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's an excellent and specific question! The meaning of a symbol can vary depending on the context (e.",
+      "reference": "A primary-location shared display/shared control function that is operator accessible",
+      "rationale": "Revised from the too-specific \u201cDCS controller on the main board.\u201d",
+      "elapsed_s": 8.3,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=25 cross-check=50 diff=25"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 25,
+      "score": 33.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Model response is incomplete - only contains preamble with no actual technical answer",
+            "No determination provided on whether circuit is balanced",
+            "No rationale given",
+            "Cannot evaluate technical content that does not exist"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not answer the yes/no question",
+            "Did not state that the circuit is not ideally balanced",
+            "Provided no technical rationale about unequal lead resistances in 3-wire RTD compensation",
+            "Response appears incomplete/truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "non-responsive answer",
+            "fails to state correct conclusion"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. Let's break down the principle of 3-wire RTD compensation to give a clear answer.",
+      "reference": "No \u2014 the circuit is not ideally balanced.",
+      "rationale": "For ideal 3-wire RTD compensation, the two current-carrying leads in the compensating bridge arms must be equal. With leads of 5, 5, and 10 ohms, one current-carrying arm differs from the other by a factor of 2, so the bridge cannot fully cancel lead-resistance error. Note: some transmitter designs only require the matched pair (L1 and L3) to be equal; in that case the 5-and-5 pair would be balanced and the 10-ohm lead would be the non-critical voltage sense wire. The question assumes the unmatched 10-ohm lead is in one of the bridge compensation arms, which is the most conservative and exam-standard interpretation.",
+      "elapsed_s": 6.6,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 92,
+      "score": 36.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "No actual answer provided",
+            "Failed to state the tag VT"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not provide the required standard tag 'VT'",
+            "Response is incomplete and non-answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to state the tag VT or any equivalent"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a fundamental concept in industrial instrumentation and control.\n\nThe standard tag for a vibration transmitter",
+      "reference": "VT",
+      "rationale": "Vibration transmitter.",
+      "elapsed_s": 7.8,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 89,
+      "score": 47.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No substantive answer provided",
+            "Unnecessary sycophantic preamble"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to state actual meaning of suffix letters"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This type of tagging is standard in industrial process control and instrumentation, particularly on P&ID (",
+      "reference": "Parallel or redundant instruments distinguished by suffix letters",
+      "rationale": "Exact use may be redundancy, comparison, or voting depending on design.",
+      "elapsed_s": 7.4,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 68,
+      "score": 33.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Completely incorrect domain - model interpreted ZSC/ZSO as SAP terminology instead of ISA instrumentation tags",
+            "Answer is truncated/incomplete",
+            "Failed to identify these as ISA-5.1 instrument tags (Z=position, S=switch, C=closed, O=open)",
+            "No recognition of I&C context"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not answer the I&C tag question",
+            "Incorrectly redirected the topic to SAP/Sales context",
+            "Failed to identify ZSC as position switch closed and ZSO as position switch open",
+            "Overconfident incorrect domain framing"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "complete topic hallucination",
+            "off-topic SAP/Sales response"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This is a very specific query that points directly to the world of **SAP**, particularly the **Sales and",
+      "reference": "Position switch closed and position switch open",
+      "rationale": "Z = position, S = switch, C/O = closed/open.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 12,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The span is **300 degF**.\n\nHere's the calculation:\n\n*   **Span = URV - LRV**\n*   Span = 250 degF - (-50 degF)\n*   Span = 250 + 50\n*   **Span = 300 degF**",
+      "reference": "300 degF",
+      "rationale": "URV - LRV = 250 - (-50).",
+      "elapsed_s": 5.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 118,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated mid-truth-table"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated after beginning a truth table, but the stated answer and rationale are correct."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The output is **low**.\n\nAn AND gate's output is high **only if all** of its inputs are high. Since one of the inputs is low, the condition is not met, and the output will be low.\n\nHere's the truth table for a 2-input AND gate (where 0 = low, 1 = high):\n\n| Input A | Input",
+      "reference": "Low",
+      "rationale": "Both inputs must be high for a high output.",
+      "elapsed_s": 5.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 138,
+      "score": 52.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "Does not actually answer the question",
+            "Only contains a filler preamble"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to deliver technical explanation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! This is a fundamental and excellent question in electronics design.\n\nThat 0.1 \u00b5F (",
+      "reference": "To provide local high-frequency bypass/decoupling",
+      "rationale": "It shunts fast noise and supplies brief current bursts locally.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 32,
+      "score": 37.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided",
+            "Failed to deliver the 63.2% answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response that never states the 63.2 percent value",
+            "fails to answer the actual question"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's a classic process control question! The key is understanding what a \"damping constant\" means in this",
+      "reference": "About 63.2 percent",
+      "rationale": "One time constant in a first-order system is about 63.2 percent response.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 97,
+      "score": 43.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete/truncated response",
+            "Did not provide an actual answer",
+            "No technical content delivered"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete response",
+            "Did not identify the solid line as a process connection or impulse line",
+            "No substantive technical answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "fails to state correct term"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's a great question about Process and Instrumentation Diagrams (P&IDs).\n\nA solid line connecting a pipe",
+      "reference": "Process connection or impulse line",
+      "rationale": "Shows a direct process/mechanical connection.",
+      "elapsed_s": 7.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 21,
+      "score": 37.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response truncated/incomplete",
+            "No final answer provided",
+            "No calculation shown"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response does not state or calculate the pH value",
+            "no explicit answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! Here is the step-by-step calculation to determine the pH value.\n\nThis is a standard linear",
+      "reference": "6 pH",
+      "rationale": "10.4 mA is 40 percent of span. 40 percent of a 10 pH span is 4; add the LRV of 2.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 142,
+      "score": 41.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 3,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No substantive answer provided beyond preamble",
+            "Cannot verify technical correctness as the actual answer is missing"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 33
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not state that raw millivolt output increases proportionally with excitation",
+            "Does not address ratiometric compensation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to state that output increases proportionally"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question. This gets to the heart of how load cells and their ratings work.\n\nHere\u2019s the short answer",
+      "reference": "It increases proportionally",
+      "rationale": "The raw output scales with excitation; a truly ratiometric measurement system compensates for this.",
+      "elapsed_s": 6.5,
+      "error": false,
+      "flags": [],
+      "block": "Block 3 - Electronics",
+      "tier": 1
+    },
+    {
+      "question_id": 76,
+      "score": 51.33,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 10,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 12,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete answer - did not provide 'Level Transmitter' as the I&C-context answer",
+            "Deflected to context-dependency without providing the expected technical answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 52
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 12,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not provide the required I&C meaning: LT = Level Transmitter",
+            "Answer is overly generic and fails to use the industrial instrumentation context",
+            "No fabricated standards citations"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 52
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "evaded domain-specific answer",
+            "failed to state Level Transmitter"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! \"LT\" is an abbreviation with many different meanings, and the correct one depends entirely on the context",
+      "reference": "Level transmitter",
+      "rationale": "Generic level transmitter, not specifically displacer type.",
+      "elapsed_s": 7.3,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 93,
+      "score": 41.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "No actual answer provided to the question",
+            "Cannot evaluate technical content as answer was cut off"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 35
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not answer what TY represents in a temperature loop",
+            "Fails to state temperature relay or converter"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "fails to answer question",
+            "provides only empty preamble"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question! This delves into the standardized language of process control and instrumentation, specifically as seen on Piping and Instrumentation Diagrams (",
+      "reference": "Temperature relay or converter",
+      "rationale": "Often used for a convert/relay function such as an I/P or signal converter in a temperature loop.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    },
+    {
+      "question_id": 50,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "response appears truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Based on your measurement, the loop is at its **minimum signal**.\n\nHere's the breakdown using Ohm",
+      "reference": "Minimum",
+      "rationale": "1.0 V across 250 ohms equals 4 mA.",
+      "elapsed_s": 6.9,
+      "error": false,
+      "flags": [],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 18,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete response - model answer is truncated/empty",
+            "No calculation provided",
+            "No final answer given"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated and does not provide the temperature.",
+            "No calculation or final answer given; expected 100 degC."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete response",
+            "no calculation or answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Of course! Here is the step-by-step calculation to find the temperature.\n\n### Key Information:\n\n*",
+      "reference": "100 degC",
+      "rationale": "138.5 - 100 = 38.5 ohms; 38.5 / 0.385 = 100.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 1 - Loop Math",
+      "tier": 1
+    },
+    {
+      "question_id": 153,
+      "score": 36.67,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incomplete response - model answer is truncated mid-sentence",
+            "No actual answer provided",
+            "Cannot evaluate technical correctness as answer is missing"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is incomplete/truncated",
+            "Does not identify Modbus RTU as the variant using a CRC",
+            "Does not contrast RTU CRC with Modbus TCP relying on lower-layer checks"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incomplete answer",
+            "fails to state which variant"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "That's a great question that gets to a key difference between the two.\n\nThe Modbus variant that uses",
+      "reference": "Modbus RTU",
+      "rationale": "TCP relies on lower-layer Ethernet/TCP checks rather than a Modbus CRC.",
+      "elapsed_s": 7.2,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ],
+      "block": "Block 4 - Networking",
+      "tier": 1
+    },
+    {
+      "question_id": 59,
+      "score": 62.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Response is truncated/incomplete",
+            "Answer cut off mid-sentence after 'denotes a'",
+            "No substantive answer provided"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "coverage": {
+          "model": "x-ai/grok-4.3",
+          "role": "coverage",
+          "substituted": true,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "answer truncated/incomplete"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 85
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Excellent question!\n\nOn a functional logic diagram, most commonly a **flowchart**, a diamond symbol denotes a **",
+      "reference": "A decision or conditional logic point",
+      "rationale": "Common flowchart/logic meaning: a yes/no or IF/THEN decision node.",
+      "elapsed_s": 7.0,
+      "error": false,
+      "flags": [],
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1
+    }
+  ]
+}

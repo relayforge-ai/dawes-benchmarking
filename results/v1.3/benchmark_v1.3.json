@@ -1,0 +1,1194 @@
+{
+  "version": "v1.3",
+  "generated_at": "2026-05-26T22:29:05.943651Z",
+  "benchmark": "IUK (Instrumentation Universal Knowledge) Benchmark",
+  "benchmark_corpus": "IC_Benchmark_v2.1",
+  "lead_evaluator": "Ryan Anderson \u2014 I&C Instrumentation Instructor / 20-Year Field SME",
+  "t1_pool": "Foundation",
+  "t1_pool_description": "Tier 1 \u00b7 200Q graduation exam anchor \u00b7 Blocks 1\u20134",
+  "t1_draw_count": 60,
+  "t1_seed": 42,
+  "models_total": 15,
+  "models_complete": 15,
+  "t2_qualifiers": 5,
+  "t2_complete": 5,
+  "t3_complete": 5,
+  "methodology_doc": "benchmark/methodology/IUK_Benchmark_Methodology_v3.0.md",
+  "t1_leaderboard": [
+    {
+      "manifest_id": 1,
+      "model_name": "Claude Opus 4.7",
+      "provider": "openrouter",
+      "score_pct": 93.33,
+      "correct": 56,
+      "total_questions": 60,
+      "mean_score_100": 94.31,
+      "tier2_eligible": true,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 0,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T04:56:25.224267",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 17,
+          "total": 17,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 14,
+          "total": 18,
+          "pct": 77.8
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "01_claude_opus_4.7.json",
+      "under_review": false,
+      "rank": 1
+    },
+    {
+      "manifest_id": 3,
+      "model_name": "GPT-5.5",
+      "provider": "openrouter",
+      "score_pct": 91.67,
+      "correct": 55,
+      "total_questions": 60,
+      "mean_score_100": 93.44,
+      "tier2_eligible": true,
+      "safety_failures": 0,
+      "api_errors": 1,
+      "divergence_flags": 4,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T05:51:19.050220",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 17,
+          "total": 17,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 13,
+          "total": 18,
+          "pct": 72.2
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "03_gpt_5.5.json",
+      "under_review": false,
+      "rank": 2
+    },
+    {
+      "manifest_id": 2,
+      "model_name": "Claude Sonnet 4.6",
+      "provider": "openrouter",
+      "score_pct": 90.0,
+      "correct": 54,
+      "total_questions": 60,
+      "mean_score_100": 93.24,
+      "tier2_eligible": true,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 1,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T05:25:09.078001",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 16,
+          "total": 17,
+          "pct": 94.1
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 13,
+          "total": 18,
+          "pct": 72.2
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "02_claude_sonnet_4.6.json",
+      "under_review": false,
+      "rank": 3
+    },
+    {
+      "manifest_id": 6,
+      "model_name": "grok-3-mini",
+      "provider": "xai",
+      "score_pct": 90.0,
+      "correct": 54,
+      "total_questions": 60,
+      "mean_score_100": 92.59,
+      "tier2_eligible": true,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 1,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T11:47:12.321899",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 9,
+          "total": 15,
+          "pct": 60.0
+        },
+        "Block 3 - Electronics": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        }
+      },
+      "result_file": "06_grok_3_mini.json",
+      "under_review": false,
+      "rank": 4
+    },
+    {
+      "manifest_id": 5,
+      "model_name": "Grok 4.3",
+      "provider": "openrouter",
+      "score_pct": 88.33,
+      "correct": 53,
+      "total_questions": 60,
+      "mean_score_100": 92.08,
+      "tier2_eligible": true,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 1,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T06:41:24.177130",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 16,
+          "total": 17,
+          "pct": 94.1
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 12,
+          "total": 18,
+          "pct": 66.7
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "05_grok_4.3.json",
+      "under_review": false,
+      "rank": 5
+    },
+    {
+      "manifest_id": 10,
+      "model_name": "Llama 4 Maverick",
+      "provider": "openrouter",
+      "score_pct": 83.33,
+      "correct": 50,
+      "total_questions": 60,
+      "mean_score_100": 86.79,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 2,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T08:34:24.942668",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 15,
+          "total": 17,
+          "pct": 88.2
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 10,
+          "total": 18,
+          "pct": 55.6
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "10_llama4_maverick.json",
+      "under_review": false,
+      "rank": 6
+    },
+    {
+      "manifest_id": 15,
+      "model_name": "accounts/fireworks/models/kimi-k2p6",
+      "provider": "fireworks",
+      "score_pct": 83.33,
+      "correct": 50,
+      "total_questions": 60,
+      "mean_score_100": 87.85,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 3,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T12:58:21.729763",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 11,
+          "total": 15,
+          "pct": 73.3
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 9,
+          "total": 15,
+          "pct": 60.0
+        },
+        "Block 3 - Electronics": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        }
+      },
+      "result_file": "15_kimi_k2.6.json",
+      "under_review": false,
+      "rank": 7
+    },
+    {
+      "manifest_id": 11,
+      "model_name": "Devstral 2",
+      "provider": "openrouter",
+      "score_pct": 81.67,
+      "correct": 49,
+      "total_questions": 60,
+      "mean_score_100": 86.64,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 0,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T09:00:42.751303",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 16,
+          "total": 17,
+          "pct": 94.1
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 8,
+          "total": 18,
+          "pct": 44.4
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "11_devstral_2512.json",
+      "under_review": false,
+      "rank": 8
+    },
+    {
+      "manifest_id": 13,
+      "model_name": "Mistral Medium 3.5",
+      "provider": "openrouter",
+      "score_pct": 81.67,
+      "correct": 49,
+      "total_questions": 60,
+      "mean_score_100": 86.68,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 1,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T09:58:46.464193",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 15,
+          "total": 17,
+          "pct": 88.2
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 9,
+          "total": 18,
+          "pct": 50.0
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        }
+      },
+      "result_file": "13_mistral_medium_3.5.json",
+      "under_review": false,
+      "rank": 9
+    },
+    {
+      "manifest_id": 14,
+      "model_name": "qwen2.5:32b",
+      "provider": "ollama_remote",
+      "score_pct": 80.0,
+      "correct": 48,
+      "total_questions": 60,
+      "mean_score_100": 86.03,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 2,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T12:54:25.886161",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 4,
+          "total": 15,
+          "pct": 26.7
+        },
+        "Block 3 - Electronics": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        }
+      },
+      "result_file": "14_qwen_2.5_32b.json",
+      "under_review": false,
+      "rank": 10
+    },
+    {
+      "manifest_id": 7,
+      "model_name": "Gemma 3 27B",
+      "provider": "ollama_local",
+      "score_pct": 76.67,
+      "correct": 46,
+      "total_questions": 60,
+      "mean_score_100": 80.39,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 2,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T07:08:46.500336",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 16,
+          "total": 17,
+          "pct": 94.1
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 6,
+          "total": 18,
+          "pct": 33.3
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 15,
+          "total": 16,
+          "pct": 93.8
+        }
+      },
+      "result_file": "07_gemma3_27b.json",
+      "under_review": false,
+      "rank": 11
+    },
+    {
+      "manifest_id": 9,
+      "model_name": "Llama 4 Scout",
+      "provider": "openrouter",
+      "score_pct": 70.0,
+      "correct": 42,
+      "total_questions": 60,
+      "mean_score_100": 80.26,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 0,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T08:11:00.771607",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 15,
+          "total": 17,
+          "pct": 88.2
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 5,
+          "total": 18,
+          "pct": 27.8
+        },
+        "Block 3 - Electronics": {
+          "correct": 9,
+          "total": 9,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 13,
+          "total": 16,
+          "pct": 81.2
+        }
+      },
+      "result_file": "09_llama4_scout.json",
+      "under_review": false,
+      "rank": 12
+    },
+    {
+      "manifest_id": 12,
+      "model_name": "Codestral latest",
+      "provider": "openrouter",
+      "score_pct": 66.67,
+      "correct": 40,
+      "total_questions": 60,
+      "mean_score_100": 77.49,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 5,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T09:36:00.203265",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 16,
+          "total": 17,
+          "pct": 94.1
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 5,
+          "total": 18,
+          "pct": 27.8
+        },
+        "Block 3 - Electronics": {
+          "correct": 8,
+          "total": 9,
+          "pct": 88.9
+        },
+        "Block 4 - Networking": {
+          "correct": 11,
+          "total": 16,
+          "pct": 68.8
+        }
+      },
+      "result_file": "12_codestral_2508.json",
+      "under_review": false,
+      "rank": 13
+    },
+    {
+      "manifest_id": 8,
+      "model_name": "Gemma 3 12B",
+      "provider": "openrouter",
+      "score_pct": 53.33,
+      "correct": 32,
+      "total_questions": 60,
+      "mean_score_100": 69.19,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 4,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T07:43:30.716846",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 10,
+          "total": 17,
+          "pct": 58.8
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 3,
+          "total": 18,
+          "pct": 16.7
+        },
+        "Block 3 - Electronics": {
+          "correct": 8,
+          "total": 9,
+          "pct": 88.9
+        },
+        "Block 4 - Networking": {
+          "correct": 11,
+          "total": 16,
+          "pct": 68.8
+        }
+      },
+      "result_file": "08_gemma3_12b.json",
+      "under_review": false,
+      "rank": 14
+    },
+    {
+      "manifest_id": 4,
+      "model_name": "Gemini 2.5 Pro",
+      "provider": "openrouter",
+      "score_pct": 21.67,
+      "correct": 13,
+      "total_questions": 60,
+      "mean_score_100": 54.36,
+      "tier2_eligible": false,
+      "safety_failures": 0,
+      "api_errors": 0,
+      "divergence_flags": 15,
+      "pool_name": "Foundation",
+      "run_timestamp": "2026-05-25T06:14:24.439305",
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 5,
+          "total": 17,
+          "pct": 29.4
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 1,
+          "total": 18,
+          "pct": 5.6
+        },
+        "Block 3 - Electronics": {
+          "correct": 2,
+          "total": 9,
+          "pct": 22.2
+        },
+        "Block 4 - Networking": {
+          "correct": 5,
+          "total": 16,
+          "pct": 31.2
+        }
+      },
+      "result_file": "04_gemini_2.5_pro.json",
+      "under_review": true,
+      "rank": 15
+    }
+  ],
+  "t1_expansion_120q": [
+    {
+      "manifest_id": 1,
+      "model_name": "anthropic/claude-opus-4.7",
+      "score_pct": 90.83,
+      "correct": 109,
+      "total_questions": 120,
+      "mean_score_100": 93.53,
+      "tier2_eligible": true,
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 20,
+          "total": 30,
+          "pct": 66.7
+        },
+        "Block 3 - Electronics": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 29,
+          "total": 30,
+          "pct": 96.7
+        }
+      },
+      "result_file": "01_claude_opus_4.7_120q.json",
+      "status": "complete"
+    },
+    {
+      "manifest_id": 2,
+      "model_name": "anthropic/claude-sonnet-4.6",
+      "score_pct": 90.83,
+      "correct": 109,
+      "total_questions": 120,
+      "mean_score_100": 93.15,
+      "tier2_eligible": true,
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 19,
+          "total": 30,
+          "pct": 63.3
+        },
+        "Block 3 - Electronics": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        }
+      },
+      "result_file": "02_claude_sonnet_4.6_120q.json",
+      "status": "complete"
+    },
+    {
+      "manifest_id": 3,
+      "model_name": "openai/gpt-5.5",
+      "score_pct": 90.83,
+      "correct": 109,
+      "total_questions": 120,
+      "mean_score_100": 92.21,
+      "tier2_eligible": true,
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 29,
+          "total": 30,
+          "pct": 96.7
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 20,
+          "total": 30,
+          "pct": 66.7
+        },
+        "Block 3 - Electronics": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        }
+      },
+      "result_file": "03_gpt_5.5_120q.json",
+      "status": "complete"
+    },
+    {
+      "manifest_id": 5,
+      "model_name": "x-ai/grok-4.3",
+      "score_pct": 90.83,
+      "correct": 109,
+      "total_questions": 120,
+      "mean_score_100": 92.49,
+      "tier2_eligible": true,
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 19,
+          "total": 30,
+          "pct": 63.3
+        },
+        "Block 3 - Electronics": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        },
+        "Block 4 - Networking": {
+          "correct": 30,
+          "total": 30,
+          "pct": 100.0
+        }
+      },
+      "result_file": "05_grok_4.3_120q.json",
+      "status": "complete"
+    },
+    {
+      "manifest_id": 6,
+      "model_name": "grok-3-mini",
+      "score_pct": 88.33,
+      "correct": 106,
+      "total_questions": 120,
+      "mean_score_100": 90.26,
+      "tier2_eligible": true,
+      "blocks": {
+        "Block 1 - Loop Math": {
+          "correct": 29,
+          "total": 30,
+          "pct": 96.7
+        },
+        "Block 2 - ISA Symbols": {
+          "correct": 19,
+          "total": 30,
+          "pct": 63.3
+        },
+        "Block 3 - Electronics": {
+          "correct": 29,
+          "total": 30,
+          "pct": 96.7
+        },
+        "Block 4 - Networking": {
+          "correct": 29,
+          "total": 30,
+          "pct": 96.7
+        }
+      },
+      "result_file": "06_grok_3_mini_120q.json",
+      "status": "complete"
+    }
+  ],
+  "t2_results_80q": [
+    {
+      "manifest_id": 2,
+      "model_name": "anthropic/claude-sonnet-4.6",
+      "score_pct": 97.5,
+      "correct": 78,
+      "total_questions": 80,
+      "answered": 80,
+      "mean_score_100": 95.59,
+      "safety_failures": 0,
+      "judge_divergence_flags": 0,
+      "api_errors": 0,
+      "blocks": {
+        "Block 5 - Pressure & Level": {
+          "correct": 16,
+          "total": 16,
+          "pct": 100.0
+        },
+        "Block 6 - Temperature & Analytical": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 7 - Flow": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 8 - Final Control": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        }
+      },
+      "result_file": "02_claude_sonnet_4.6_t2_80q.json",
+      "pool_name": "Competency",
+      "run_timestamp": "2026-05-25T21:49:56.945138",
+      "rank": 1
+    },
+    {
+      "manifest_id": 1,
+      "model_name": "anthropic/claude-opus-4.7",
+      "score_pct": 96.25,
+      "correct": 77,
+      "total_questions": 80,
+      "answered": 80,
+      "mean_score_100": 95.64,
+      "safety_failures": 0,
+      "judge_divergence_flags": 0,
+      "api_errors": 0,
+      "blocks": {
+        "Block 5 - Pressure & Level": {
+          "correct": 15,
+          "total": 16,
+          "pct": 93.8
+        },
+        "Block 6 - Temperature & Analytical": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 7 - Flow": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 8 - Final Control": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        }
+      },
+      "result_file": "01_claude_opus_4.7_t2_80q.json",
+      "pool_name": "Competency",
+      "run_timestamp": "2026-05-25T19:31:03.653249",
+      "rank": 2
+    },
+    {
+      "manifest_id": 6,
+      "model_name": "grok-3-mini",
+      "score_pct": 93.75,
+      "correct": 75,
+      "total_questions": 80,
+      "answered": 80,
+      "mean_score_100": 94.3,
+      "safety_failures": 1,
+      "judge_divergence_flags": 0,
+      "api_errors": 0,
+      "blocks": {
+        "Block 5 - Pressure & Level": {
+          "correct": 15,
+          "total": 16,
+          "pct": 93.8
+        },
+        "Block 6 - Temperature & Analytical": {
+          "correct": 13,
+          "total": 15,
+          "pct": 86.7
+        },
+        "Block 7 - Flow": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 8 - Final Control": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        }
+      },
+      "result_file": "06_grok_3_mini_t2_80q.json",
+      "pool_name": "Competency",
+      "run_timestamp": "2026-05-25T21:15:36.538716",
+      "rank": 3
+    },
+    {
+      "manifest_id": 3,
+      "model_name": "openai/gpt-5.5",
+      "score_pct": 92.5,
+      "correct": 74,
+      "total_questions": 80,
+      "answered": 76,
+      "mean_score_100": 91.55,
+      "safety_failures": 0,
+      "judge_divergence_flags": 4,
+      "api_errors": 4,
+      "blocks": {
+        "Block 5 - Pressure & Level": {
+          "correct": 15,
+          "total": 16,
+          "pct": 93.8
+        },
+        "Block 6 - Temperature & Analytical": {
+          "correct": 13,
+          "total": 15,
+          "pct": 86.7
+        },
+        "Block 7 - Flow": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 8 - Final Control": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        }
+      },
+      "result_file": "03_gpt_5.5_t2_80q.json",
+      "pool_name": "Competency",
+      "run_timestamp": "2026-05-25T20:45:58.963398",
+      "rank": 4
+    },
+    {
+      "manifest_id": 5,
+      "model_name": "x-ai/grok-4.3",
+      "score_pct": 92.5,
+      "correct": 74,
+      "total_questions": 80,
+      "answered": 79,
+      "mean_score_100": 92.9,
+      "safety_failures": 1,
+      "judge_divergence_flags": 0,
+      "api_errors": 1,
+      "blocks": {
+        "Block 5 - Pressure & Level": {
+          "correct": 15,
+          "total": 16,
+          "pct": 93.8
+        },
+        "Block 6 - Temperature & Analytical": {
+          "correct": 13,
+          "total": 15,
+          "pct": 86.7
+        },
+        "Block 7 - Flow": {
+          "correct": 14,
+          "total": 15,
+          "pct": 93.3
+        },
+        "Block 8 - Final Control": {
+          "correct": 15,
+          "total": 15,
+          "pct": 100.0
+        },
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 0,
+          "total": 0,
+          "pct": null
+        }
+      },
+      "result_file": "05_grok_4.3_t2_80q.json",
+      "pool_name": "Competency",
+      "run_timestamp": "2026-05-25T20:12:53.809260",
+      "rank": 5
+    }
+  ],
+  "t3_results_100q": [
+    {
+      "manifest_id": 1,
+      "model_name": "anthropic/claude-opus-4.7",
+      "score_pct": 97.0,
+      "correct": 97,
+      "total_questions": 100,
+      "answered": 100,
+      "mean_score_100": 95.39,
+      "safety_failures": 0,
+      "judge_divergence_flags": 0,
+      "api_errors": 0,
+      "incomplete": false,
+      "blocks": {
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 39,
+          "total": 40,
+          "pct": 97.5
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 58,
+          "total": 60,
+          "pct": 96.7
+        }
+      },
+      "result_file": "01_claude_opus_4.7_t3_100q.json",
+      "pool_name": "Certification",
+      "run_timestamp": "2026-05-25T22:15:47.914988",
+      "rank": 1
+    },
+    {
+      "manifest_id": 3,
+      "model_name": "openai/gpt-5.5",
+      "score_pct": 96.0,
+      "correct": 96,
+      "total_questions": 100,
+      "answered": 97,
+      "mean_score_100": 93.08,
+      "safety_failures": 0,
+      "judge_divergence_flags": 6,
+      "api_errors": 3,
+      "incomplete": true,
+      "blocks": {
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 39,
+          "total": 40,
+          "pct": 97.5
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 57,
+          "total": 60,
+          "pct": 95.0
+        }
+      },
+      "result_file": "03_gpt_5.5_t3_100q.json",
+      "pool_name": "Certification",
+      "run_timestamp": "2026-05-26T09:55:49.578265",
+      "rank": 2
+    },
+    {
+      "manifest_id": 6,
+      "model_name": "grok-3-mini",
+      "score_pct": 96.0,
+      "correct": 96,
+      "total_questions": 100,
+      "answered": 100,
+      "mean_score_100": 94.97,
+      "safety_failures": 0,
+      "judge_divergence_flags": 0,
+      "api_errors": 0,
+      "incomplete": false,
+      "blocks": {
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 39,
+          "total": 40,
+          "pct": 97.5
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 57,
+          "total": 60,
+          "pct": 95.0
+        }
+      },
+      "result_file": "06_grok_3_mini_t3_100q.json",
+      "pool_name": "Certification",
+      "run_timestamp": "2026-05-26T10:47:57.411788",
+      "rank": 3
+    },
+    {
+      "manifest_id": 5,
+      "model_name": "x-ai/grok-4.3",
+      "score_pct": 92.0,
+      "correct": 92,
+      "total_questions": 100,
+      "answered": 100,
+      "mean_score_100": 89.35,
+      "safety_failures": 0,
+      "judge_divergence_flags": 7,
+      "api_errors": 0,
+      "incomplete": false,
+      "blocks": {
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 37,
+          "total": 40,
+          "pct": 92.5
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 55,
+          "total": 60,
+          "pct": 91.7
+        }
+      },
+      "result_file": "05_grok_4.3_t3_100q.json",
+      "pool_name": "Certification",
+      "run_timestamp": "2026-05-26T08:49:11.276191",
+      "rank": 4
+    },
+    {
+      "manifest_id": 2,
+      "model_name": "anthropic/claude-sonnet-4.6",
+      "score_pct": 65.0,
+      "correct": 65,
+      "total_questions": 100,
+      "answered": 70,
+      "mean_score_100": 66.13,
+      "safety_failures": 0,
+      "judge_divergence_flags": 1,
+      "api_errors": 30,
+      "incomplete": true,
+      "blocks": {
+        "Block 9 - Advanced Diagnostic": {
+          "correct": 28,
+          "total": 40,
+          "pct": 70.0
+        },
+        "Block 10 - Safety & Leadership": {
+          "correct": 37,
+          "total": 60,
+          "pct": 61.7
+        }
+      },
+      "result_file": "02_claude_sonnet_4.6_t3_100q.json",
+      "pool_name": "Certification",
+      "run_timestamp": "2026-05-26T11:35:29.563566",
+      "rank": 5
+    }
+  ],
+  "irr": null,
+  "foundation_blocks": [
+    "Block 1 - Loop Math",
+    "Block 2 - ISA Symbols",
+    "Block 3 - Electronics",
+    "Block 4 - Networking"
+  ],
+  "competency_blocks": [
+    "Block 5 - Pressure & Level",
+    "Block 6 - Temperature & Analytical",
+    "Block 7 - Flow",
+    "Block 8 - Final Control",
+    "Block 9 - Advanced Diagnostic",
+    "Block 10 - Safety & Leadership"
+  ],
+  "certification_blocks": [
+    "Block 9 - Advanced Diagnostic",
+    "Block 10 - Safety & Leadership"
+  ]
+}

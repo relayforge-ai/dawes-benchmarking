@@ -1,0 +1,3027 @@
+{
+  "run_metadata": {
+    "benchmark_version": "v1.3",
+    "model_name": "grok-3-mini",
+    "model_slug": "xai/grok-3-mini",
+    "provider": "xai",
+    "temperature": 0,
+    "seed": 42,
+    "question_count": 80,
+    "pool_tier": 2,
+    "pool_name": "Competency",
+    "run_timestamp": "2026-05-25T21:15:36.538716",
+    "completed_at": "2026-05-25T21:49:49.647466",
+    "hardware": "DAWES RTX 3090 / RTX 4060 Ti",
+    "runner_version": "tier1_v13_runner.py v1.3",
+    "sop_version": "Dawes Einstein Engine Lab SOP v1",
+    "sop_judge_prompt": "Section 4.1 \u2014 5-dimension adversarial",
+    "lead_evaluator": "Ryan Anderson",
+    "judge_panel": [
+      {
+        "model": "anthropic/claude-opus-4.7",
+        "role": "primary",
+        "company": "anthropic",
+        "substituted": false
+      },
+      {
+        "model": "openai/gpt-5.5",
+        "role": "cross-check",
+        "company": "openai",
+        "substituted": false
+      },
+      {
+        "model": "google/gemini-2.5-pro",
+        "role": "coverage",
+        "company": "google",
+        "substituted": false
+      }
+    ]
+  },
+  "summary": {
+    "total_questions": 80,
+    "answered": 80,
+    "correct": 75,
+    "score_pct": 93.75,
+    "mean_score_100": 94.3,
+    "tier2_eligible": true,
+    "correct_threshold": 70,
+    "safety_failures": 1,
+    "safety_failure_qids": [
+      288
+    ],
+    "judge_divergence_flags": 0,
+    "api_errors": 0
+  },
+  "divergence_flags": [],
+  "questions": [
+    {
+      "question_id": 317,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The gas expansion factor \\(Y\\) (sometimes denoted \\(\\varepsilon\\)) corrects the basic DP flow equation for the density reduction that occurs when a compressible fluid (gas or vapor) accelerates through a restriction. Because static pressure falls, the fluid expands; the resulting drop in density alters both the velocity profile and the mass flux that would be predicted by the incompressible (liquid) orifice/venturi equation. Without \\(Y\\), the calculated mass flow would be systematically high. The factor is obtained from an isentropic expansion model and is a function of the pressure ratio, th",
+      "reference": "To correct for gas compressibility through the restriction",
+      "rationale": "Gas density changes as pressure drops through the primary element.",
+      "elapsed_s": 3.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 358,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The phenomenon described is a classic example of **hysteresis** (specifically, *positioner* or *valve hysteresis* in a control-valve context).\n### Why this matches the definition\n- Hysteresis means the output (valve-stem position) is not a single-valued function of the input (actuator pressure or control signal); instead it depends on the recent history of the input\u2014in this case, the direction from which the target position was approached.\n- Mechanically this arises from:\n - friction/stiction in the packing and seating surfaces,\n - play or lost motion in linkages,\n - magnetic or pneumatic hyst",
+      "reference": "Hysteresis",
+      "rationale": "Direction-dependent error.",
+      "elapsed_s": 6.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 307,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Transit-time ultrasonic flow meters work by sending ultrasonic pulses between transducers and measuring the precise difference in transit time (with vs. against the flow). This time difference is directly proportional to the average flow velocity along the acoustic path.\nBecause the method depends on a clean, uninterrupted acoustic path, it performs best in **clean liquids** (low solids, low entrained gas). In such fluids the signal arrives with high amplitude and minimal distortion, yielding the highest accuracy and reliability.\nLiquids that contain high concentrations of solids or bubbles sc",
+      "reference": "Clean liquids",
+      "rationale": "Transit-time ultrasonics work best when the acoustic path is not scattered by solids or bubbles.",
+      "elapsed_s": 3.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 289,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer focuses on electrochemical EMFs and corrosion; reference emphasizes leakage paths/secondary junctions - model covers secondary junctions via corrosion but underweights simple resistive leakage paths across terminals"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Moisture in a thermocouple junction box (the connection point between thermocouple wires and copper/extension leads) introduces two primary error mechanisms, both of which corrupt the tiny Seebeck voltage (typically tens of \u00b5V/\u00b0C):\n- **Electrochemical (galvanic) EMFs**: Water acts as an electrolyte between dissimilar metals (thermocouple alloys, terminals, screws). This creates unwanted \u201cbattery\u201d voltages of the same order of magnitude as the thermocouple signal itself. These spurious voltages add directly to the measured emf and are temperature- and chemistry-dependent, producing drift, noise",
+      "reference": "It creates leakage paths or secondary junction errors",
+      "rationale": "Moisture can introduce conductive paths, shorts, or unstable millivolt signals.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 209,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The 4-20 mA output of a pressure transmitter is linearly proportional to the configured measurement range. Here the range is 0-30 inHg vacuum, so:\n\n- 4 mA corresponds to 0 inHg vacuum  \n- 20 mA corresponds to 30 inHg vacuum  \n\nThe 16 mA span is therefore mapped directly onto the 30 inHg span. At the midpoint current of 12 mA the transmitter reports exactly half-scale:\n\n\\[\n30\\,\\text{inHg}\\times\\frac{12-4}{16}=15\\,\\text{inHg vacuum}\n\\]\n\nThus the indicated vacuum is 15 inHg.\n\nFinal answer: 15 inHg vacuum",
+      "reference": "15 inHg vacuum",
+      "rationale": "12 mA is 50 percent of span.",
+      "elapsed_s": 4.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 503,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "An **Industrial DMZ (IDMZ)**, also called an OT DMZ or Purdue Level 3.5, is a dedicated network zone that sits between the enterprise IT network (Levels 4\u20135) and the OT/ICS environment (Levels 0\u20133). It functions as a controlled buffer zone that prevents any direct communication between IT and OT systems.\n\n### Key Characteristics\n- **No direct routing** \u2014 Traffic between IT and OT must terminate in the IDMZ; it cannot pass through.\n- **Proxy/reverse-proxy services** \u2014 Data exchange occurs through hardened intermediaries (e.g., data diodes, historians, file transfer proxies, patch servers, or AP",
+      "reference": "An IDMZ is a neutral network segment between the OT network (Levels 0-3) and enterprise IT (Levels 4+). It hosts shared services such as historians and patch servers, preventing direct connections between IT and OT.",
+      "rationale": "Direct IT-to-OT connections are a primary attack vector; the IDMZ creates an enforced architectural boundary with no end-to-end connectivity.",
+      "elapsed_s": 6.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 397,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a direct-acting diaphragm actuator (commonly used for globe-style control valves), air pressure is applied to the top of the flexible diaphragm. This forces the diaphragm and attached actuator stem downward (compressing an opposing spring below the diaphragm). The stem motion is therefore downward as air pressure rises.\n(The opposite behavior\u2014in which increasing air pressure lifts the stem\u2014occurs in a reverse-acting actuator, where air is applied beneath the diaphragm.)\nFinal answer: down",
+      "reference": "Down",
+      "rationale": "Question rewritten to remove ambiguity around \u201cextend\u201d versus \u201cretract.\u201d",
+      "elapsed_s": 2.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 228,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor wording ambiguity in final line: 'offset +\u03c1gh' could be read as implying the hydrostatic term is the offset, whereas the vapor pressure is the offset. Main explanation is correct."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A non-compensated bottom pressure gauge measures the total pressure at the tank bottom, which equals vapor pressure (ullage) + hydrostatic head (\\(\\rho g h\\)). The vapor pressure therefore appears as a constant positive offset on the gauge reading. This causes the indicated liquid level to read higher than the true hydrostatic head alone; the offset grows or shrinks with any change in vapor pressure (e.g., temperature swings, blanketing gas, or boiling). Accurate level inference therefore requires either a separate vapor-pressure measurement that is subtracted or a differential-pressure instru",
+      "reference": "It makes the indicated pressure look higher because vapor pressure adds to the hydrostatic head",
+      "rationale": "Without compensation, the gauge sees both liquid head and vessel pressure.",
+      "elapsed_s": 3.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 208,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The capillaries in a remote-seal DP transmitter (or level transmitter) are filled with a fixed volume of incompressible liquid. When one capillary is heated by the sun its fill fluid expands, raising the pressure transmitted to that side of the sensor; the shaded capillary remains cooler and its fluid does not expand. The resulting pressure difference appears as a spurious differential-pressure offset (typically several inches or centimeters of water column per 10 \u00b0C difference, depending on capillary length, diameter and fill-fluid expansion coefficient). The transmitter therefore reports an ",
+      "reference": "A zero shift occurs",
+      "rationale": "Unequal fill-fluid expansion creates a false differential.",
+      "elapsed_s": 7.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 537,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**No**\n\nATEX certification (per the EU\u2019s 2014/34/EU Directive) is not accepted by itself for installation in hazardous locations classified under the North American NEC/CEC. North American rules require evaluation and listing by an OSHA-recognized NRTL (UL, CSA, FM, Intertek, etc.) to the applicable NEC articles (500/501/505/506) or equivalent standards (ANSI/UL 60079 series, CSA C22.2, etc.).  \n\nEven when the protection concepts are technically similar (Ex d, Ex ia, etc.), the certification marks, ambient-temperature ratings, conduit entries, and labeling must match the North American scheme.",
+      "reference": "No. ATEX certification alone does not satisfy NEC or FM/CSA approval requirements for North American installation. The instrument must carry a recognized North American certification (FM, CSA, or equivalent UL listing) to be legally installed in NEC-classified areas.",
+      "rationale": "ATEX and NEC are entirely separate regulatory systems with no automatic mutual recognition. Procurement must verify the required national certification mark for the country and jurisdiction of installation.",
+      "elapsed_s": 3.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 375,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 86.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 18,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Model interpreted 'large actuators' as electromagnetic/inertial shakers rather than valve actuators on vibrating piping/units \u2014 context mismatch with reference answer",
+            "Did not mention valve body/packing area stress or leak prevention",
+            "Overly specific claim about force scaling 'with square of armature diameter or coil current' is questionable and overclaimed"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 86
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Large actuators (e.g., electromagnetic or inertial exciters) in vibrating equipment generate substantial dynamic reaction forces in addition to their own static weight. Without external bracing, these loads would be carried entirely by the vibrating member\u2019s suspension, mounts, or isolation springs, producing:\n- excessive static deflection that alters the intended natural frequencies or stroke,\n- high alternating stresses leading to fatigue in the mounting hardware,\n- misalignment between the actuator and the driven structure.\nA stanchion (a rigid vertical column anchored to a foundation or ma",
+      "reference": "To support weight and reduce stress/vibration damage to the valve body and packing area",
+      "rationale": "Helps prevent mechanical strain and leaks.",
+      "elapsed_s": 11.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 261,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The Nernst equation governs the potential response of a pH-sensitive electrode (e.g., a glass electrode) to changes in hydrogen-ion activity. For the half-cell reaction involving H\\(^+\\), the equation simplifies to\n\\[\nE = E_0 - \\frac{2.303\\,RT}{F}\\cdot\\mathrm{pH},\n\\]\nwhere the factor \\(2.303\\,RT/F\\) is the theoretical slope (in volts) per pH unit.\nAt \\(T=298.15\\,\\mathrm{K}\\) (25 \u00b0C), the gas constant \\(R=8.314\\,\\mathrm{J\\,mol^{-1}K^{-1}}\\) and Faraday constant \\(F=96485\\,\\mathrm{C\\,mol^{-1}}\\) give\n\\[\n\\frac{RT}{F}=25.693\\,\\mathrm{mV}.\n\\]\nMultiplying by the conversion factor from natural to com",
+      "reference": "59.16 mV",
+      "rationale": "At 25 degC the ideal Nernst slope is 59.16 mV per pH unit.",
+      "elapsed_s": 9.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 279,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Electrochemical H2S sensors operate via oxidation of H2S at a sensing electrode (typically in an aqueous electrolyte), generating a current proportional to gas concentration. Their usable life is limited by gradual consumption/depletion of the electrolyte and/or sensing electrode material, plus minor poisoning effects.\n\nNear end-of-life the dominant observable behavior is therefore a progressive loss of sensitivity: the sensor produces progressively less current for a given H2S concentration. In practice this appears as:\n- inability to reach the correct span value during calibration (even with",
+      "reference": "Loss of sensitivity",
+      "rationale": "As the electrochemical cell ages, sensitivity and response usually fall off.",
+      "elapsed_s": 7.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 283,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A colorimeter determines the concentration of a target analyte (e.g., nitrate, phosphate, chlorine, or iron) in a water sample through **colorimetric analysis**, which relies on the Beer-Lambert Law:\n\n\\[\nA = \\epsilon \\cdot l \\cdot c\n\\]\n\nwhere:\n- \\(A\\) = absorbance (measured by the instrument),\n- \\(\\epsilon\\) = molar absorptivity (constant for a given substance and wavelength),\n- \\(l\\) = path length (fixed by the cuvette),\n- \\(c\\) = concentration.\n\nHigher analyte concentration produces a more intense color (after reagent addition), leading to greater light absorption at a specific wavelength.\n\n",
+      "reference": "By measuring light absorption at a specific wavelength",
+      "rationale": "Colorimeters apply Beer-Lambert style measurement principles.",
+      "elapsed_s": 5.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 238,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 35.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Contradicts reference answer: model chose diaphragm but authoritative answer is bellows",
+            "Incorrect technical reasoning regarding bellows travel at low pressures"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 30
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect final answer: reference answer is bellows, not diaphragm",
+            "Incorrect rationale: bellows are typically preferred for very low pressures because they provide larger travel at low pressure",
+            "Overconfident incorrect claims about diaphragms being almost always used for a few inches of water",
+            "Unsupported specific threshold claim that bellows are reserved for roughly 0.5 psi and up"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Diaphragms are typically the better choice for sensing very low pressures (inches of water). This is because a diaphragm can be fabricated with a large surface area, which produces a usable force and deflection even when the applied pressure is tiny (recall that force = pressure \\(\\times\\) area). Bellows, by contrast, have a smaller effective area and a stiffer spring rate, so they are normally reserved for somewhat higher ranges (roughly 0.5 psi and up). In practice this is why commercial low-pressure instruments (Magnehelic gauges, capacitance-based DP cells, etc.) almost always employ diaph",
+      "reference": "Bellows",
+      "rationale": "Bellows can provide larger travel at very low pressures.",
+      "elapsed_s": 3.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 387,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 96.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: 100-110 dB figure stated without source but is a reasonable engineering range, not attributed to a specific standard"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer correctly identifies high-velocity turbulent gas flow and conversion of pressure/mechanical energy into acoustic energy.",
+            "Minor overstatement: shock waves/expansion fans and discrete tones are not required for aerodynamic valve noise and may not be present in all high-pressure gas valve cases.",
+            "Specific dB range is plausible but asserted without context and not necessary to answer the question."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Aerodynamic noise arises because high-pressure gas accelerates through the valve's narrow restriction (e.g., trim orifice or seat), converting pressure energy into kinetic energy. This produces one or both of:\n- Intense turbulence and turbulent mixing of high-velocity jets with slower downstream fluid, generating broadband pressure fluctuations that radiate as sound.\n- Choked (sonic) flow when \\(\\Delta P\\) is large enough; the gas reaches \\(M=1\\) at the vena contracta, forming shock waves and expansion fans that add discrete, high-intensity tones.\nBoth mechanisms turn a fraction of the flow's ",
+      "reference": "Because high-velocity turbulent gas flow sheds energy as sound",
+      "rationale": "The trim and expanding gas create strong turbulence.",
+      "elapsed_s": 6.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 241,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor wording: says 'reduces HP-side pressure' \u2014 in standard DP-level setups the wet/reference leg is on the LP side of the transmitter; loss of reference leg head reduces LP-side pressure, increasing measured DP. The model's directional conclusion (false high) is correct, but the HP/LP labeling is inconsistent with conventional drum-level DP transmitter convention."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The reference (wet) leg provides a constant hydrostatic head on the HP side of the drum-level DP transmitter. Loss of that water column (by boiling or leakage) reduces HP-side pressure, which lowers the measured differential. Because the transmitter is calibrated such that a smaller DP corresponds to a higher drum level, the indicated level reads erroneously high.\nThis false-high reading can mask an actual low drum level, risking dry-out or furnace trip.\nFinal answer: false high level reading (risk of dry-out)",
+      "reference": "The indicated level reads high, often severely high",
+      "rationale": "Loss of low-side head makes the differential look larger.",
+      "elapsed_s": 6.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 542,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Missing explicit reference to IEC 60079-17 for inspection/maintenance",
+            "Slightly garbled final summary line"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The ATEX equipment directive (2014/34/EU) certifies only that an individual Ex device (or component) meets essential health-and-safety requirements when it leaves the manufacturer and is used within its stated conditions. It does **not** certify the way that device is subsequently combined with cables, glands, junction boxes, earthing arrangements, other apparatus, or the surrounding plant. Those interactions are governed by the workplace directive (1999/92/EC) and by the installation standard EN/IEC 60079-14, which together require a holistic verification that:\n- the chosen protection concept",
+      "reference": "ATEX certification applies to the device as manufactured and tested in isolation. Installation factors including cable glands, conduit seal fittings, junction boxes, earthing/bonding, installed orientation, and nearby heat sources can all invalidate the protection concept. Complete installations must comply with IEC 60079-14 (design) and IEC 60079-17 (inspection and maintenance).",
+      "rationale": "A correctly certified device installed incorrectly provides no actual explosion protection. System compliance \u2014 not just component compliance \u2014 is the legal and safety requirement.",
+      "elapsed_s": 5.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 339,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The question pertains to differential-pressure (DP) flow metering (orifice plates, venturi tubes, pitot tubes, etc.) when the measured DP is small\u2014typically a few inches of water column or less. In U.S. engineering practice the conventional unit for expressing these low-range DP values is inches of water column, almost always written\n\\[\n\\text{in H}_2\\text{O (60 \u00b0F)} \\quad\\text{or simply}\\quad \\text{in wc}.\n\\]\nThis unit is chosen for three practical reasons:\n- It gives a convenient numeric span (0\u20135 in wc, 0\u201310 in wc, etc.) for the low-pressure ranges encountered in HVAC, combustion air, custod",
+      "reference": "Inches of water column (inWC)",
+      "rationale": "This is the common low-DP engineering unit in US practice.",
+      "elapsed_s": 10.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 524,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "References to IEC 62443 and NIST SP 800-82 are general and accurate, no fabricated specifics"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Instrument and controls (I&C) engineers should understand cybersecurity because the systems they design, configure, and maintain\u2014such as PLCs, DCS, SCADA, and safety instrumented systems\u2014are now high-value targets in converged IT/OT environments. Even without being IT specialists, their domain expertise directly influences cyber risk in ways that pure IT teams cannot address alone.\n\n**Key reasons include:**\n\n- **Physical consequences of cyber incidents**: Unlike enterprise IT, where breaches mainly affect data, compromises to I&C systems can cause real-world harm\u2014equipment damage, process upse",
+      "reference": "I&C engineers specify, configure, and maintain the exact devices that would be targeted in an OT attack. They understand the process consequences of control system failure better than IT teams and are key participants in OT risk assessments and safety function validation.",
+      "rationale": "OT cybersecurity cannot be delegated entirely to IT; process domain knowledge is essential for making industrial security decisions that do not inadvertently create safety hazards.",
+      "elapsed_s": 11.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 277,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "ISA-7.0.01 cited for instrument air spec - this is a legitimate standard (ANSI/ISA-7.0.01-1996) covering instrument air quality, dew point claim of -40\u00b0C/-40\u00b0F is consistent with this standard",
+            "ISO 8573-1 reference is legitimate for compressed air purity classes"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Dew point** is the temperature at which air becomes saturated with water vapor, causing moisture to condense into liquid water. It is a direct measure of the actual moisture content in compressed air (unlike relative humidity, which changes with temperature).\n\n### Why Dew Point Is Critical in Instrument Air Systems\n\nInstrument air (also called plant air or control air) powers pneumatic instruments, valve actuators, positioners, and control systems. These systems require extremely dry air because even small amounts of moisture cause serious problems:\n\n- **Corrosion and rust** \u2014 Water reacts w",
+      "reference": "The temperature at which water vapor condenses",
+      "rationale": "Wet instrument air can freeze, corrode components, and damage regulators and pneumatics.",
+      "elapsed_s": 4.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 292,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The refractometer is an optical instrument whose operating principle is based on Snell's law of refraction. When a light ray crosses the interface between two media of different densities, its direction changes (i.e., it is bent) by an amount that is quantitatively described by the refractive index \\(n\\) of the second medium relative to the first:\n\\[\nn = \\frac{\\sin i}{\\sin r},\n\\]\nwhere \\(i\\) and \\(r\\) are the angles of incidence and refraction, respectively.\nBecause \\(n\\) of a solution varies monotonically with the concentration of dissolved solids (or other solutes), a measurement of refracti",
+      "reference": "Refractive index",
+      "rationale": "Refractometers infer concentration from how light bends through the sample.",
+      "elapsed_s": 3.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 203,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The setup involves a differential-pressure (DP) level transmitter whose high-pressure (HP) port is connected to the vessel\u2019s 0 % (lower) tap. Because the transmitter is mounted 5 ft below that tap and the connecting impulse line is liquid-filled (SG = 1.0), a static head of exactly 5 ft of process liquid acts on the HP diaphragm at all times.\nAt the 0 % level the liquid surface is coincident with the lower tap, so no additional head exists above the tap. Consequently the only pressure seen by the transmitter is the 5 ft liquid column in the impulse line:\n\\[\nP_{\\text{HP}} = 5\\,\\text{ft}\\times\\t",
+      "reference": "5 feet of water, or 60 inWC",
+      "rationale": "The transmitter always sees the liquid head in the filled line.",
+      "elapsed_s": 16.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 202,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The hydrostatic pressure exerted by a static liquid column is given by \\(P=\\rho g h\\), where \\(\\rho\\) is the liquid density. When the desired units are psi and feet and the liquid density is expressed via its specific gravity (SG) relative to water, this expression simplifies to a convenient engineering formula.\nWater at standard conditions has a density of 62.4 lb/ft\u00b3. Converting to pressure in psi therefore requires division by the factor 144 in\u00b2/ft\u00b2:\n\\[\nP_\\text{water}=\\frac{h\\times62.4}{144}=0.4333\\,h\\quad\\text{(psi)}.\n\\]\nHence one foot of water column produces approximately 0.433 psi, or c",
+      "reference": "P = Height x 0.433 x S.G.",
+      "rationale": "One foot of water is about 0.433 psi.",
+      "elapsed_s": 7.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 252,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Platinum (Pt) is the standard material for precision industrial RTDs because of its chemical inertness, long-term stability, and nearly linear resistance-temperature characteristic over a wide range. Industrial standards (IEC 60751 / ASTM E1137) therefore define the nominal resistance of a Pt RTD at the ice point (0 \u00b0C) as 100 \u03a9; the resulting device is universally known as a Pt100 (or PT100) sensor. While other nominal resistances (e.g., 500 \u03a9 or 1000 \u03a9) exist, 100 \u03a9 remains the most common value specified for precision industrial applications.\nFinal answer: platinum (Pt100), 100 \u03a9",
+      "reference": "Platinum, 100 ohms",
+      "rationale": "The common industrial standard is the Pt100, which is 100 ohms at 0 degC.",
+      "elapsed_s": 3.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 390,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "decreased\nHunting (persistent oscillation of the valve around setpoint) is a classic sign of loop instability or marginal stability. In a PID controller the proportional gain \\(K_c\\) (or \\(K_p\\)) directly sets the magnitude of the corrective action:\n- Larger \\(K_c\\) amplifies the error, producing larger actuator moves that overshoot and then undershoot, sustaining the cycle.\n- Reducing \\(K_c\\) shrinks the loop gain, moves the closed-loop poles farther from the imaginary axis, and damps the oscillation.\nStandard tuning rules (Ziegler\u2013Nichols, Tyreus\u2013Luyben, etc.) therefore prescribe lowering pr",
+      "reference": "Decreased",
+      "rationale": "An overly aggressive loop often needs calming down.",
+      "elapsed_s": 3.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 560,
+      "block": "Block 13 - Calibration",
+      "tier": 2,
+      "score": 90.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 18,
+          "epistemic_calibration": 18,
+          "citation_integrity": 16,
+          "flags": [
+            "API RP 750 reference is dated/largely superseded by PSM regulations - minor citation concern",
+            "ASTM E2655 cited for tolerance/uncertainty context - reasonable but verify applicability",
+            "NCSL RP-1 reference is legitimate for calibration interval analysis"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The proper engineering process follows a structured, data-driven approach (typically under a Management of Change (MOC) framework per OSHA PSM, API RP 750, or IEC 61511). It is **not** a blanket extension for \u201call\u201d transmitters; intervals must be justified individually or by class. Key steps:\n\n1. **Classify instruments by criticality**  \n   Separate safety-critical (SIS/SIL, PSM-critical, custody transfer, environmental), quality-critical, and general monitoring transmitters. Different risk profiles require different intervals.\n\n2. **Collect and analyze historical performance data**  \n   Pull ",
+      "reference": "Step 1: Collect and analyze as-found data from the last 2-3 cycles for all affected instruments \u2014 calculate actual drift rates. Step 2: Identify SIS/SIL instruments (proof test intervals dictated by SIL design cannot be extended without formal SIL re-validation). Step 3: Review regulatory requirements (OSHA PSM, applicable pressure equipment directives). Step 4: Perform a formal risk assessment for each criticality tier. Step 5: Implement via Management of Change with documented justification. Step 6: Monitor with enhanced as-found recording to validate the decision.",
+      "rationale": "Calibration interval extension is a Management of Change activity \u2014 not a scheduling decision. It requires engineering evidence, risk management, and regulatory review. Changes made without this process expose the facility to regulatory violation and undetected measurement failures.",
+      "elapsed_s": 8.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 306,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The Strouhal number \\(St\\) is the dimensionless constant of proportionality that governs vortex shedding from a bluff body (the shedder bar) inserted into the flow. It is defined by\n\\[\nSt = \\frac{f\\,d}{U},\n\\]\nwhere \\(f\\) is the vortex-shedding frequency, \\(d\\) is the characteristic width of the bluff body, and \\(U\\) is the free-stream velocity.  \n\nBecause \\(St\\) remains essentially constant over a wide Reynolds-number range (typically \\(10^4\\)\u2013\\(10^7\\)), the shedding frequency is linearly proportional to velocity:\n\\[\nf = St\\,\\frac{U}{d}.\n\\]\nA vortex flow meter therefore measures \\(f\\) (usually",
+      "reference": "A dimensionless relationship between shedding frequency and velocity",
+      "rationale": "For a given bluff body geometry, shedding frequency is proportional to fluid velocity through the Strouhal relationship.",
+      "elapsed_s": 5.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 322,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Condensate (or seal) pots are installed at the top of the high- and low-pressure impulse lines on a steam DP flow (or level) installation. Their functions are:\n- They allow incoming steam to condense so that both legs remain completely filled with water, creating two identical, stable liquid columns. This keeps the hydrostatic head on each side of the transmitter equal and prevents measurement offset or drift.\n- They act as a thermal/liquid barrier, ensuring hot steam never reaches the DP transmitter itself (protecting the sensor from over-temperature damage).\n- They provide a reservoir that a",
+      "reference": "To keep both impulse legs filled with condensate and protect the transmitter from live steam",
+      "rationale": "They also maintain a stable reference head.",
+      "elapsed_s": 6.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 353,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The flow characteristic of an equal-percentage valve obeys\n\\[\n\\frac{dQ}{Q}=k\\,dl\n\\]\n(where \\(l\\) is valve lift). Integrating yields the exponential relation\n\\[\nQ(l)=Q_0\\,e^{kl}.\n\\]\nConsequently the local slope\n\\[\n\\frac{dQ}{dl}=kQ(l)\n\\]\nis itself proportional to the instantaneous flow. At small lift (near the seat) \\(Q\\) is small, so a given increment \\(\\Delta l\\) produces only a small absolute change \\(\\Delta Q\\). At large lift the same \\(\\Delta l\\) acts on a much larger \\(Q\\) and therefore produces a correspondingly larger \\(\\Delta Q\\).\nThus a small increase in lift near the low end produces ",
+      "reference": "Small change",
+      "rationale": "Equal percentage means equal travel increments produce equal percentage changes of existing flow.",
+      "elapsed_s": 5.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 508,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The principle of least privilege (PoLP) in an ICS/OT environment means that every user, service, application, or device is granted only the minimum permissions, network access, and system rights required to perform its specific function\u2014and nothing more.\nIn practice this translates to:\n- **Accounts and roles**: Operators receive only the HMI or SCADA rights needed for their shift (e.g., monitoring + limited set-point changes); engineers get temporary, time-bounded privileges for configuration work; vendors receive session-specific credentials that expire when the job is done. Shared \u201cadministr",
+      "reference": "Each user, process, or device should have only the minimum access rights required to perform its function \u2014 nothing more.",
+      "rationale": "This limits blast radius if an account or device is compromised and prevents accidental or deliberate modification of systems outside a role's scope.",
+      "elapsed_s": 6.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 550,
+      "block": "Block 13 - Calibration",
+      "tier": 2,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not explicitly mention SIL/proof test interval linkage",
+            "Did not explicitly name as-found data as the most defensible basis, though statistical analysis of past calibrations was mentioned"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Calibration interval** (also called calibration period or recalibration cycle) is the elapsed time between two consecutive calibrations of a measurement instrument or system. It is the maximum period during which the instrument is expected to remain within its specified accuracy or tolerance limits under defined conditions of use.\n\n### Engineering Factors That Determine a Safe Interval\n\nThe interval is not arbitrary; it is set so that the probability of the instrument drifting outside tolerance remains acceptably low. The main technical drivers are:\n\n- **Drift / stability characteristics**  ",
+      "reference": "Calibration interval is the maximum allowable time between successive calibrations of an instrument. Key engineering factors: manufacturer recommendation, historical drift data from as-found calibration records, measurement criticality, process conditions (temperature, vibration, corrosive exposure), regulatory requirements, and SIL/safety proof test interval requirements.",
+      "rationale": "Setting intervals too long risks undetected drift and regulatory non-compliance; too short wastes resources. Historical as-found data is the most defensible basis for interval optimization.",
+      "elapsed_s": 8.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 218,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The level transmitter (typically a DP type) infers height from the hydrostatic pressure \\(P = h \\times SG \\times g\\). It has been scaled so that the pressure produced by a column of SG = 1.0 fluid corresponds to the displayed height.\nWhen the actual fluid SG drops to 0.8, the same physical height now produces only 80 % of the pressure the transmitter expects. Consequently the transmitter calculates\n\\[\nh_\\text{indicated} = \\frac{P_\\text{measured}}{1.0 \\times g} < h_\\text{actual},\n\\]\ni.e., it under-reports the true level (reads low).\n(The opposite occurs if SG rises above the calibrated value: t",
+      "reference": "Low",
+      "rationale": "Lower density produces less head for the same level.",
+      "elapsed_s": 5.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 215,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: statement that 'each leg moves only h/2' is correct but the framing of 'displaces the mercury' could be interpreted as total differential height vs per-leg displacement; answer matches reference"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The pressure difference supported by a manometer is given by \\(\\Delta p=\\gamma h\\), where \\(\\gamma\\) is the specific weight of the manometer fluid and \\(h\\) is the resulting difference in liquid-surface elevations. For mercury the specific weight is obtained from its given specific gravity:\n\\[\n\\gamma_\\text{Hg}=13.6\\times62.4=848.64\\,\\text{lb/ft}^3.\n\\]\nOne psi equals 144 psf, so the elevation difference that corresponds to 1 psi is\n\\[\nh=\\frac{144}{848.64}=0.1697\\,\\text{ft}=2.036\\,\\text{in}.\n\\]\nIn a U-tube manometer this \\(h\\) is exactly the quantity read on the instrument; each leg moves only \\",
+      "reference": "About 2.04 inches",
+      "rationale": "1 psi = 27.7 inWC; divide by 13.6.",
+      "elapsed_s": 11.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 369,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Blowdown (i.e., manually opening the drain valve on the filter bowl) is performed on an air-filter/regulator (AFR) unit during preventive maintenance to expel accumulated condensate, oil carry-over, and particulates.  \n\nIf left in place these contaminants can:\n- corrode the bowl or internal parts,\n- restrict airflow or cause erratic regulation,\n- freeze in cold conditions and block the regulator,\n- migrate downstream and damage pneumatic components or instruments.\n\nRoutine blowdown therefore keeps the AFR delivering clean, dry, regulated air and extends service life between full overhauls.\n\nFi",
+      "reference": "To remove collected moisture and contaminants that can foul downstream pneumatic devices",
+      "rationale": "Tiny orifices in I/Ps and positioners hate dirt and water.",
+      "elapsed_s": 8.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 328,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 92.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Specific percentage bias ranges (0.5-2%, 1-3%) stated without source attribution, though not attributed to any named standard",
+            "Decay length claim (>20-50 D) is plausible but presented with high confidence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 92
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Swirl from out-of-plane elbows (e.g., two successive 90\u00b0 bends in perpendicular planes) generates persistent, non-axial tangential velocity components and asymmetric velocity profiles that decay only slowly (often >20\u201350 pipe diameters). Both turbine and vortex meters rely on a clean axial flow field, so this swirl produces repeatable but meter-specific bias:\n- Turbine meters: The tangential momentum adds or subtracts from rotor torque, shifting the rotor speed relative to the true axial velocity. Typical result is a positive or negative shift of 0.5\u20132 % (sometimes more at high swirl angles), ",
+      "reference": "It causes measurement error",
+      "rationale": "Swirl distorts the velocity profile seen by the meter and can make the reading inaccurate.",
+      "elapsed_s": 5.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 380,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A balanced plug (or \"balanced trim\") in a globe-style control valve has internal passages or ports that route upstream pressure to both sides of the plug. This equalizes the pressure acting on the plug's effective area, so the large net hydraulic force that would otherwise push the plug in one direction is largely cancelled out. The actuator therefore only has to overcome much smaller forces\u2014packing friction, the plug's weight, and any residual unbalance or spring load\u2014rather than the full pressure-drop force across the valve orifice. As a result, a smaller, lower-thrust actuator (pneumatic, e",
+      "reference": "It reduces net process force on the plug by balancing pressure on both sides",
+      "rationale": "Less thrust is required to move the trim.",
+      "elapsed_s": 3.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 250,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The three points checked in a standard 3-point pressure-gauge verification (also called a \u201cspot check\u201d) are chosen to sample the entire scale while remaining quick to perform. They are:\n- Zero (0 % of full scale) \u2013 confirms the pointer returns to the mechanical zero/stop pin with no pressure applied.\n- Mid-scale (\u2248 50 % of full scale) \u2013 verifies linearity and accuracy at the middle of the dial.\n- Full scale (100 % of full scale) \u2013 checks the upper-end accuracy and confirms the gauge does not over-travel or peg.\nThese three points are normally performed in both ascending and descending directio",
+      "reference": "0 percent, 50 percent, and 100 percent of scale",
+      "rationale": "Common basic calibration checkpoints.",
+      "elapsed_s": 6.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 285,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The effective measuring junction moves to the short location (typically producing large errors or erratic readings, as the sheath is rarely isothermal with the tip). This is a common failure mode in vibrating MI-cable sensors when insulation migrates or cracks.\n\nFinal answer: effective junction shifts to short (erratic/wrong T)",
+      "reference": "It can create an unintended grounded or intermittent junction",
+      "rationale": "If the conductors short to the sheath, the sensor can become noisy or measure from the wrong effective junction location.",
+      "elapsed_s": 5.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 386,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 18,
+          "flags": [
+            "Cites ISA-7.0.01 which is technically a withdrawn/renamed standard (current is ISA-7.0.01-1996, superseded by considerations in newer practice); minor citation specificity concern but the 10\u00b0C/18\u00b0F margin is correct"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The ISA standard governing instrument air quality (ISA-7.0.01) requires that air supplied to pneumatic instruments be sufficiently dry to prevent condensation, freezing, or corrosion inside tubing and devices. The quantitative rule that implements this requirement is that the pressure dew point of the instrument air must lie at least 10 \u00b0C (18 \u00b0F) below the lowest expected ambient temperature at the installation site. In other words, the highest permissible dew point equals the minimum ambient temperature minus 10 \u00b0C (18 \u00b0F). This margin accounts for temperature gradients, pressure drops, and ",
+      "reference": "At least 18 degF (10 degC) below the lowest ambient temperature",
+      "rationale": "This helps prevent condensation/freezing in service.",
+      "elapsed_s": 3.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 323,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Higher fluid viscosity reduces internal leakage (\"slip\") through meter clearances, improving volumetric accuracy (typically up to the point where pressure drop becomes excessive).\nFinal answer: improves accuracy (less slip/leakage)",
+      "reference": "It generally improves accuracy",
+      "rationale": "Higher viscosity reduces slippage past the moving elements in many PD meters.",
+      "elapsed_s": 5.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 288,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 0.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "FAIL",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect final answer: model says 'high' but correct answer is 'low'",
+            "Safety-relevant error: under-reading of combustible gas is a critical safety hazard; model gives opposite (falsely reassuring) direction would be worse, but here model claims high reading which contradicts established response factor behavior",
+            "Flawed reasoning about heat of combustion vs. response factor \u2014 heavier hydrocarbons typically under-respond on methane-calibrated catalytic bead sensors due to diffusion/pellistor limitations, not over-respond"
+          ],
+          "safety_failure_detail": "Model provides technically incorrect direction for LEL sensor response to pentane on methane calibration. Real-world response factors for pentane on methane-calibrated LEL sensors are >1, meaning the sensor under-reads actual concentration \u2014 a safety-critical error that could lead to undetected explosive atmospheres.",
+          "citation_fabrication_detail": null,
+          "total": 0
+        }
+      },
+      "correct": false,
+      "safety_failed": true,
+      "answer": "Catalytic LEL sensors produce a signal proportional to the heat released when the target gas is oxidized on the active bead. Because the sensor is calibrated so that a known volume percent of methane (its LEL = 5 % vol) produces a 100 % LEL reading, any other gas is measured relative to that methane reference.\nPentane has both a lower LEL (1.5 % vol) and a higher heat of combustion per molecule than methane. Consequently, the same volume-percent concentration of pentane generates a larger raw sensor signal than the equivalent volume-percent concentration of methane. When that larger signal is ",
+      "reference": "Low",
+      "rationale": "Methane calibration can under-read heavier hydrocarbons such as pentane unless proper correction is applied.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 348,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 93.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: Dall tube laying length typically ~2 pipe diameters, claim of 0.5-1 may be slightly low",
+            "Pressure tap location description slightly imprecise - Dall tube taps are at the throat shoulder/slot, not just at the throat in the conventional Venturi sense",
+            "Specific accuracy figures (\u00b11-2%) and pressure loss percentages stated without uncertainty caveats"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A **Dall tube** (also called a Dall flow tube) is a differential-pressure flow-measurement device used to determine the volumetric flow rate of liquids or gases in a closed pipe. It is essentially a shortened, low-loss variant of the classical Venturi tube.\n\n### Construction\nIt consists of two truncated cones joined at their narrow ends:\n- An upstream \u201cinlet\u201d cone that converges the flow.\n- A short cylindrical throat (often only a few millimeters long).\n- A downstream \u201cexit\u201d cone that diverges more abruptly than a classical Venturi.\n\nPressure taps are located in the pipe wall upstream of the i",
+      "reference": "A low-loss differential-pressure flow tube",
+      "rationale": "It is used where DP flow measurement is desired with very low permanent pressure loss.",
+      "elapsed_s": 4.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 544,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 95.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 19,
+          "flags": [
+            "Reference cites Article 8 while model cites Article 4 and Annex I \u2014 Article 8 is actually the correct article for the EPD requirement in 1999/92/EC, though Annex I covers zone classification; minor article-citation imprecision"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The ATEX workplace directive 1999/92/EC (also known as ATEX 137) places obligations on employers to protect workers from explosive-atmosphere hazards. Article 4 and Annex I explicitly require the employer to draw up and maintain a single, comprehensive document\u2014the Explosion Protection Document (EPD)\u2014that demonstrates compliance.\nThe EPD must contain, at minimum:\n- the explosion-risk assessment (likelihood, duration, and consequences of explosive atmospheres);\n- the classification of hazardous zones (0/1/2 for gases, 20/21/22 for dusts);\n- the technical and organisational measures adopted to e",
+      "reference": "The Explosion Protection Document (EPD), required by ATEX Directive 1999/92/EC Article 8. It must document zone classifications, explosion risks, protective measures applied, evidence that equipment meets applicable category requirements, and arrangements for safe working practices in hazardous zones.",
+      "rationale": "The EPD is the primary legal audit trail demonstrating the operator has met their duty of care. Absence of an EPD is a direct regulatory violation under the Workplace Explosive Atmospheres Directive.",
+      "elapsed_s": 4.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 510,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 91.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 34,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Response appears truncated at 'Monitoring & Anomaly' section",
+            "Mentions data diodes as bidirectional firewalled conduits which is slightly imprecise (diodes are unidirectional)",
+            "Vendor name-drops (Nozomi, Claroty, Dragos) without fabricating standards"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 91
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Remote VPN access to an **Industrial Control System (ICS)** carries significantly higher risk than standard enterprise VPN access because ICS environments were never designed for remote connectivity and prioritize availability and safety over confidentiality or integrity.\n\n### Why ICS VPN Access Is Higher Risk\n\n| Factor | Enterprise VPN | ICS VPN | Risk Impact |\n|--------|----------------|---------|-------------|\n| **System Design** | Modern OS, regular patching, endpoint protection | Legacy OS/software, unpatchable due to uptime/safety requirements | Easy exploitation once inside |\n| **Networ",
+      "reference": "ICS VPN bypasses all physical perimeter controls; a compromised VPN session gives direct access to safety-critical systems. Additional controls: multi-factor authentication, dedicated jump server/bastion host, session recording, time-limited access windows, and role-based access management.",
+      "rationale": "Remote access accounts for a disproportionately large fraction of documented OT security incidents; uncontrolled remote access is one of the top attack vectors.",
+      "elapsed_s": 7.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 310,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The turndown ratio of an orifice plate is the ratio of maximum to minimum flow rates that can be measured while remaining within the device's stated accuracy (typically \\(\\pm 1\\%\\) of full scale or better). Because the fundamental orifice equation is\n\\[\nQ = C_d A \\sqrt{\\frac{2\\Delta P}{\\rho(1-\\beta^4)}},\n\\]\nflow rate \\(Q\\) is proportional to the square root of the measured differential pressure \\(\\Delta P\\). Consequently a 3:1 or 4:1 change in \\(Q\\) produces a 9:1 or 16:1 change in \\(\\Delta P\\).\nA conventional differential-pressure transmitter is normally spanned so that its full-scale output ",
+      "reference": "Because DP becomes very small at low flow",
+      "rationale": "Since DP varies with flow squared, the signal collapses quickly as flow drops and accuracy suffers.",
+      "elapsed_s": 6.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 214,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Stilling wells (internal pipes) or standpipes/bridles (external chambers) are used with non-contact radar or ultrasonic level sensors primarily to create a calm, isolated liquid surface. This improves measurement reliability in challenging conditions.\n\nKey reasons include:\n\n- **Dampen turbulence and waves**: Agitation from mixers, inlets, pumps, or boiling is blocked, so the sensor sees a flat, stable surface for consistent echo returns (critical for both ultrasonic and non-contact radar).\n- **Reduce foam/vapor interference**: The enclosure minimizes foam layers or heavy vapors that can scatte",
+      "reference": "To reduce turbulence, foam effects, and false echoes from internals",
+      "rationale": "It can provide a calmer, cleaner measuring path.",
+      "elapsed_s": 5.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 235,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Remote seal systems (used with pressure/differential-pressure transmitters) isolate the sensing element from harsh process conditions via a thin diaphragm and a sealed capillary. The capillary is filled with a hydraulic fluid that transmits process pressure to the sensor.\n\nRefinery applications typically involve hydrocarbons, elevated temperatures (often >200 \u00b0C), and the need for long-term chemical stability and low viscosity. Among the fluids that satisfy these constraints, silicone oils\u2014most commonly polydimethylsiloxane grades such as DC 200, DC 704 or Syltherm\u2014are the industry-standard ch",
+      "reference": "Silicone oil",
+      "rationale": "Common, though exact fill fluid depends on service.",
+      "elapsed_s": 5.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 265,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The standard unit for ORP (oxidation-reduction potential, also called redox potential) is the volt (V), as it is fundamentally an electrical potential difference between two electrodes. In practice, however, ORP values are almost always reported in millivolts (mV) because typical readings fall in the range of roughly \u22121000 mV to +1000 mV; using the smaller unit avoids awkward decimal fractions.\nThus the conventional, universally adopted unit for ORP measurement and instrumentation is mV.\nFinal answer: mV (millivolts)",
+      "reference": "Millivolts",
+      "rationale": "ORP is normally displayed in mV.",
+      "elapsed_s": 4.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 558,
+      "block": "Block 13 - Calibration",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Dead-weight testing (also called dead-weight calibration) is a pressure metrology technique in which precisely known masses are stacked on a piston of known effective area; the resulting force \\(F=mg\\) is balanced by fluid pressure acting on that area (\\(P=F/A\\)), thereby generating a calculable, highly repeatable reference pressure. Because the only quantities that must be measured are mass, local gravity, piston area (including small distortion and thermal corrections), and fluid density/head corrections, the method yields primary-standard uncertainties that can be as low as a few parts in \\",
+      "reference": "Dead weight testing applies a precisely known mass to a piston of precisely known cross-sectional area to generate a traceable pressure standard: P = F/A (mass x gravity / area). It is the primary standard method for pressure calibration, achieving uncertainties below 0.01% of reading.",
+      "rationale": "Dead weight testers derive pressure from SI base units (mass, length, time) without requiring an external reference instrument \u2014 providing inherent traceability. They are used to calibrate reference transducers, pressure gauges, and high-accuracy transmitters.",
+      "elapsed_s": 10.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 513,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Air-gap** in ICS (Industrial Control System) security refers to the practice of physically isolating critical operational technology (OT) networks\u2014such as those running PLCs, DCS, SCADA, or safety systems\u2014from external networks, especially the corporate IT network and the internet. In a true air-gapped environment, there are no wired or wireless connections that allow data to flow in or out electronically. Any data exchange (e.g., software updates, configuration files, or historian data) must occur via manual, physical means such as USB drives, DVDs, or external hard drives that are carried ",
+      "reference": "An air-gap means no electronic network connection exists between the OT system and any external network. Modern plants increasingly require remote monitoring, vendor support, software updates, and historian data sharing \u2014 all of which introduce connections that break a true air-gap.",
+      "rationale": "Business and operational efficiency pressures consistently erode air-gaps; when they cannot be maintained, compensating controls must be explicitly designed, documented, and enforced.",
+      "elapsed_s": 8.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 391,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 97.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 19,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: did not explicitly address overlap philosophy alternative"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 97
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "At the split point (exactly 12 mA), the 4-12 mA valve should be at its endpoint (fully open or closed) while the 12-20 mA valve is simultaneously at its starting point (closed or open). This produces a seamless hand-off with neither overlap nor a control gap.\n(The exact open/closed polarity depends on whether the split-range scheme is sequential or opposing, but the transition condition itself remains the same.)\nFinal answer: 1@100% & other@0% (seamless handoff)",
+      "reference": "Valve A should be fully open and Valve B should just be starting to open (or remain just shut depending on split overlap philosophy)",
+      "rationale": "The transition point should be clearly defined in the range split.",
+      "elapsed_s": 4.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 300,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Matched thermocouple extension wires (made from the same alloys or with closely matched Seebeck coefficients) are required over long distances to avoid introducing spurious EMFs. Any material mismatch at the connection points creates new, unintended thermocouple junctions. If those junctions experience temperature gradients\u2014which become more likely and harder to control over tens or hundreds of meters\u2014the resulting voltage errors add directly to the measured signal and degrade accuracy. Properly matched extension wire ensures the net thermoelectric voltage remains determined solely by the meas",
+      "reference": "They preserve thermoelectric accuracy",
+      "rationale": "Matched extension wires prevent added junction errors and maintain the correct Seebeck behavior over distance.",
+      "elapsed_s": 4.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 556,
+      "block": "Block 13 - Calibration",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Repeatability** and **reproducibility** are two distinct components of measurement precision (how consistently an instrument produces the same result). They differ primarily in the conditions under which the repeated measurements are made.\n\n### Repeatability\n- **Definition**: The closeness of agreement between successive measurements of the same measurand (quantity being measured) when all of the following are kept constant:  \n  \u2013 same instrument  \n  \u2013 same operator  \n  \u2013 same procedure/method  \n  \u2013 same location/environment  \n  \u2013 very short time interval between measurements  \n- It reflects",
+      "reference": "Repeatability: agreement between successive measurements under identical conditions \u2014 same operator, instrument, location, short time interval. Reproducibility: agreement under changed conditions \u2014 different operators, reference standards, environments, or longer time intervals.",
+      "rationale": "Reproducibility is more relevant to long-term performance and calibration interval decisions. An instrument with good repeatability but poor reproducibility indicates drift or sensitivity to changed conditions that repeatability testing alone cannot reveal.",
+      "elapsed_s": 12.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 540,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The EU's ATEX Workplace Directive (1999/92/EC, also called ATEX 153) places the legal duty on the employer (i.e., the plant operator / site owner) to:\n\n- identify and evaluate explosion risks,\n- classify any areas into zones (0/1/2 for gases), and\n- document that classification, normally by means of hazardous-area-classification drawings and the associated Ex-protection document.\n\nThis obligation cannot be delegated away; while the operator may (and frequently does) engage an engineering contractor, consultant or EPC to prepare the actual drawings, the employer remains legally responsible for ",
+      "reference": "The plant owner/operator is legally responsible under ATEX Directive 1999/92/EC (the Workplace Explosive Atmospheres Directive). They must prepare an Explosion Protection Document (EPD) documenting zone classifications, explosion risks, protective measures, and evidence that equipment and work methods protect personnel.",
+      "rationale": "Equipment suppliers provide Ex-certified devices; the owner/operator classifies the area and is legally responsible for the complete protective system. This duty cannot be delegated to a vendor.",
+      "elapsed_s": 4.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 522,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 96.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not explicitly name OT-specific passive monitoring vendors (Claroty, Dragos, Nozomi) though concept is correctly described",
+            "Mentions NIDS which can be active; reference emphasizes passive OT monitoring"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The scenario describes unauthorized outbound data flows (periodic exfiltration or beaconing) from a historian, which is a high-value ICS asset that should only communicate with explicitly authorized internal or DMZ destinations.\n\nIn ICS environments the appropriate detection control is a network-based monitoring sensor (NIDS/NTA) that is:\n- Deployed at the conduit boundary between the OT zone containing the historian and any external zone,\n- Capable of building a baseline of allowed flows (IP addresses, ports, protocols, and timing), and\n- Configured with anomaly rules that alert on any connec",
+      "reference": "Network monitoring or anomaly detection using OT-specific passive monitoring tools (e.g., Claroty, Dragos, Nozomi Networks) configured with baseline traffic profiles and alerting on unauthorized outbound connections or anomalous communication patterns.",
+      "rationale": "Continuous passive monitoring is required to detect data exfiltration as it occurs; periodic manual audits alone would miss ongoing data theft.",
+      "elapsed_s": 7.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 529,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not explicitly mention that Category 1G equipment is also permitted in Zone 1 and Zone 2"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Category 1G** under the ATEX Directive (2014/34/EU) means the equipment provides a **very high level of protection** and is certified for use in **Zone 0** (explosive gas atmospheres that are present continuously, for long periods, or frequently).\n### Key points of the marking\n- **Category 1** = highest protection level (can remain safe even with two independent faults or a double failure).\n- **G** = intended for **Gas** (vapour/mist) atmospheres (as opposed to D for dust).\n- **Zone equivalence**: Zone 0 (gas) / Zone 20 (dust).\nIn practice, a piece of equipment marked **II 1G** (or **I M1** ",
+      "reference": "Category 1G means the equipment provides the highest level of protection and is suitable for Zone 0 use in gas/vapor atmospheres (G = gas). Category 1G equipment may also be installed in Zone 1 and Zone 2 (higher categories are always permitted in lower-risk zones).",
+      "rationale": "ATEX categories for gas: 1G = Zones 0/1/2; 2G = Zones 1/2 only; 3G = Zone 2 only. The zone determines the minimum required category.",
+      "elapsed_s": 3.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 303,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The relationship between volumetric flow rate \\(Q\\) and differential pressure \\(\\Delta P\\) (DP) across an orifice plate is given by the orifice flow equation\n\\[\nQ = C \\sqrt{\\Delta P},\n\\]\nwhere the constant \\(C\\) incorporates fluid density, orifice geometry, pipe diameter, and discharge coefficient (all assumed fixed for this problem).\nRearrangement immediately shows that\n\\[\n\\Delta P \\propto Q^2.\n\\]\nConsequently, if the flow rate is doubled,\n\\[\n\\frac{Q_2}{Q_1} = 2 \\implies \\frac{\\Delta P_2}{\\Delta P_1} = 4.\n\\]\nThus DP must increase by a factor of 4.\n(The same square-law relationship holds for a",
+      "reference": "By a factor of four",
+      "rationale": "DP varies with the square of flow.",
+      "elapsed_s": 3.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 374,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "References standards (TA-Luft, ISO 15848, EPA) without specific fabricated numeric thresholds \u2014 acceptable general citations"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Bellows-seal bonnets are used in place of conventional packing when zero (or near-zero) leakage to atmosphere is mandatory. Typical triggers include:\n- toxic, radioactive, or highly hazardous fluids (e.g., chlorine, phosgene, hydrogen sulfide);\n- strict fugitive-emission limits (EPA, TA-Luft, ISO 15848, etc.) on volatile organic compounds (VOCs);\n- high-vacuum service where in-leakage of air or moisture cannot be tolerated;\n- extremely valuable or pure process fluids where any loss is unacceptable.\nIn all other respects the valve is selected normally; the bellows simply replaces (or augments) ",
+      "reference": "When virtually zero stem leakage is required for toxic, lethal, or very valuable service",
+      "rationale": "Used where atmospheric leakage cannot be tolerated.",
+      "elapsed_s": 3.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 314,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 55.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 15,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer contradicts reference: model says 'total pressure' while reference states 'difference between total and static'",
+            "Model distinguishes Pitot from Pitot-static but the conventional benchmark answer expects differential measurement",
+            "Failed to align with expected answer despite technically defensible reasoning about bare Pitot tube"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "A Pitot tube (the basic/open-ended variant) is oriented directly into the flow and captures the stagnation (total) pressure at its inlet. It does not sense static pressure on its own, nor does it internally compute a difference; that subtraction is performed downstream by an airspeed indicator that also receives a static-pressure signal from a separate static port (or from the static ports integrated into a Pitot-static probe).\nThus the Pitot tube itself measures total pressure.\nFinal answer: total pressure",
+      "reference": "The difference between total and static pressure",
+      "rationale": "Velocity is inferred from that pressure difference.",
+      "elapsed_s": 2.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 363,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 95.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Mentions <1-2 s response time as illustrative but not attributed to a specific standard",
+            "SIL referenced loosely but not fabricated as a citation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A quick-exhaust valve (QEV) is installed in a pneumatic ESD loop (typically between the solenoid valve and the actuator) to enable very rapid venting of supply air from the actuator chamber. This allows the spring-return actuator to stroke the shutdown valve to its fail-safe position (usually closed) in the minimum possible time, satisfying the fast response requirements of the safety function (e.g., <1\u20132 s depending on SIL or HAZOP criteria). Without the QEV, exhaust flow would be limited by the solenoid orifice, resulting in unacceptably slow stroking.\nFinal answer: rapid actuator venting fo",
+      "reference": "To vent actuator air quickly so the valve moves to its safe state faster",
+      "rationale": "Used for rapid shutdown.",
+      "elapsed_s": 4.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 248,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "For DP-based level measurement, \\(\\Delta P \\propto h\\) (i.e., \\(P = \\rho g h\\)) when density is constant. Therefore the transmitter output must be configured as **linear**; square-root extraction is used only for flow elements such as orifice plates.\nFinal answer: linear",
+      "reference": "Linear",
+      "rationale": "Hydrostatic pressure is linear with level.",
+      "elapsed_s": 3.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 504,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: OT priority typically lists Safety as separate/first before Availability; model bundles them parenthetically"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The core difference is the **reversed priority order** of the CIA triad (Confidentiality, Integrity, Availability):\n\n- **IT security** typically prioritizes **Confidentiality** first (protecting data from unauthorized access or exfiltration), followed by Integrity, then Availability. Downtime is often tolerable for patching or incident response.\n- **OT security** prioritizes **Availability** (and safety) first\u2014systems must keep running continuously to avoid physical process disruption, equipment damage, or human harm\u2014followed by Integrity, then Confidentiality. Security controls that could int",
+      "reference": "IT prioritizes Confidentiality, Integrity, Availability (CIA) in that order. OT inverts this: Safety and Availability first, then Integrity, then Confidentiality.",
+      "rationale": "Shutting down a control system to apply a security patch can cause process upsets or safety incidents; unavailability has direct physical consequences in OT that IT downtime does not.",
+      "elapsed_s": 6.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 531,
+      "block": "Block 12 - ATEX/IECEx",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Ex ia** denotes **intrinsically safe** electrical apparatus (protection technique \u201ci\u201d) certified to the highest fault-tolerance level \u201ca\u201d.\n- **Ex** = equipment is explosion-protected for use in a potentially explosive atmosphere (gas, vapour or dust).\n- **i** = intrinsic safety: the circuit is designed so that, even under normal operation or defined fault conditions, it cannot release enough electrical or thermal energy to ignite the surrounding atmosphere.\n- **a** = the \u201cia\u201d grade (as defined in IEC 60079-11). It remains safe after the application of **two independent faults** and is theref",
+      "reference": "Ex ia designates intrinsic safety, Category ia: the circuit cannot cause ignition during normal operation or with up to two independent simultaneous faults. This is the highest IS protection level and is suitable for Zone 0 installation.",
+      "rationale": "Ex ia is more fault-tolerant than Ex ib (one fault safe) or Ex ic (normal operation only). The category directly determines the zone approval: ia = Zones 0/1/2; ib = Zones 1/2; ic = Zone 2 only.",
+      "elapsed_s": 3.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 356,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "4 mA (zero) and 20 mA (span)\nThe standard I/P (current-to-pressure) converter maps the 4\u201320 mA analog-control range to the 3\u201315 psi pneumatic range. Consequently:\n- 4 mA is defined as the zero (lower-range-value) input that must produce 3 psi at the output.\n- 20 mA is defined as the span (upper-range-value) input that must produce 15 psi at the output.\nDuring calibration the technician therefore injects 4 mA and trims the zero adjustment until the output pressure reads 3 psi, then injects 20 mA and trims the span adjustment until the output reads 15 psi (repeating as needed for linearity).",
+      "reference": "4 mA and 20 mA",
+      "rationale": "Standard 4-20 mA input range.",
+      "elapsed_s": 3.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 325,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The standard installation guideline for DP-based gas flow measurement (e.g., orifice-plate taps) is that any condensable liquid that forms inside the impulse lines must be able to drain back into the process pipe by gravity.  \n\nWhen the transmitter is mounted above the pipe, this requirement is satisfied by arranging the lines so that they continuously descend from the transmitter toward the taps. In other words, the lines rise as they approach the transmitter\u2014they slope **upward toward the transmitter** (minimum recommended slope is 1 in/ft).  \n\n(The opposite arrangement\u2014downward slope toward",
+      "reference": "Upward",
+      "rationale": "That lets condensate drain back into the process line.",
+      "elapsed_s": 6.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 216,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "psia = psig + atmospheric pressure. At sea level, standard atmospheric pressure is 14.7 psi (often rounded to ~15 psi for approximations). Thus, a reading of 100 psig corresponds to an absolute pressure of ~114.7 psia (or ~115 psia using the common approximation).\nFinal answer: ~114.7 psia (\u2248115)",
+      "reference": "114.7 psia",
+      "rationale": "Add atmospheric pressure.",
+      "elapsed_s": 2.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 251,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The described principle matches the operating mechanism of a thermocouple. A thermocouple consists of two wires made from dissimilar metals (or metal alloys) that are joined at one end to form a measuring junction. When a temperature difference exists between this junction and the free ends of the wires, a small thermoelectric voltage (the Seebeck voltage) is generated. The magnitude of the voltage is a repeatable function of the junction temperature; therefore, by measuring the voltage and applying the appropriate reference-junction compensation, the unknown temperature can be determined.\nOth",
+      "reference": "Thermocouple",
+      "rationale": "Thermocouples use the Seebeck effect: a voltage is generated by two dissimilar metals at different temperatures.",
+      "elapsed_s": 7.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 207,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A remote seal system (also called a diaphragm seal or capillary seal system) is an accessory used with pressure, differential pressure, level, or flow transmitters. Its core purpose is to hydraulically transmit process pressure to the instrument while physically isolating the transmitter\u2019s sensor from direct contact with the process fluid.\nThis isolation is required when the fluid is:\n- corrosive or aggressive (e.g., acids, chlorides),\n- at extreme temperature (very hot or very cold),\n- viscous, polymerizing, or solids-laden (risk of plugging),\n- hygienic/sanitary (food, pharma), or\n- when the",
+      "reference": "To isolate the transmitter from hot, corrosive, plugging, or otherwise unsuitable process conditions",
+      "rationale": "The capillary/fill-fluid system keeps process fluid away from the sensing element.",
+      "elapsed_s": 4.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 343,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Paddlewheel flowmeters (also called paddlewheel sensors) are mechanical/insertion-style devices whose rotating impeller generates a frequency signal proportional to liquid velocity. Typical published accuracy is on the order of \u00b11 % to \u00b12.5 % of full-scale reading (sometimes stated as a percentage of rate), with repeatability usually no better than \u00b10.5 %. That level of performance, combined with sensitivity to viscosity, upstream piping, bearing wear, and particulates, places them in the \u201cutility-grade\u201d or general-purpose category rather than the high-precision tier occupied by Coriolis, posi",
+      "reference": "Utility-grade",
+      "rationale": "Paddlewheel meters are typically utility/service instruments rather than top-tier precision custody devices.",
+      "elapsed_s": 3.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 268,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Yes, polarographic (Clark-type) dissolved-oxygen sensors require flow or stirring across the membrane. These electrochemical sensors consume O\u2082 as part of the reduction reaction at the cathode; without continuous replenishment of the sample at the membrane surface, a stagnant boundary layer forms and the local O\u2082 concentration drops, producing a falsely low and drifting reading. In practice this means the probe must be immersed in moving liquid (e.g., stirred beaker, flowing stream, or recirculation loop) for the measured current to remain proportional to the bulk dissolved-oxygen concentratio",
+      "reference": "Yes",
+      "rationale": "Polarographic DO sensors consume oxygen at the membrane, so they need flow or agitation to avoid a depleted boundary layer.",
+      "elapsed_s": 4.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 318,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The relationship is linear (flow \\(\\propto\\) \\(\\Delta P\\)).\nLaminar flow elements (LFEs) are designed with many small parallel passages (e.g., capillary tubes or honeycomb matrices) that keep the Reynolds number low enough for fully laminar flow throughout the operating range. Under laminar conditions the Hagen\u2013Poiseuille relation applies:\n\\[\nQ = \\frac{\\pi r^4 \\Delta P}{8\\mu L}\n\\]\nso volumetric flow \\(Q\\) is directly proportional to the measured pressure drop \\(\\Delta P\\). (Viscosity \\(\\mu\\) and geometry are constant, or are compensated for.)\nThis is in contrast to turbulent devices such as or",
+      "reference": "Linear",
+      "rationale": "Laminar flow elements are designed so DP is proportional to flow in the laminar regime.",
+      "elapsed_s": 3.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 385,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The cam in an older pneumatic positioner (e.g., a Bailey or Foxboro unit) is mechanically linked to the valve/actuator shaft. A follower rides on the cam and modulates the pneumatic relay that applies air to the actuator. Because the follower motion is dictated by the cam profile, the cam\u2019s shape directly sets the steady-state mapping between the incoming instrument signal (typically 3\u201315 psi) and the resulting actuator/valve-stem position. By machining or selecting a cam with a linear, equal-percentage, quick-opening, or custom contour, the positioner therefore imposes the desired installed f",
+      "reference": "The valve characteristic or travel relationship",
+      "rationale": "The cam maps input signal to valve travel behavior.",
+      "elapsed_s": 6.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 355,
+      "block": "Block 8 - Final Control",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The term \"bench set\" refers to the calibration/adjustment of an actuator spring (typically on a spring-and-diaphragm pneumatic actuator) while the actuator is on a workbench, before the valve is installed in a process line. This sets the actuator's response to an instrument air signal in the standard 3-15 psi range.\n- The lower value in the bench-set range (here, 3 psi) is the minimum air pressure at which the actuator diaphragm begins to move the stem against spring tension (i.e., the start of valve travel).\n- The upper value (15 psi) is the pressure needed to complete the full stroke.\n(The e",
+      "reference": "The pressure required to overcome spring preload and begin stem movement",
+      "rationale": "Start of travel point.",
+      "elapsed_s": 8.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 286,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor overclaim: 'virtually no maintenance or recalibration' is slightly optimistic; periodic verification is still recommended"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "TDLAS stands for Tunable Diode Laser Absorption Spectroscopy (a laser-based optical technique that measures the absorption of light by water molecules at a specific wavelength).\nIts primary advantage for moisture measurement in natural gas is that the measurement is highly selective/specific to H\u2082O and is unaffected by interference from the hydrocarbon matrix, acid gases (e.g., H\u2082S, CO\u2082), or liquid contaminants (glycol, methanol, amines) that commonly foul or bias other sensor technologies. Because the laser beam never contacts the gas stream, the analyzer also requires virtually no maintenanc",
+      "reference": "Tunable Diode Laser Absorption Spectroscopy; fast, selective, low-maintenance moisture measurement",
+      "rationale": "TDLAS gives real-time moisture measurement with high selectivity and minimal sample-conditioning burden.",
+      "elapsed_s": 4.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 345,
+      "block": "Block 7 - Flow",
+      "tier": 2,
+      "score": 92.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Specific 2D/2D claim stated without citation - vendor-dependent figure presented with high confidence",
+            "Slight overclaiming on straight-run reduction specifics"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 92
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A conditioning orifice plate (also called a multi-hole or flow-conditioning orifice plate) is a specialized variant of the traditional single-hole orifice plate used for differential-pressure flow measurement. Instead of one concentric bore, it features a pattern of multiple smaller holes (typically four) arranged symmetrically around the plate. This geometry both measures flow via the standard \\(\\Delta P\\) principle and simultaneously acts as a flow conditioner by straightening and symmetrizing the velocity profile.\n\nIts primary benefit is that it dramatically reduces the required straight-ru",
+      "reference": "A multi-hole or specially conditioned orifice plate used to reduce straight-run requirements",
+      "rationale": "Its main benefit is better performance in disturbed flow, not total elimination of piping effects.",
+      "elapsed_s": 3.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 509,
+      "block": "Block 11 - ICS Cybersecurity",
+      "tier": 2,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: characterizes conduit as 'a special type of zone' which aligns with ISA 62443-1-1 terminology but could be misleading without context"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Security Zone (per ISA/IEC 62443-1-1 and 62443-3-2):**\nA **Security Zone** is a logical or physical grouping of assets (systems, devices, applications, etc.) that share common security requirements, risk level, and security policies. All assets inside the zone are subject to the same set of security countermeasures and are assumed to have a similar level of trust. Zones are the fundamental building block used to segment an Industrial Automation and Control System (IACS) so that a breach or compromise in one zone does not automatically propagate to others.\n**Conduit (per ISA/IEC 62443-1-1 and",
+      "reference": "A Security Zone is a grouping of logical or physical assets sharing the same security requirements, protected as a unit. A Conduit is the communication path and its security controls between two zones.",
+      "rationale": "The zone/conduit model is the foundational architecture pattern in ISA 62443 and drives all network segmentation and firewall design decisions.",
+      "elapsed_s": 4.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 263,
+      "block": "Block 6 - Temperature & Analytical",
+      "tier": 2,
+      "score": 45.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 10,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect final answer: silicones are the canonical answer for catalytic-bead LEL poisoning in refinery contexts, not H2S",
+            "H2S is more commonly considered an inhibitor (often recoverable) rather than the classic permanent poison; silicones are the textbook permanent poison",
+            "Overconfident reasoning leading to wrong conclusion despite mentioning silicones in the list of known poisons"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 45
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Catalytic-bead (pellistor) LEL sensors detect combustible gases via controlled oxidation on a heated catalyst bead. Certain substances permanently inhibit that catalyst, producing an irreversible loss of sensitivity known as \u201cpoisoning.\u201d\nAmong the well-documented poisons are silicones, lead alkyls, halogenated hydrocarbons, and sulfur compounds. In a refinery setting the most ubiquitous sulfur-bearing contaminant is hydrogen sulfide (H\u2082S), which is present in sour crude, process streams, flare gas, and wastewater treatment. H\u2082S adsorbs onto and reacts with the platinum or palladium catalyst, f",
+      "reference": "Silicones",
+      "rationale": "Silicone compounds can poison catalytic-bead sensors and permanently reduce sensitivity.",
+      "elapsed_s": 4.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 557,
+      "block": "Block 13 - Calibration",
+      "tier": 2,
+      "score": 48.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 8,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer misses the reference's intended error source: impulse line/manifold/isolation valve effects (trapped air, liquid head, blockage, leaks)",
+            "Model instead discusses DAC/analog output error, which is a different calibration concern (digital-to-analog trim vs sensor trim) and does not match the reference rationale",
+            "Does not address process connection installation errors at all"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 48
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The reference standard applied at the process connection performs a sensor trim (or characterizes the input stage) of the HART transmitter. This step alone does not exercise the transmitter\u2019s internal DAC that converts the digital PV into the 4\u201320 mA analog output.  \n\nConsequently, any DAC nonlinearity, zero/span drift, or temperature-induced error remains invisible when the loop is read only through the HART digital PV. The overlooked contribution is therefore the analog-output (DAC) error, which must be quantified separately by measuring the loop current with a precision milliamp meter while",
+      "reference": "The impulse lines, manifold valves, and isolation valves may introduce errors from trapped air/gas in liquid service, liquid head errors in gas service, partial blockage, or minor leaks. These connection errors appear in the calibration result and are often misdiagnosed as transmitter drift.",
+      "rationale": "Many precision calibration procedures require applying the standard directly at the transmitter process flange or body, bypassing the impulse line, to isolate instrument error from installation error.",
+      "elapsed_s": 6.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 206,
+      "block": "Block 5 - Pressure & Level",
+      "tier": 2,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The total liquid level (i.e., combined height of both liquid phases) must remain constant (normally above the upper DP tap). This is required because a DP transmitter measures hydrostatic head according to\n\\[\n\\Delta P = g \\int_0^H \\rho(h) \\, dh\n\\]\nwhere the integral is taken over the fixed tap-to-tap distance \\(H\\). With two immiscible liquids of densities \\(\\rho_1 < \\rho_2\\), the integral reduces to a unique function of interface position only when \\(H\\) itself does not vary. Any change in total level therefore appears as an extraneous head change that cannot be distinguished from an interfac",
+      "reference": "The total liquid level",
+      "rationale": "The interface calculation depends on a stable total head relationship.",
+      "elapsed_s": 4.5,
+      "error": false,
+      "flags": []
+    }
+  ]
+}

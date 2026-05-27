@@ -1,0 +1,31 @@
+# IUK Benchmark public repo — .gitignore
+#
+# Anything in this repo should be safe to publish openly. This file mostly
+# guards against accidental leakage from local working dirs.
+
+# Working directories
+_filled_drafts/
+_local_scratch/
+
+# Backup files from the upgrade promotion step
+*.ai-draft.md.bak
+*.bak
+
+# Anthropic / Gemini / OpenAI keys — should never live in this repo
+.env
+.env.*
+*.relayforge_secrets
+
+# Python tooling
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-training/
+
+# OS detritus
+.DS_Store
+Thumbs.db
+
+# Tool result spillover
+tool-results/

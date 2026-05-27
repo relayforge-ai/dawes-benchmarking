@@ -1,0 +1,2567 @@
+{
+  "run_metadata": {
+    "benchmark_version": "v1.3",
+    "model_name": "qwen2.5:32b",
+    "model_slug": "qwen2.5:32b@localhost:11435",
+    "provider": "ollama_remote",
+    "temperature": 0,
+    "seed": 42,
+    "question_count": 60,
+    "pool_tier": 1,
+    "pool_name": "Foundation",
+    "run_timestamp": "2026-05-25T12:54:25.886161",
+    "completed_at": "2026-05-25T13:42:13.192429",
+    "hardware": "DAWES RTX 3090 / RTX 4060 Ti",
+    "runner_version": "tier1_v13_runner.py v1.3",
+    "sop_version": "Dawes Einstein Engine Lab SOP v1",
+    "sop_judge_prompt": "Section 4.1 \u2014 5-dimension adversarial",
+    "lead_evaluator": "Ryan Anderson",
+    "judge_panel": [
+      {
+        "model": "anthropic/claude-opus-4.7",
+        "role": "primary",
+        "company": "anthropic",
+        "substituted": false
+      },
+      {
+        "model": "openai/gpt-5.5",
+        "role": "cross-check",
+        "company": "openai",
+        "substituted": false
+      },
+      {
+        "model": "google/gemini-2.5-pro",
+        "role": "coverage",
+        "company": "google",
+        "substituted": false
+      }
+    ]
+  },
+  "summary": {
+    "total_questions": 60,
+    "answered": 60,
+    "correct": 48,
+    "score_pct": 80.0,
+    "mean_score_100": 86.03,
+    "tier2_eligible": false,
+    "correct_threshold": 70,
+    "safety_failures": 0,
+    "safety_failure_qids": [],
+    "judge_divergence_flags": 2,
+    "api_errors": 0
+  },
+  "divergence_flags": [
+    "judge_diverge: primary=47 cross-check=62 diff=15",
+    "judge_diverge: primary=20 cross-check=40 diff=20"
+  ],
+  "questions": [
+    {
+      "question_id": 6,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To determine the pressure that should be applied to the actuator of an air-to-close (fail-open) control valve given a specific controller output percentage, you need to understand how the signal range maps to the pressure range.\n\nThe typical standard for pneumatic controllers is a 3-15 psi signal. This means:\n- A 0% controller output corresponds to 3 psi.\n- A 100% controller output corresponds to 15 psi.\n\nGiven that the controller output is at 75%, you can calculate the corresponding pressure using linear interpolation between these two points (3 psi and 15 psi).\n\nThe formula for calculating t",
+      "reference": "12 psi",
+      "rationale": "75 percent of a 12 psi span is 9 psi; add the 3 psi starting point.",
+      "elapsed_s": 36.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 41,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The nominal resistance of a Pt1000 RTD (Resistance Temperature Detector) at 0 degrees Celsius is 1000 ohms. The \"Pt\" in Pt1000 stands for platinum, and the number 1000 indicates that the sensor has a resistance of 1000 ohms at 0\u00b0C under standard conditions. This type of RTD is commonly used for temperature measurement due to its high accuracy and stability over a wide range of temperatures.",
+      "reference": "1000 ohms",
+      "rationale": "By definition, Pt1000 is 1000 ohms at 0 degC.",
+      "elapsed_s": 13.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 189,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The standard subnet mask for a Class C IP address is `255.255.255.0`. This subnet mask allows for up to 254 usable IP addresses in the network (ranging from `.1` to `.254`, with `.0` being the network address and `.255` reserved for broadcast).\n\nHowever, if you're referring to a \"small\" Class C style network, it might imply further subnetting to create smaller subnets within that Class C range. For example:\n\n- If you use a `/26` (or `255.255.255.192`) subnet mask, you get 4 subnets with 62 usable IP addresses each.\n- A `/27` (or `255.255.255.224`) gives you 8 subnets with 30 usable IPs each.\n\n",
+      "reference": "255.255.255.0",
+      "rationale": "Common /24 subnet mask.",
+      "elapsed_s": 27.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 111,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In an operational amplifier (op-amp) configured as a comparator, the output voltage is determined by comparing the voltages at its two inputs: the non-inverting (+) input and the inverting (-) input.\n\nGiven:\n- Non-inverting input voltage (\\(V_+\\)) = +5 V\n- Inverting input voltage (\\(V_-\\)) = +3 V\n- Supply voltages = \\(\\pm 15\\) V\n\nIn a comparator circuit, if \\(V_+ > V_-\\), the output of the op-amp will swing towards the positive supply rail. Conversely, if \\(V_- > V_+\\), the output would swing towards the negative supply rail.\n\nSince in this case:\n\\[ V_+ = +5 \\text{ V} > V_- = +3 \\text{ V}, \\]\n",
+      "reference": "Go to positive saturation",
+      "rationale": "The non-inverting input is higher, so the output swings high.",
+      "elapsed_s": 26.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 86,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 54.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 12,
+          "citation_integrity": 20,
+          "flags": [
+            "Failed to identify 'Weight Transmitter' as the I&C-context meaning",
+            "Provided irrelevant/incorrect expansions (Washing Tongs, Western Texas, Welding Torch)",
+            "Did not recognize industrial instrumentation context"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 47
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not provide the authoritative I&C meaning: Weight transmitter",
+            "Only mentioned generic 'Weight' rather than 'Weight transmitter'",
+            "Included irrelevant/unsubstantiated expansions such as Washing Tongs, Web Technology, Western Texas, and Welding Torch"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 62
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The abbreviation \"WT\" can have different meanings depending on the context:\n\n1. **Washing Tongs**: In laundry contexts, it might refer to tools used in washing clothes.\n2. **Web Technology**: It could be related to technologies used in web development and design.\n3. **Weight**: Sometimes used as an abbreviation for weight in various contexts.\n4. **Western Texas**: Refers to the western part of Texas, USA.\n5. **Welding Torch**: In welding contexts, it might refer to a tool used for welding.\n\nWithout additional context, it's difficult to determine which specific meaning is intended by \"WT.\" Coul",
+      "reference": "Weight transmitter",
+      "rationale": "Common for load-cell or scale signal transmission.",
+      "elapsed_s": 17.5,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=47 cross-check=62 diff=15"
+      ]
+    },
+    {
+      "question_id": 149,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In Programmable Logic Controllers (PLCs), the configuration of inputs can vary based on the manufacturer and model, but generally speaking, for sinking type inputs, the common terminal is connected to the negative side of the circuit.\n\nSinking inputs are designed to sink current from a PLC input device. This means that when an input device (such as a switch or sensor) is activated, it allows current to flow into the PLC through the input module and out through the common terminal, which is typically connected to the negative supply voltage. The power supply for the input devices must be extern",
+      "reference": "Negative",
+      "rationale": "A sinking input returns current to the negative/common side.",
+      "elapsed_s": 26.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 186,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The protocol that is well-known for using an object dictionary and is frequently utilized in motion control applications is the CANopen protocol.\n\nCANopen is based on Controller Area Network (CAN) technology and provides a higher-level communication protocol. It includes features such as device profiling, which allows devices to be defined with specific functionalities, and it uses an object dictionary to store all parameters and data that can be accessed via the network. This makes it particularly suitable for industrial applications where precise control over motion is required, including ro",
+      "reference": "CANopen",
+      "rationale": "The object dictionary defines device parameters and functions.",
+      "elapsed_s": 14.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 123,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When dealing with electrical circuits and components like fuses, it's important to follow safe troubleshooting procedures. In your case, a blown fuse on a 24 VDC electronic board output suggests that there was an excessive current draw or short circuit in the system.\n\nMeasuring 0.2 ohms from the output to return indicates a very low resistance path, which is likely causing the fuse to blow due to excessive current flow. This measurement strongly suggests a short circuit condition somewhere in the circuit connected to this output.\n\nBefore replacing the fuse, it's crucial to investigate further ",
+      "reference": "No",
+      "rationale": "In this context that resistance is suspiciously low and suggests a fault still exists.",
+      "elapsed_s": 44.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 18,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To calculate the temperature from the resistance of a Pt100 RTD (Resistance Temperature Detector), you can use the formula:\n\n\\[ R = R_0(1 + \\alpha T) \\]\n\nwhere:\n- \\( R \\) is the measured resistance,\n- \\( R_0 \\) is the nominal resistance at 0\u00b0C (for Pt100, this is typically 100 ohms),\n- \\( \\alpha \\) is the temperature coefficient of resistance per degree Celsius,\n- \\( T \\) is the temperature in degrees Celsius.\n\nGiven:\n- The measured resistance \\( R = 138.5 \\) ohms,\n- Nominal resistance at 0\u00b0C, \\( R_0 = 100 \\) ohms,\n- Temperature coefficient \\( \\alpha = 0.00385 \\) (or 0.385 ohms per degree Cels",
+      "reference": "100 degC",
+      "rationale": "138.5 - 100 = 38.5 ohms; 38.5 / 0.385 = 100.",
+      "elapsed_s": 38.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 28,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To find the flow rate in gallons per minute (GPM) using the given information about the turbine flowmeter's K-factor and frequency, you can follow these steps:\n\n1. **Understand the relationship**: The K-factor represents the number of pulses generated by the flowmeter for each gallon of fluid that passes through it. In this case, the K-factor is 150 pulses per gallon.\n\n2. **Frequency to Pulses per Minute**: The frequency given is in Hertz (Hz), which means pulses per second. To convert this into pulses per minute:\n   \\[\n   \\text{Pulses per minute} = \\text{Frequency (in Hz)} \\times 60\n   \\]\n   ",
+      "reference": "120 GPM",
+      "rationale": "300 pulses/s x 60 = 18,000 pulses/min; divide by 150 pulses/gal.",
+      "elapsed_s": 41.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 197,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a standard point-to-point 4-20mA plus HART configuration, typically only one HART field device is connected to the loop. This setup allows for both an analog (4-20mA) signal and digital communication using the HART protocol between the field device and the control system or transmitter.\n\nThe HART protocol superimposes a digital signal on top of the standard 4-20mA analog signal, enabling two-way communication with the field device. This allows for configuration, calibration, and diagnostic information to be communicated while still maintaining the traditional 4-20mA current loop for process",
+      "reference": "One field device",
+      "rationale": "Point-to-point is one field instrument, though more than one host/master may exist.",
+      "elapsed_s": 24.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 52,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 55.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect identification of signal type - should be pneumatic, not electrical",
+            "Model contradicts standard ISA S5.1 convention"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "In Process and Instrumentation Diagrams (P&IDs), the representation of signals or connections can vary based on industry standards and specific company practices. However, generally speaking, a solid line with double diagonal slashes often represents an electrical or control signal connection.\n\nMore specifically:\n- A solid line typically indicates a continuous path for a medium such as fluid or gas.\n- The addition of symbols like slashes usually modifies the meaning to indicate something different about that line, such as it being a signal rather than a physical pipe or conduit.\n\nIn many conve",
+      "reference": "Pneumatic signal",
+      "rationale": "This is the common ISA-style signal notation for pneumatic signals.",
+      "elapsed_s": 24.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 68,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 49.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Failed to identify standard ISA/instrumentation tag meaning",
+            "Incorrectly speculated about stock market codes",
+            "Missed basic I&C nomenclature: Z=position, S=switch, C/O=closed/open"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 50
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 8,
+          "citation_integrity": 20,
+          "flags": [
+            "Failed to provide the correct I&C tag meanings: ZSC = position switch closed, ZSO = position switch open",
+            "Gave irrelevant finance/stock-market examples instead of instrumentation tag interpretation",
+            "Overstated lack of context despite the benchmark being explicitly industrial Instrumentation & Controls"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 48
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The tags \"ZSC\" and \"ZSO\" don't have universally recognized meanings across all contexts or industries. However, in some specific fields, they might be used to denote certain classifications or categories.\n\nFor example:\n- In the context of Chinese stock markets, \"ZSC\" could potentially refer to a specific company's stock code on an exchange.\n- Similarly, \"ZSO\" might also represent another company\u2019s stock code or have relevance within a particular market segment.\n\nWithout additional context about where you encountered these tags (such as in finance, technology, logistics, etc.), it is challengin",
+      "reference": "Position switch closed and position switch open",
+      "rationale": "Z = position, S = switch, C/O = closed/open.",
+      "elapsed_s": 18.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 145,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The average DC voltage of a Pulse Width Modulation (PWM) signal can be calculated using its duty cycle and peak voltage. The formula to calculate the average DC voltage (\\(V_{avg}\\)) for a PWM signal is:\n\n\\[ V_{avg} = Duty\\ Cycle \\times Peak\\ Voltage \\]\n\nGiven that the duty cycle is 25% or 0.25 (in decimal form) and the peak voltage is 10 volts, we can substitute these values into the formula:\n\n\\[ V_{avg} = 0.25 \\times 10V = 2.5V \\]\n\nTherefore, the average DC voltage of this PWM signal is 2.5 volts.",
+      "reference": "2.5 V",
+      "rationale": "Average is duty cycle times peak voltage in this simple case.",
+      "elapsed_s": 18.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 65,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 30.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect valve identification - answered butterfly valve instead of ball valve",
+            "Overconfident incorrect answer with fabricated rationalization of symbol meaning"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 20
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect valve type: described symbol is typically a ball valve, not a butterfly valve.",
+            "Overconfident incorrect explanation of the symbol."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The valve symbol you described, featuring two triangles pointing towards each other with a circle in the center, typically represents a butterfly valve.\n\nButterfly valves are quarter-turn valves used to stop or regulate flow. They consist of a circular body with a disc (often referred to as the \"butterfly\") that rotates within the valve body. When the disc is parallel to the flow direction, the valve is open; when it's perpendicular to the flow direction, the valve is closed.\n\nThe symbol effectively represents this mechanism: the two triangles pointing towards each other can be seen as a styli",
+      "reference": "Ball valve",
+      "rationale": "Common P&ID shorthand for a ball valve.",
+      "elapsed_s": 18.1,
+      "error": false,
+      "flags": [
+        "judge_diverge: primary=20 cross-check=40 diff=20"
+      ]
+    },
+    {
+      "question_id": 110,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A flyback diode, also known as a freewheeling or suppression diode, is often placed across the terminals of a DC solenoid coil to protect electronic components from voltage spikes that occur when the current through the inductive load (in this case, the solenoid) is suddenly interrupted. Here's how it works and why it\u2019s important:\n\n1. **Inductive Load Behavior**: When you have an inductive load like a solenoid, the current flowing through it creates a magnetic field. According to Faraday's law of induction, when the current is abruptly stopped (for example, by switching off the power supply), ",
+      "reference": "To suppress inductive kickback when the coil is de-energized",
+      "rationale": "It protects switches and electronics from voltage spikes.",
+      "elapsed_s": 46.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 169,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor inaccuracy: FF H1 characteristic impedance is ~100 ohms, but terminators are typically 100 ohm resistor in series with 1 \u00b5F capacitor \u2014 model's wording about 'specific resistance and capacitance' is acceptable but slightly imprecise"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In the context of the Foundation Fieldbus (FF), specifically for an H1 segment, there should be two terminators present to ensure proper signal integrity and minimize signal reflections along the bus.\n\nThe terminators are crucial because they match the impedance of the cable at both ends of the network. This matching helps in reducing signal degradation due to reflections that can occur when a signal reaches the end of the cable without being properly absorbed by a terminator. Each terminator is typically designed with a specific resistance and capacitance value that matches the characteristic",
+      "reference": "Two",
+      "rationale": "One at each end of the trunk.",
+      "elapsed_s": 18.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 137,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 70.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 25,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 15,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Sign convention omitted - model gave v = L(di/dt) instead of v = -L(di/dt) per Lenz's law",
+            "Did not acknowledge sign convention ambiguity between passive sign convention and Lenz's law form",
+            "Overclaimed certainty without noting the magnitude-vs-signed-form distinction"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 70
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The relationship between the voltage across an inductor and the changing current through it is described by Faraday's law of induction as applied to inductors, which can be expressed with the following formula:\n\n\\[ V = L \\frac{dI}{dt} \\]\n\nwhere:\n- \\(V\\) is the voltage across the inductor,\n- \\(L\\) is the inductance of the inductor (measured in henries),\n- \\(\\frac{dI}{dt}\\) is the rate of change of current with respect to time.\n\nThis equation shows that the voltage across an inductor is directly proportional to the rate at which the current through it changes. If the current changes rapidly, a h",
+      "reference": "v = -L (di/dt)",
+      "rationale": "The sign reflects Lenzs law; many shorthand explanations quote the magnitude only.",
+      "elapsed_s": 21.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 175,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The tool that measures the distance to a fault in a fiber run using reflected light is called an Optical Time-Domain Reflectometer (OTDR). This device sends a light pulse into the optical fiber and analyzes the backscattered and reflected light to determine the location of faults, splices, or other irregularities along the length of the fiber. The OTDR can provide information about the quality of the fiber optic cable and help in identifying where issues such as breaks or high attenuation may occur.",
+      "reference": "OTDR",
+      "rationale": "Optical Time Domain Reflectometer.",
+      "elapsed_s": 12.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 155,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In Modbus communication protocol, registers are often referred to using both human-readable references and their corresponding addresses in the Protocol Data Unit (PDU), which uses a zero-based indexing system.\n\nFor the first holding register:\n- The human reference number typically starts at 1. So, the first holding register would be referenced as \"register 40001\" or simply \"holding register 1\".\n- In terms of its PDU address, since Modbus uses a zero-based index for addressing registers within its PDUs, the first holding register has an address of 0.\n\nTo summarize:\n- Human reference number: 40",
+      "reference": "Reference 40001, PDU address 0",
+      "rationale": "The original question mixed reference notation with internal addressing.",
+      "elapsed_s": 18.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 35,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To solve this problem, we need to understand the relationship between flow rate and differential pressure (DP) for a given orifice plate. The relationship is based on Bernoulli's principle and can be described by the following equation:\n\n\\[ \\Delta P = kQ^n \\]\n\nwhere:\n- \\( \\Delta P \\) is the differential pressure,\n- \\( Q \\) is the flow rate,\n- \\( k \\) is a constant that depends on the orifice plate geometry, fluid properties, and other factors,\n- \\( n \\) is an exponent typically close to 2 for incompressible fluids.\n\nGiven:\n- At 100 GPM (gallons per minute), the differential pressure (\\( \\Delta",
+      "reference": "100 inWC",
+      "rationale": "DP varies with flow squared, so doubling flow quadruples DP.",
+      "elapsed_s": 61.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 3,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 26.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect final answer: 244.8 GPM instead of 150 GPM",
+            "Model ignored the explicit statement that the transmitter performs square-root extraction, meaning the 4-20 mA signal is already linear to flow",
+            "Applied square-root extraction twice (once implicitly by the transmitter, once by the model)",
+            "High confidence in wrong answer"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 25
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 8,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 0,
+          "epistemic_calibration": 0,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect final flow rate: answered approximately 244.8 GPM instead of 150 GPM.",
+            "Misapplied square-root relationship even though the problem states the transmitter already performs square-root extraction.",
+            "Failed to recognize that the 4-20 mA signal is linear to flow after square-root extraction.",
+            "Overconfident presentation of an incorrect result."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 28
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "To solve this problem, we need to understand how the orifice plate flow meter and the differential pressure (DP) transmitter work together.\n\nThe DP transmitter converts the differential pressure into a current signal (4-20 mA). The relationship between the differential pressure and the flow rate is not linear but follows a square-root law. This means that if you double the differential pressure, the flow rate increases by a factor of \\(\\sqrt{2}\\).\n\nGiven:\n- The DP transmitter output range: 4-20 mA\n- Flow meter calibrated for: 0 to 400 GPM\n\nThe current reading is 10 mA. We need to convert this ",
+      "reference": "150 GPM",
+      "rationale": "Because the transmitter already performs square-root extraction, the 4-20 mA signal is linear to flow. 10 mA is 37.5 percent of span.",
+      "elapsed_s": 63.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 114,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor: characterizes reverse biasing as impractical, which is debatable - forced commutation via reverse bias is actually a standard turn-off method"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "An SCR (Silicon Controlled Rectifier), also known as a thyristor, is a type of semiconductor device that can be used for switching power applications. Once an SCR is triggered \"on,\" meaning its gate receives the appropriate signal and there's sufficient forward voltage across it to allow current flow, it remains in the conducting state until certain conditions are met to turn it off.\n\nTo turn an SCR off (i.e., transition from a conducting state back to a non-conducting state), one of the following must occur:\n\n1. **Reduce Current Below Holding Level**: The most common method is to reduce the c",
+      "reference": "Current must drop below holding current",
+      "rationale": "Gate control alone does not turn it off in normal use.",
+      "elapsed_s": 38.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 99,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor terminology error: P&ID is usually 'Piping and Instrumentation Diagram/Drawing,' not 'Process and Instrumentation Diagram.'",
+            "Otherwise correctly states that exact Cv is typically not shown on the P&ID and is found in valve datasheets/specifications/instrument index."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A Process and Instrumentation Diagram (P&ID) is an engineering diagram that shows the piping, process flow, valves, instrumentation, equipment, and interconnections within a system. While a P&ID provides detailed information about the process layout and control systems, it typically does not show the exact Cv (flow coefficient) of a control valve.\n\nThe Cv value represents the capacity of a control valve to pass fluids at specific conditions and is used in sizing calculations for valves. This kind of detail is usually specified in more specialized documents such as valve datasheets or engineeri",
+      "reference": "No",
+      "rationale": "Cv is usually found in the valve data sheet, specification, or instrument index rather than the P&ID.",
+      "elapsed_s": 23.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 7,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To solve this problem, we need to understand how the current output of the transmitter corresponds to the temperature range and then convert that current reading into a temperature value.\n\nThe typical current output range for industrial transmitters is from 4 mA (representing the lower limit of the measurement range) to 20 mA (representing the upper limit). In this case, we have:\n\n- Lower limit: -50 degC corresponds to 4 mA\n- Upper limit: 150 degC corresponds to 20 mA\n\nThe DCS shows a current reading of 16.8 mA.\n\nFirst, let's calculate the span of the measurement range and the corresponding cu",
+      "reference": "110 degC",
+      "rationale": "16.8 mA is 80 percent of span. 80 percent of a 200 degC span is 160 degC; add -50 degC.",
+      "elapsed_s": 54.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 8,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To find the corresponding percentage of the 4-20mA scale for a given temperature within the transmitter's range, you can follow these steps:\n\n1. **Determine the span and zero point of the temperature range:**\n   - The minimum (zero) temperature is \\(50 \\deg F\\).\n   - The maximum temperature is \\(250 \\deg F\\).\n\n2. **Calculate the span of the temperature range:**\n   \\[\n   \\text{Span} = 250 \\deg F - 50 \\deg F = 200 \\deg F\n   \\]\n\n3. **Determine the current temperature and its position within the span:**\n   - Current temperature \\( T_{\\text{current}} = 110 \\deg F \\)\n   - Position relative to zero p",
+      "reference": "30 percent",
+      "rationale": "(110 - 50) / (250 - 50) = 60 / 200 = 30 percent.",
+      "elapsed_s": 55.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 88,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In industrial settings and piping systems, a line around a control valve that contains a manual valve is often referred to as a \"bypass line\" or simply \"bypass.\" The bypass line allows fluid to flow through an alternate path when the main control valve is closed or needs maintenance. The manual valve in this bypass line can be opened to allow flow through the bypass, which helps maintain process continuity during maintenance activities on the primary control valve or for other operational reasons.",
+      "reference": "Bypass line",
+      "rationale": "Used to route flow around the control valve for maintenance or manual control.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 128,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To find the secondary voltage of a transformer given its primary voltage and the number of turns in both the primary and secondary windings, you can use the transformer voltage ratio formula:\n\n\\[ \\frac{V_{\\text{primary}}}{V_{\\text{secondary}}} = \\frac{N_{\\text{primary}}}{N_{\\text{secondary}}} \\]\n\nWhere:\n- \\( V_{\\text{primary}} \\) is the primary voltage,\n- \\( V_{\\text{secondary}} \\) is the secondary voltage,\n- \\( N_{\\text{primary}} \\) is the number of turns in the primary winding,\n- \\( N_{\\text{secondary}} \\) is the number of turns in the secondary winding.\n\nGiven:\n- \\( V_{\\text{primary}} = 480",
+      "reference": "48 VAC",
+      "rationale": "Turns ratio is 10:1.",
+      "elapsed_s": 46.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 79,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 47.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 12,
+          "citation_integrity": 20,
+          "flags": [
+            "Failed to identify ISA-5.1 instrumentation tag convention where A = Analysis",
+            "Provided irrelevant industry contexts instead of the standard I&C answer",
+            "Missed the standard meaning of AIC = Analysis Indicating Controller"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 47
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The meaning of the letter \"A\" at the beginning of a tag like AIC-400 can vary widely depending on the context or industry. Without specific information about the system or organization using this tag, it's challenging to provide an exact definition. However, in many contexts:\n\n1. **Automotive Industry**: In some automotive parts coding systems, \"A\" might stand for a category of components such as \"Assembly,\" but this is highly dependent on the manufacturer\u2019s coding scheme.\n\n2. **Electrical Engineering or Manufacturing**: It could represent \"Alternating Current\" if it's related to electrical eq",
+      "reference": "Analysis",
+      "rationale": "AIC = Analysis Indicating Controller.",
+      "elapsed_s": 28.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 118,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The output of an AND gate with one high (1) input and one low (0) input will be low (0). An AND gate only outputs a high signal (1) when all its inputs are high. In this case, since one of the inputs is low, the output will also be low.",
+      "reference": "Low",
+      "rationale": "Both inputs must be high for a high output.",
+      "elapsed_s": 8.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 63,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 33.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 8,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect answer - I stands for Indicating in ISA instrumentation tag conventions",
+            "Failed to recognize I&C context despite benchmark domain",
+            "Provided irrelevant project management interpretation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 33
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "TIC is not a universally standardized acronym and can have different meanings depending on the context. However, in some contexts, such as in project management or business analysis, TIC might stand for \"Time, Information, Cost.\" Here, the \"I\" stands for \"Information.\"\n\nIf you are referring to a specific field or context where TIC is used, it would be helpful if you could provide more details so I can give you a more accurate answer.",
+      "reference": "Indicating",
+      "rationale": "TIC = Temperature Indicating Controller.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 156,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 87.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer is verbose and includes some overreach (e.g., firmware updates via DD files is not standard)",
+            "Core purpose (interpreting device-specific parameters/menus) is implied but not stated as crisply as reference"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 85
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 34,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Core purpose is correctly identified: DD lets the HART communicator understand/configure device-specific parameters and menus.",
+            "Answer is overbroad: a DD is primarily a device description for host interpretation, not literally the device's configuration itself.",
+            "Questionable overclaim that DD files automate firmware updates; this is not a normal purpose of HART DD files.",
+            "Some claims are stated too broadly, such as ensuring interoperability across all brands/models and automating routine tasks."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A DD (Device Description) file serves as a digital representation of a device's configuration and operational parameters in the context of industrial automation systems. Specifically, when it comes to a handheld HART (Highway Addressable Remote Transducer) communicator, the purpose of a DD file is multifaceted:\n\n1. **Configuration Support**: The DD file provides detailed information about how to configure the device connected via HART communication. This includes setting up parameters such as measurement ranges, output signals, and other operational settings.\n\n2. **Parameter Management**: It a",
+      "reference": "It tells the communicator how to interpret the device-specific parameters and menus",
+      "rationale": "Device description files let the host understand newer instruments.",
+      "elapsed_s": 41.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 125,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Includes some less likely causes (electrical noise, wiring) that dilute focus on primary cause"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 35,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Correctly identifies worn/dirty contacts and inconsistent wiper contact as the likely cause.",
+            "Adds less likely or secondary possibilities such as electrical noise, incorrect connection, and manufacturing defects, which dilutes the expected singular physical diagnosis.",
+            "Does not explicitly emphasize dirty/worn resistive track as the primary likely cause."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 92
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When adjusting a trim-pot (trimmer potentiometer) causes the output signal to jump erratically rather than change smoothly, it can be due to several potential issues:\n\n1. **Worn or Dirty Contacts**: Over time, the contacts inside the trim-pot may wear out or accumulate dirt and debris, leading to intermittent contact and erratic changes in resistance as you adjust the potentiometer.\n\n2. **Mechanical Issues**: If there are any mechanical problems with the wiper (the part that moves across the resistive element), it might not make consistent contact with the resistive track. This could be due to",
+      "reference": "Dirty or worn resistive track / bad wiper contact",
+      "rationale": "Mechanical wear or contamination causes intermittent contact.",
+      "elapsed_s": 40.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 158,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Point 7 on physical layer is slightly inconsistent since ping success generally rules out most physical issues affecting data exchange",
+            "Baud rate/parity items more applicable to serial than IP-pingable device"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When you can successfully ping a flowmeter but the Programmable Logic Controller (PLC) still shows a communication fault, it suggests that there might be an issue at the application or protocol level rather than at the network layer. Here are some areas to investigate:\n\n1. **Protocol Compatibility**: Ensure that both the flowmeter and PLC support the same communication protocol (e.g., Modbus RTU/ASCII/TCP, Profibus, etc.). Mismatched protocols can cause communication issues even if basic connectivity is established.\n\n2. **Configuration Settings**: Check the configuration settings on both devic",
+      "reference": "Application/protocol layer or device configuration above basic IP connectivity",
+      "rationale": "Ping shows IP reachability, not successful industrial protocol exchange.",
+      "elapsed_s": 43.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 174,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 89.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not explicitly name 'burst mode' or 'event notification', which are the specific HART 7 features",
+            "Describes the concept correctly but lacks the precise terminology"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 88
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 34,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Correctly identifies automatic publishing of process variables/status/diagnostics without host polling, matching HART 7 enhanced burst/event reporting concept.",
+            "Does not explicitly name 'enhanced burst mode' or 'event reporting,' which is the expected key term.",
+            "Slight overstatement with phrases like 'real-time' and 'immediately'; HART communication is not generally real-time in the strict industrial control sense."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "HART (Highway Addressable Remote Transducer) protocol version 7 introduces several advancements over its predecessors, including significant improvements in how devices can automatically publish data. One of the major advantages of HART 7 related to automatic data publishing is the enhanced capability for real-time data exchange and device diagnostics.\n\nIn HART 7, devices can automatically publish their process variables (PV), status information, and diagnostic data without requiring a host system to poll them first. This feature allows for more efficient and timely communication between field",
+      "reference": "Enhanced burst mode / event reporting",
+      "rationale": "HART 7 improved how devices can push data or event updates automatically.",
+      "elapsed_s": 20.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 107,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To decrease the cutoff frequency of a simple RC (resistor-capacitor) low-pass filter, you need to increase the capacitance.\n\nThe cutoff frequency (\\(f_c\\)) for an RC low-pass filter is given by:\n\n\\[ f_c = \\frac{1}{2\\pi RC} \\]\n\nwhere:\n- \\(R\\) is the resistance in ohms,\n- \\(C\\) is the capacitance in farads.\n\nFrom this formula, you can see that increasing the value of \\(C\\) (capacitance) will decrease the cutoff frequency (\\(f_c\\)). Conversely, decreasing \\(C\\) would increase the cutoff frequency. Therefore, to lower the cutoff frequency, you should increase the capacitance.",
+      "reference": "Decrease",
+      "rationale": "fc = 1/(2\u03c0RC). Doubling C halves the cutoff frequency \u2014 it moves lower on the frequency axis, not higher. The filter becomes slower/more aggressive. [CORRECTED v2.1: original answer word was inverted despite correct rationale.]",
+      "elapsed_s": 18.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 64,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Failed to recognize ISA 5.1 instrumentation symbology context",
+            "Incorrectly interpreted question as music/acoustics notation",
+            "Did not provide correct answer (behind panel/inaccessible to operator)",
+            "Missed standard P&ID convention"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "In musical notation and instrument diagrams, symbols like bubbles or circles with lines through them can have specific meanings depending on the context. However, there isn't a universally accepted standard for what a \"bubble with a dashed horizontal line through it\" specifically means regarding an instrument's location.\n\nIf we consider common notations used in music and acoustics:\n\n1. **Bubbles or Circles**: Often represent speakers, microphones, or points of sound emission/absorption.\n2. **Horizontal Lines**: Can indicate the height at which something is placed (like a microphone stand) or c",
+      "reference": "Behind the panel or inaccessible to the operator",
+      "rationale": "Dashed line indicates an inaccessible location.",
+      "elapsed_s": 32.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 122,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Thermal paste (also known as thermal grease, thermal compound, or thermal gel) is used between a power transistor and a heat sink to improve the efficiency of heat transfer from the transistor to the heat sink. Here are several reasons why it's important:\n\n1. **Filling Gaps**: Even when surfaces appear smooth, they have microscopic imperfections that create tiny air gaps. Air is a poor conductor of heat compared to solid materials like metals used in transistors and heat sinks. Thermal paste fills these gaps, providing better thermal conductivity.\n\n2. **Enhanced Heat Transfer**: By filling the",
+      "reference": "To fill microscopic air gaps and improve heat transfer",
+      "rationale": "Air is a poor conductor compared with a properly filled interface.",
+      "elapsed_s": 37.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 167,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 97.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer says 'Modbus' rather than specifically 'Modbus TCP', though clarifies TCP/IP implementation uses port 502"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 39,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Slight imprecision: TCP port 502 is specifically associated with Modbus TCP, not serial Modbus generally."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 99
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "TCP port 502 is most commonly associated with the Modbus protocol. Modbus is a serial communication protocol used for industrial supervisory control and data acquisition (SCADA) systems, connecting industrial electronic devices. While traditionally a serial protocol, it can also be implemented over TCP/IP networks, in which case it often uses port 502.",
+      "reference": "Modbus TCP",
+      "rationale": "Well-known reserved port.",
+      "elapsed_s": 9.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 146,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor inaccuracy: calls 250\u03a9 a 'voltage divider' which is technically a shunt/sense resistor, not a divider",
+            "Did not explicitly mention low temperature coefficient by name, though stability was covered"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Precision resistors are crucial in the conversion of a 4-20mA current signal to a 1-5V voltage signal because they ensure accuracy and reliability in industrial control systems. Here\u2019s why precision is so important:\n\n### Accuracy:\nIn industrial applications, signals like 4-20mA are used for transmitting sensor data over long distances with minimal loss due to cable resistance. The conversion from current to voltage must be precise to maintain the integrity of the signal. Precision resistors have tight tolerance values (often \u00b10.1% or better), which means they can convert the current accurately",
+      "reference": "For tight tolerance, low temperature coefficient, and long-term stability",
+      "rationale": "Ordinary carbon-film parts may drift too much for accurate loop scaling.",
+      "elapsed_s": 57.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 16,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To determine the total current draw from your 24 VDC power supply for the five 4-20 mA loops, you need to consider that each loop operates within a range of 4 to 20 mA. At full scale (i.e., at maximum output), each loop will be drawing 20 mA.\n\nGiven:\n- Each loop draws 20 mA at full scale.\n- There are five such loops.\n\nThe total current draw can be calculated by multiplying the number of loops by the current drawn per loop:\n\n\\[ \\text{Total Current Draw} = \\text{Number of Loops} \\times \\text{Current Per Loop} \\]\n\nSubstituting in the values:\n\\[ \\text{Total Current Draw} = 5 \\times 20\\, \\text{mA} ",
+      "reference": "100 mA",
+      "rationale": "5 loops x 20 mA each.",
+      "elapsed_s": 27.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 185,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The Controller Area Network (CAN) protocol uses CAN-High and CAN-Low differential signals. This protocol is widely used in automotive applications for communication between different electronic control units (ECUs), as well as in industrial automation systems, due to its robustness against electrical noise and interference. The differential signaling means that the data is transmitted over two wires (CAN-High and CAN-Low) with the signal being the difference in voltage between them, which helps in reducing electromagnetic interference (EMI).",
+      "reference": "CAN bus",
+      "rationale": "Controller Area Network.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 163,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The \"N\" in the 8-N-1 serial format stands for \"None.\" This notation is used to describe the configuration of asynchronous serial communication settings. Here's a breakdown of what each part means:\n\n- **8**: Indicates that each character is transmitted using 8 data bits.\n- **N**: Stands for \"None,\" meaning no parity bit is added to the data. Parity is sometimes used as an error-checking mechanism, but in this case, it is not included.\n- **1**: Represents one stop bit at the end of each byte, which signals the receiver that a character has been fully transmitted.\n\nSo, 8-N-1 means that the serial",
+      "reference": "No parity",
+      "rationale": "8 data bits, no parity, 1 stop bit.",
+      "elapsed_s": 19.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 48,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A quick-opening valve is designed to allow for rapid changes in the flow rate with minimal movement of the valve stem. This characteristic means that a significant portion of the total flow through the valve can be achieved with just a small amount of stem travel.\n\nSpecifically, most of the flow increase occurs during the **low** part of the stem travel. In other words, as soon as you start to open the valve (even slightly), there is a substantial increase in flow. This behavior continues until the valve reaches its full open position, but the majority of the flow capacity is achieved very ear",
+      "reference": "Low travel",
+      "rationale": "Quick-opening trim produces large flow change early in travel.",
+      "elapsed_s": 18.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 92,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 18.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 8,
+          "citation_integrity": 0,
+          "flags": [
+            "Failed to provide correct ISA-5.1 tag 'VT' for vibration transmitter",
+            "Misinterpreted question about tag identifier as question about industry standards",
+            "Fabricated/misattributed standards content",
+            "IEC 60074-8 citation appears incorrect/fabricated",
+            "ISO 2954 description is inaccurate"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": "IEC 60074-8 cited as standard for vibration measurement in electric motors - this standard reference appears fabricated or misattributed; ISO 2954 mischaracterized (it concerns requirements for instruments measuring vibration severity, not accelerometer methods specifically)",
+          "total": 18
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The term \"vibration transmitter\" refers to a device used in industrial settings to convert mechanical vibrations into electrical signals that can be measured and analyzed. These devices are commonly used in predictive maintenance, condition monitoring of rotating machinery like motors, pumps, and turbines.\n\nWhen it comes to standards for vibration transmitters, there isn't necessarily one universal \"standard tag,\" but rather several standards and specifications that guide their design, performance, and application. Some key standards include:\n\n1. **IEC 60074-8**: This is part of the Internatio",
+      "reference": "VT",
+      "rationale": "Vibration transmitter.",
+      "elapsed_s": 44.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 153,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor imprecision: TCP provides checksum-based error detection and retransmission-based reliability, not true error correction in the sense of correcting corrupted data in place."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The Modbus RTU variant uses a Cyclic Redundancy Check (CRC) at the end of each frame for error detection. This CRC helps ensure that the data has not been corrupted during transmission.\n\nOn the other hand, Modbus TCP does not use a CRC because it relies on the underlying TCP protocol to handle error checking and correction. The Transmission Control Protocol (TCP) itself provides mechanisms for ensuring reliable delivery of packets over a network, including checksums at the transport layer.",
+      "reference": "Modbus RTU",
+      "rationale": "TCP relies on lower-layer Ethernet/TCP checks rather than a Modbus CRC.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 38,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To solve this problem, we need to understand how the current (mA) relates to the conductivity measurement in microsiemens per centimeter (\\(\\mu S/cm\\)). Typically, a 4-20 mA output corresponds to the full range of the sensor's measurement. In your case, the conductivity probe is ranged from 0 to 5000 \\(\\mu S/cm\\).\n\nHere\u2019s how you can calculate it:\n\n1. **Determine the span of the current signal:** The typical span for a 4-20 mA output is \\(20 - 4 = 16\\) mA.\n   \n2. **Relate this to the conductivity range:** This 16 mA corresponds to the full measurement range, which in your case is from 0 to 500",
+      "reference": "2500 uS/cm",
+      "rationale": "12 mA is 50 percent of the 4-20 mA span.",
+      "elapsed_s": 46.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 85,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 42.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect identification of hexagon symbol - should be computer/logic function, not operator action",
+            "Misidentifies ISA as 'Instrumentation and Systems Architecture' (actually Instrumentation, Systems, and Automation Society / International Society of Automation)",
+            "Overconfident incorrect answer with no hedging"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 4,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrectly identifies the ISA logic drawing hexagon as an operator action/intervention point rather than a computer/logic function.",
+            "Overstates an incorrect interpretation with insufficient caveat about ISA symbol usage."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 44
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "In the context of Instrumentation and Systems Architecture (ISA) logic drawings or diagrams, which are used to depict control systems in industrial settings, a hexagon often represents an operator action or intervention point. This means that at this point in the process flow or control logic, some form of manual input or decision-making by an operator is required.\n\nThe notation within or around the hexagon can provide more specific details about what kind of operator action is needed, such as acknowledging alarms, starting/stopping processes manually, or making decisions based on certain cond",
+      "reference": "Computer/logic function",
+      "rationale": "Rewritten to avoid conflict with modern shared-control symbols.",
+      "elapsed_s": 16.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 106,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A reverse-biased Zener diode placed in parallel with a load serves primarily as a voltage regulator. When used this way, its main function is to maintain a constant voltage across the load despite variations in input voltage or changes in the load resistance.\n\nHere's how it works:\n\n1. **Voltage Regulation**: The Zener diode allows current to flow through it when the reverse voltage reaches its breakdown voltage (the Zener voltage). This property ensures that once this voltage is reached, any further increase in applied voltage will not cause a significant change in the voltage across the load.",
+      "reference": "Voltage regulation or clamping",
+      "rationale": "It limits voltage to its Zener value.",
+      "elapsed_s": 29.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 51,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 30.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 5,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect identification of Y as 'Flow' - Y represents relay/compute/convert function per ISA-5.1",
+            "F is the letter for Flow, not Y",
+            "Model failed to recognize that in FY-101, F is the measured variable (Flow) and Y is the function (relay/compute/convert)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 30
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "In instrumentation and control systems within industrial settings, tags or designations like FY-101 are used to identify specific instruments and their functions. The letter \"Y\" in such a tag typically stands for \"Flow,\" indicating that the instrument is related to measuring flow rates.\n\nHowever, it's important to note that while there are common conventions, the exact meaning can sometimes vary depending on the specific company or industry standards. In some contexts, if \"Y\" were used for flow measurement, then FY-101 would refer to a particular flow instrument (like a flow transmitter or flo",
+      "reference": "Relay, compute, or convert function",
+      "rationale": "Y is the ISA functional letter for relay/computing/conversion type functions.",
+      "elapsed_s": 18.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 83,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 40.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 0,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 10,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "Incorrect answer - failed to identify ISA-5.1 instrumentation tagging convention",
+            "Second F in FFIC represents Ratio/Fraction (flow ratio control), not Flash memory",
+            "Model applied wrong industry context (semiconductor instead of process control/I&C)",
+            "Did not recognize standard ISA tag identifier"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 40
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The term \"FFIC\" as it relates to controllers or other electronic components isn't standard across all industries and might be specific to certain contexts or companies. However, if we break down \"FFIC\" based on common conventions used in electronics and semiconductor industry:\n\n- The first 'F' could stand for \"Flash,\" indicating that the controller has Flash memory.\n- The second 'F' is less clear without additional context but could potentially represent a variety of things depending on the specific naming convention being used. It might be another 'Flash' reference, or it could stand for some",
+      "reference": "Ratio or fraction",
+      "rationale": "Used in ratio-control functions.",
+      "elapsed_s": 27.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 77,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 95.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Symbol-to-valve-type mappings provided are not standardized and may mislead; gate/globe/ball valves are typically distinguished by body symbol conventions per ISA-5.1, not by handle orientation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 19,
+          "citation_integrity": 20,
+          "flags": [
+            "Core answer correctly identifies the symbol as a manually operated/manual valve.",
+            "Minor concern: added examples of specific valve-type symbols are somewhat generalized and may vary by drafting standard or company convention."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 97
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In the context of piping and instrumentation diagrams (P&IDs) used in process engineering and plant design, a valve symbol that includes a handle or crossbar but lacks an actuator symbol typically represents a manually operated valve. This means that the operation of the valve\u2014whether opening, closing, or adjusting\u2014is performed by hand rather than through automated means such as pneumatic, hydraulic, or electric actuators.\n\nThe specific type of manual valve (e.g., gate valve, globe valve, ball valve) can often be inferred from additional details in its symbol. For example:\n\n- A straight line w",
+      "reference": "Manual valve",
+      "rationale": "Hand operated valve.",
+      "elapsed_s": 23.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 9,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The relationship between the current and the percentage command in a typical industrial control system can often be linear, with a standard range for current corresponding to a specific percentage range. A common standard used in process control systems is 4-20 mA for 0-100% of the valve position or other controlled variable.\n\nGiven this standard:\n- 4 mA corresponds to 0%\n- 20 mA corresponds to 100%\n\nTo find out what percent command a current of 15.2 mA represents, you can use linear interpolation between these two points:\n\n\\[ \\text{Percent Command} = \\frac{(I - I_{\\min})}{(I_{\\max} - I_{\\min}",
+      "reference": "70 percent",
+      "rationale": "(15.2 - 4) / 16 = 0.70.",
+      "elapsed_s": 39.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 187,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Minor inaccuracy: jitter does not inherently cause retransmissions or reduce bandwidth utilization\u2014that conflates jitter with packet loss"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "High network jitter can significantly impact the performance of a fast Proportional-Integral-Derivative (PID) control loop that relies on data transmitted over an Ethernet network. Here's how:\n\n1. **Timing Uncertainty**: Network jitter introduces variability in the time it takes for packets to travel from one point to another. This timing uncertainty is problematic for PID loops because they rely on consistent and predictable feedback times to maintain stability and accuracy.\n\n2. **Control Loop Stability**: The performance of a PID controller depends heavily on timely updates of its input sign",
+      "reference": "It creates timing irregularity and can destabilize the loop",
+      "rationale": "Control algorithms expect data at reasonably consistent intervals.",
+      "elapsed_s": 59.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 15,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Did not mention the minor 4095-vs-4096 endpoint convention ambiguity, though the numerical answer is effectively correct."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To determine the smallest increment of change that a 12-bit Analog-to-Digital (A/D) converter can detect on a 0-100% scale, we need to understand how many discrete levels this A/D converter can represent and then calculate the size of each level.\n\nA 12-bit A/D converter has \\(2^{12}\\) possible output values. This is because it uses binary representation where each bit can be either a 0 or a 1:\n\n\\[ 2^{12} = 4096 \\]\n\nThis means there are 4096 discrete levels that the A/D converter can represent over its full range.\n\nThe full scale of the system is from 0 to 100%. To find the smallest increment (",
+      "reference": "About 0.024 percent",
+      "rationale": "100 / 4096 is about 0.0244 percent. Some systems use 4095 in practice, but the answer is effectively the same.",
+      "elapsed_s": 33.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 89,
+      "block": "Block 2 - ISA Symbols",
+      "tier": 1,
+      "score": 95.5,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Point 4 slightly speculative - A/B suffixes typically denote redundancy, not different functions"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 37,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Slight overstatement that A/B often denotes primary/secondary active-standby; suffix letters more generally distinguish parallel/redundant or related instruments and do not inherently define control role.",
+            "Mention of different functions or different points is possible but less aligned with the usual interpretation for identical tag number plus suffix."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When two transmitters are labeled as PT-101A and PT-101B, this typically indicates that they are part of a redundant system or a paired set designed for the same process variable measurement. Here's how these labels can be interpreted:\n\n1. **Redundancy**: In industrial settings, redundancy is often used to ensure reliability and safety. If one transmitter (PT-101A) fails, the other (PT-101B) can take over its function without interrupting the process.\n\n2. **Dual Measurement**: Sometimes, two transmitters are used to measure the same variable but from slightly different perspectives or under sl",
+      "reference": "Parallel or redundant instruments distinguished by suffix letters",
+      "rationale": "Exact use may be redundancy, comparison, or voting depending on design.",
+      "elapsed_s": 34.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 180,
+      "block": "Block 4 - Networking",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In the RS-232 standard, the representation of logic levels uses different voltage ranges for logic 1 and logic 0:\n\n- Logic 1 (also known as \"mark\") is represented by a negative voltage range typically between -3V to -15V.\n- Logic 0 (also known as \"space\") is represented by a positive voltage, usually in the range of +3V to +15V.\n\nTherefore, a negative voltage corresponds to logic 1 in RS-232.",
+      "reference": "Logic 1 (mark)",
+      "rationale": "RS-232 uses inverted voltage polarity compared with TTL logic.",
+      "elapsed_s": 13.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 50,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a 4-20 mA current loop, the current varies between 4 mA (minimum) and 20 mA (maximum). The voltage drop across a resistor is given by Ohm's Law: \\(V = I \\times R\\), where \\(V\\) is the voltage, \\(I\\) is the current, and \\(R\\) is the resistance.\n\nGiven:\n- Voltage (\\(V\\)) = 1.0 V\n- Resistance (\\(R\\)) = 250 ohms\n\nWe can calculate the current (\\(I\\)) using Ohm's Law:\n\n\\[ I = \\frac{V}{R} = \\frac{1.0 \\, \\text{V}}{250 \\, \\Omega} = 4 \\, \\text{mA}\\]\n\nSince the calculated current is 4 mA, this corresponds to the minimum signal in a standard 4-20 mA loop.\n\nTherefore, the loop is at its minimum signal l",
+      "reference": "Minimum",
+      "rationale": "1.0 V across 250 ohms equals 4 mA.",
+      "elapsed_s": 25.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 141,
+      "block": "Block 3 - Electronics",
+      "tier": 1,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Does not explicitly mention PLC logic by name, though industrial control systems are covered"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Debounce logic is a technique used to smooth out or filter the signal from mechanical switches or buttons that can produce unstable signals due to their physical nature when pressed or released. When a button is pressed or a switch is flipped, the contacts inside may bounce against each other for a short period before settling into a stable state. This bouncing can cause the electrical circuit to detect multiple transitions (on and off) instead of just one clean transition.\n\n### How Debounce Logic Works\n\nDebounce logic works by introducing a delay or filtering mechanism that ignores these rapi",
+      "reference": "Filtering of mechanical contact chatter, usually in PLC logic, device firmware, or dedicated hardware",
+      "rationale": "Prevents multiple false transitions from one contact action.",
+      "elapsed_s": 52.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 2,
+      "block": "Block 1 - Loop Math",
+      "tier": 1,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "anthropic/claude-opus-4.7",
+          "role": "primary",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To solve this problem, we need to understand how the level transmitter converts the physical measurement (level) into an electrical signal (current). Typically, these transmitters use a 4-20mA current loop for their output. This means that:\n\n- A reading of 4 mA corresponds to the minimum measurable value.\n- A reading of 20 mA corresponds to the maximum measurable value.\n\nGiven:\n- The range of the level transmitter is from 25 inches (minimum) to 175 inches (maximum).\n- The current output is 8 mA.\n\nFirst, we need to determine what fraction of the full scale (4-20mA) the measured current represen",
+      "reference": "62.5 inches",
+      "rationale": "8 mA is 25 percent of the 16 mA span; 25 percent of 150 inches is 37.5 inches, plus the 25-inch LRV.",
+      "elapsed_s": 63.8,
+      "error": false,
+      "flags": []
+    }
+  ]
+}

@@ -1,0 +1,3363 @@
+{
+  "run_metadata": {
+    "benchmark_version": "v1.3",
+    "model_name": "anthropic/claude-opus-4.7",
+    "model_slug": "openrouter/anthropic/claude-opus-4.7",
+    "provider": "openrouter",
+    "temperature": 0,
+    "seed": 42,
+    "question_count": 100,
+    "pool_tier": 3,
+    "pool_name": "Certification",
+    "run_timestamp": "2026-05-25T22:15:47.914988",
+    "completed_at": "2026-05-25T23:14:32.718812",
+    "hardware": "DAWES RTX 3090 / RTX 4060 Ti",
+    "runner_version": "tier1_v13_runner.py v1.3",
+    "sop_version": "Dawes Einstein Engine Lab SOP v1",
+    "sop_judge_prompt": "Section 4.1 \u2014 5-dimension adversarial",
+    "lead_evaluator": "Ryan Anderson",
+    "judge_panel": [
+      {
+        "model": "x-ai/grok-4.3",
+        "role": "primary",
+        "company": "xai",
+        "substituted": true
+      },
+      {
+        "model": "openai/gpt-5.5",
+        "role": "cross-check",
+        "company": "openai",
+        "substituted": false
+      },
+      {
+        "model": "google/gemini-2.5-pro",
+        "role": "coverage",
+        "company": "google",
+        "substituted": false
+      }
+    ]
+  },
+  "summary": {
+    "total_questions": 100,
+    "answered": 100,
+    "correct": 97,
+    "score_pct": 97.0,
+    "mean_score_100": 95.39,
+    "tier2_eligible": true,
+    "correct_threshold": 70,
+    "safety_failures": 0,
+    "safety_failure_qids": [],
+    "judge_divergence_flags": 0,
+    "api_errors": 0
+  },
+  "divergence_flags": [],
+  "questions": [
+    {
+      "question_id": 401,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why the Loop Became Sluggish\n\n## Short Answer\nThe control system itself is fine \u2014 the **valve responds immediately** to the 4\u201320 mA signal, proving the controller, I/P, and final element are healthy. The sluggishness is in the **measurement**, specifically in the **temperature sensor's response time**, which has been dramatically increased by the new thermowell installation.\n\n## The Physical Cause: Thermal Lag in the Sensor Assembly\n\nA temperature sensor (RTD or thermocouple) cannot read process temperature directly \u2014 heat must **flow** from the process fluid into the sensing element. That h",
+      "reference": "The loop is sluggish because the new thermowell increased sensor thermal lag / time constant. The heavy wall and poor thermal contact add thermal resistance and mass, so the sensing element responds much more slowly to process temperature changes.",
+      "rationale": "The original wording called this dead time; the cleaner control answer is increased lag/time constant.",
+      "elapsed_s": 10.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 402,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why Reducing Gain Didn't Fix It\n\nReducing controller gain fails here because **the oscillation isn't caused by controller tuning \u2014 it's caused by the valve itself**. This is a classic *stick-slip limit cycle*, and it behaves fundamentally differently from a tuning-induced oscillation.\n\n## The Mechanism\n\nWith over-tightened packing, static friction is high. What happens:\n\n1. PV drifts off setpoint \u2192 controller integral action ramps the output\n2. Valve **sticks** \u2014 stem doesn't move despite increasing signal\n3. Force eventually overcomes static friction \u2192 valve **slips/jumps** past where it ne",
+      "reference": "Reducing gain failed because the root cause is mechanical stiction, not excessive controller aggressiveness alone. The output ramps until friction breaks free, then the valve jumps, producing a stick-slip sawtooth pattern.",
+      "rationale": "Mechanical friction must be fixed or compensated; tuning alone will not cure severe stiction.",
+      "elapsed_s": 11.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 403,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 82.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 28,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 14,
+          "citation_integrity": 20,
+          "flags": [
+            "frequency mismatch with reference (HF carrier vs 50/60 Hz emphasis)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 82
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Likely Cause: VFD-Induced Electrical Noise\n\nThe magmeter is reading **25 GPM at zero flow** because the VFD's high-frequency switching noise (typically 2\u201320 kHz carrier frequency with fast dV/dt edges) is being capacitively/inductively coupled into the magmeter's signal circuit. With the motor cable's **shield ground failed**, common-mode noise that would normally be shunted to ground is instead radiating onto:\n\n- The magmeter's low-level electrode signal wires (millivolt range \u2014 very susceptible)\n- The flow tube itself (acting as an antenna)\n- The signal cable shield (if improperly grounded",
+      "reference": "The likely cause is stray 50/60 Hz interference or poor process/reference grounding affecting the electrode circuit. The tech should verify grounding/reference integrity, shield termination, and check for AC/noise voltage associated with the electrode circuit.",
+      "rationale": "The original answer was directionally right but too casual about \u201cjust use a DMM on AC volts.\u201d",
+      "elapsed_s": 12.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 404,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "If both the transmitter AND the DCS are performing square root extraction, the square root is being applied twice (double extraction), which gives an incorrect reading.\n\n**Step-by-step:**\n\n1. **Actual flow = 50%**, so the actual differential pressure (DP) = (0.50)\u00b2 = **0.25 or 25%** of full-scale DP (since DP is proportional to flow\u00b2).\n\n2. **Transmitter output** (with square root extraction): \n \u221a0.25 = 0.50 = **50% signal** (correct flow representation)\n\n3. **DCS receives 50% signal and applies square root AGAIN:**\n \u221a0.50 = 0.707 = **70.7%**\n\n**HMI Display \u2248 70.7% flow**\n\nSo the HMI will incor",
+      "reference": "About 70.7 percent",
+      "rationale": "If the transmitter already outputs linearized flow, applying another square root in the DCS makes the indicated value read artificially high.",
+      "elapsed_s": 6.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 405,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Boiler Drum Swell Explained\n\n## What You're Seeing\nThe drum level indicator jumps **upward** immediately after a pressure drop \u2014 even though no feedwater was added. This phenomenon is called **swell**.\n\n## The Physics Behind Swell\n\nIn a steam drum at operating pressure, the water below the saturation line contains a population of **steam bubbles** rising through it. The volume occupied by the water/steam mixture depends on two things:\n1. The mass of water present\n2. The volume of vapor bubbles entrained in that water\n\n### When Pressure Drops Suddenly:\n\n**1. Saturation temperature drops.**\nAt",
+      "reference": "A rapid pressure drop lets steam bubbles in the drum water expand and causes some water to flash, increasing the apparent water volume. That temporary expansion makes the drum level indication rise even without added water.",
+      "rationale": "The original explanation leaned too hard on a sloppy DP shortcut instead of the actual swell mechanism.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 406,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 93.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 37,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "response truncated mid-sentence",
+            "slightly prescriptive wording vs reference's 'per site practice'"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Permanent Fix: Establish a Single-Point Ground at the Power Supply Common\n\n## Root Cause Analysis\n\nThe erratic readings stem from **two grounding violations** working together:\n\n1. **Floating 24 VDC common** \u2013 With no reference to earth, the loop supply can drift to any potential relative to ground (driven by leakage, capacitive coupling, or common-mode noise). The temporary jumper works because it forces a reference; remove it and the loops float again.\n\n2. **Shield grounded at the field end** \u2013 Instrumentation cable shields must be grounded at the **power supply / control system end**, not",
+      "reference": "Provide the loop/common with the proper cabinet-side instrument reference/grounding arrangement and terminate shields per site practice, usually at the control-system end.",
+      "rationale": "The original multimeter explanation assumed a grounding path the meter may not actually provide.",
+      "elapsed_s": 11.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 407,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Frozen High-Side Impulse Line on DP Flow Transmitter\n\n## Short Answer\n**The transmitter will remain stuck at 12.5 mA** regardless of any change in actual process flow.\n\n## Why This Happens\n\nA DP flow transmitter measures flow by sensing the **differential pressure** across a primary element (orifice plate, venturi, etc.):\n\n$$\\Delta P = P_{high} - P_{low}$$\n\nWhen the **high-side impulse line freezes**, it becomes a sealed, hydraulically isolated column. The pressure trapped in that line at the moment of freezing is \"locked in\" and can no longer transmit changes in upstream process pressure to",
+      "reference": "It will stay near 12.5 mA",
+      "rationale": "The trapped pressure isolates the sensor from new process changes.",
+      "elapsed_s": 10.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 408,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 83.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 28,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "model introduces conflicting amp behavior note that does not align with given high-amps symptom",
+            "over-elaborates pump-type distinctions not required by reference"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 83
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Using the Pressure Gauge to Localize the Blockage\n\n## The Diagnostic Logic\n\nA backward check valve creates a **closed/near-closed restriction** on the pump discharge. The pressure gauge between the pump and the meter is your key witness. Here's how to read it:\n\n## What Each Reading Tells You\n\n**Pressure gauge reads at or above shutoff head (very high):**\n- The pump is \"deadheading\" against the reversed check valve\n- Flow is blocked **downstream of the gauge**\n- This explains:\n  - **High amps** (actually, deadhead amps are often *lower* than rated on centrifugal pumps \u2014 but with PD pumps or i",
+      "reference": "If pump-discharge pressure rises toward shutoff head while the flowmeter still reads zero, the pump is building pressure against a blockage located downstream of the pump and upstream of the meter.",
+      "rationale": "High pressure with no measured flow is powerful field evidence of a downstream restriction.",
+      "elapsed_s": 12.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 409,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "response truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A pH glass electrode works by developing a potential across a thin, hydrated glass membrane that selectively responds to H\u207a activity. The measured voltage follows the Nernst equation, with the inner reference solution (typically pH 7 buffer) on one side and the sample on the other. Ideally, the only conductive path between the inner solution and the sample is *through* the H\u207a-selective glass membrane.\n\nWhen the glass cracks:\n\n1. **Electrical short circuit through the crack.** The sample solution and the internal filling solution become connected by a liquid (ionic) pathway that bypasses the se",
+      "reference": "A cracked glass electrode can collapse the membrane potential toward the probes zero point, which is around 0 mV / pH 7, so the indicated value often drifts toward neutral.",
+      "rationale": "The original \u201calmost always exactly 7.0\u201d answer was too absolute.",
+      "elapsed_s": 12.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 410,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "response is truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Phenomenon: RFI (Radio Frequency Interference)\n\nThe handheld radio's RF transmission is being picked up by the detector's wiring, which acts as an **unintended antenna**. The induced RF voltage couples into the Wheatstone bridge circuit of the catalytic bead sensor, creating a false signal that mimics a combustible gas response. Catalytic bead detectors are particularly susceptible because they operate on small millivolt-level bridge imbalances \u2014 easily swamped by induced RF currents.\n\nHandheld radios (typically 1\u20135 W VHF/UHF) can produce field strengths of 10+ V/m at close range, well above",
+      "reference": "This is RFI/EMI. Use properly grounded shielded twisted pair, maintain correct bonding, and route/install wiring and housing grounding to reduce radio-frequency pickup.",
+      "rationale": "High RF fields can couple into detector electronics and create false output behavior.",
+      "elapsed_s": 11.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 411,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In ISA-88 batch control, a **phase** is the lowest level of the procedural control hierarchy and represents the smallest element of procedural logic that performs **process-oriented, equipment-specific actions** to accomplish a particular task.\n\n## Position in the ISA-88 Procedural Hierarchy\n\nFrom highest to lowest:\n1. **Procedure** \u2013 the overall recipe-level strategy to make a batch\n2. **Unit Procedure** \u2013 a contiguous production sequence executed in a single unit (e.g., a reactor)\n3. **Operation** \u2013 a major processing activity within a unit procedure (e.g., \"React,\" \"Heat,\" \"Charge\")\n4. **Ph",
+      "reference": "A distinct processing step or operation performing a specific function, e.g., charge, heat, react, or discharge.",
+      "rationale": "Phases are the building blocks of unit procedures and contain control logic and state transitions per ISA-88.",
+      "elapsed_s": 12.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 412,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When a PID controller experiences integral windup during prolonged MV (manipulated variable) saturation, the classic symptom that appears once the error reverses direction is:\n\n**Delayed response and large overshoot of the setpoint**\n\n### What happens specifically:\n\n1. **During saturation:** While the MV is pinned at its limit (e.g., 100% open valve), the error persists. The integral term keeps accumulating (\"winding up\") to a very large value, even though additional integration produces no further control action.\n\n2. **When error reverses:** Once the process variable finally crosses the setpo",
+      "reference": "Overshoot or delayed recovery caused by the accumulated integral term.",
+      "rationale": "Anti-reset windup via back calculation or clamping prevents or mitigates this behavior.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 413,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "response_truncated"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why the Inner Loop is Tuned More Aggressively in Cascade Control\n\nThe inner (slave) loop is tuned more aggressively than the outer (master) loop for several interconnected reasons rooted in control theory and practical performance requirements.\n\n## 1. **Purpose of the Inner Loop**\n\nThe primary job of the slave loop is to **rapidly reject disturbances** before they propagate to the primary (outer) variable. For this to be effective, the inner loop must respond *much faster* than the outer loop can.\n\n## 2. **Time-Scale Separation**\n\nCascade control relies on a clear separation of dynamics:\n\n- ",
+      "reference": "To make the slave respond quickly to disturbances so the master sees a well-behaved secondary process.",
+      "rationale": "The slave should be 3-5x faster than the master for stable cascade operation.",
+      "elapsed_s": 11.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 414,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The primary advantage of MPC over single-loop PID for a multivariable distillation column is its ability to **explicitly handle process interactions and constraints in a coordinated, multivariable fashion**.\n\nMore specifically:\n\n**1. Multivariable Coordination (Decoupling)**\nA distillation column has strong interactions \u2014 for example, changing reflux flow affects both the overhead composition *and* the bottoms composition, and similarly for reboiler duty. Single-loop PIDs treat each loop independently, so one controller's corrective action becomes a disturbance to the other, causing oscillatio",
+      "reference": "Explicit handling of multi-variable interactions, constraints, and economic objectives simultaneously.",
+      "rationale": "MPC optimizes within defined limits; single-loop PID cannot handle strong loop cross-coupling.",
+      "elapsed_s": 11.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 415,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 95.5,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 37,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Correctly states that a high/low selector passes one controller output to the manipulated variable.",
+            "Correctly describes override takeover when constraint controller output becomes selected.",
+            "Minor overgeneralization: low selector output is not inherently the 'most conservative/safe action'; this depends on valve/action and process design.",
+            "Minor overstatement: override controller output does not necessarily 'change rapidly' as a constraint is approached.",
+            "Answer is truncated at the end but contains the essential correct content."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 95
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Override Control (Selector Strategy)\n\nIn an override control scheme, **two or more controllers compete to manipulate the same final control element**, but only one is allowed to take command at any given time. A **selector** (high or low) arbitrates between them.\n\n## How It Works\n\nEach controller calculates its own output based on its respective process variable and setpoint. These outputs are fed into a **selector block**, which passes only one signal through to the manipulated variable:\n\n- **Low selector (LS):** picks the controller demanding the *least* output \u2192 most conservative/safe act",
+      "reference": "The selector passes the higher or lower output depending on configuration (max/min select).",
+      "rationale": "Used for protection, e.g., pressure override on flow control to protect equipment.",
+      "elapsed_s": 11.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 416,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "For **perfect disturbance rejection** by a feedforward controller, the feedforward transfer function must be designed so that the effect of the measured disturbance on the controlled variable is exactly canceled by the manipulated variable's effect.\n\n## The Required Condition\n\nFor a process with:\n- **G_p** = transfer function from manipulated variable (u) to controlled variable (h, the level)\n- **G_d** = transfer function from disturbance (d) to controlled variable (h)\n- **G_f** = feedforward controller transfer function\n\nThe level response is:\n\n$$h(s) = G_d(s)\\,d(s) + G_p(s)\\,u(s)$$\n\nWith fee",
+      "reference": "The feedforward model gain and dynamics must exactly match the real process disturbance path.",
+      "rationale": "Model mismatch causes offset; the feedback path corrects residual error.",
+      "elapsed_s": 9.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 417,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Gain Scheduling in pH Control\n\n## Primary Purpose\n\nThe **primary purpose of gain scheduling** in a nonlinear process such as pH control is to **adapt the controller tuning parameters (especially controller gain) to match the changing process gain** as the operating point moves through different regions of nonlinearity, thereby maintaining consistent closed-loop performance and stability across the full operating range.\n\n## Why pH Control Specifically Needs It\n\npH is a classic example of a severely nonlinear process because of the logarithmic relationship between hydrogen ion concentration an",
+      "reference": "To adjust PID parameters dynamically based on operating region, e.g., near neutrality vs. pH extremes.",
+      "rationale": "Process gain changes dramatically around pH 7; fixed-gain tuning fails across the full range.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 418,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# OPC UA's Key Advancement: Information Modeling with Service-Oriented Architecture\n\nThe defining feature that distinguishes **OPC UA (Unified Architecture)** from classic OPC is its **integrated information modeling framework combined with a platform-independent, service-oriented architecture (SOA)**.\n\n## Core Features Enabling This Advantage\n\n### 1. **Rich Information Modeling**\n- OPC UA uses an **object-oriented address space** where data is represented as nodes (Objects, Variables, Methods, Events) with defined relationships.\n- Supports **complex data types, hierarchies, and semantics** \u2014 ",
+      "reference": "Information modeling with nodes and references, plus built-in security: encryption, message signing, and user authentication.",
+      "rationale": "OPC UA is service-oriented and replaces COM/DCOM dependencies, enabling cross-platform and firewall-friendly communication.",
+      "elapsed_s": 10.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 419,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Ratio Control Override Response to Failed-Low Air Flow Transmitter\n\n## The Critical Safety Issue\n\nIn a fired heater, the **fuel-to-air ratio** is critical. If air flow is insufficient relative to fuel, you get:\n- Incomplete combustion\n- Fuel-rich (sub-stoichiometric) conditions\n- Risk of **firebox explosion** when unburned fuel accumulates and finds ignition/oxygen\n\nIf the air flow transmitter fails **low**, the ratio controller \"sees\" low air and would normally respond by **cutting fuel** to maintain ratio \u2014 which is the safe direction. But a well-designed override must handle this properly",
+      "reference": "Drive fuel to minimum or safe low to prevent rich combustion or explosion risk.",
+      "rationale": "Air-flow-failure-low is a classic combustion hazard; the safety override must protect against fuel-rich conditions.",
+      "elapsed_s": 13.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 420,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The **Relative Gain Array (RGA)** is a steady-state analysis tool developed by Bristol (1966) that helps identify several key aspects of multi-variable (MIMO) control systems:\n\n## Primary Uses\n\n**1. Input-Output Pairing**\n- Determines the best pairing of manipulated variables (inputs) with controlled variables (outputs) for decentralized (multi-loop SISO) control\n- Pairings with RGA elements close to **+1** are preferred\n- Avoid pairings with **negative** RGA elements (closed-loop instability risk) or values **far from 1**\n\n**2. Interaction Assessment**\n- Quantifies the degree of interaction b",
+      "reference": "Loop interactions and pairing recommendations \u2014 avoid pairings with RGA near 0 or very large/negative values.",
+      "rationale": "RGA near 1 indicates minimal interaction; values far from 1 indicate poor pairings that will cause control instability.",
+      "elapsed_s": 10.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 421,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Control on Control: Cascaded PID Instability\n\n## What \"Control on Control\" Means\n\n\"Control on control\" occurs when two independent feedback controllers act on the same physical variable in series, each trying to correct the error simultaneously. In your scenario:\n\n- **DCS PID loop**: Reads process variable (e.g., flow, pressure), computes a position demand, sends it to the valve\n- **Positioner PID loop**: Reads actual stem position, computes actuator pressure to drive position to the DCS setpoint\n\nBoth are closed-loop controllers with integral action. The positioner is essentially an inner l",
+      "reference": "The DCS outer loop is trying to control the process while the positioner inner loop is also aggressively controlling valve travel. If both loops are tuned too hard, they interact and fight each other instead of one serving as a fast, well-behaved inner loop.",
+      "rationale": "The inner positioner loop should be fast and stable; the outer DCS loop should control the process, not wrestle another aggressive controller.",
+      "elapsed_s": 10.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 422,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why Entrained Air Causes Loss of Lock in Coriolis Meters\n\n## The Fundamental Problem: Two-Phase Flow Breaks the Single-Mass Assumption\n\nA Coriolis meter operates by vibrating its flow tubes at their natural resonant frequency and measuring the phase shift between inlet and outlet pickoffs. This works beautifully for a homogeneous fluid, but vapor slugs destroy the physics the meter relies on.\n\n## Mechanisms of Loss of Lock\n\n### 1. Decoupling of Phases\nGas bubbles don't move with the liquid during tube vibration. Because the densities differ by ~1000:1, the liquid sloshes *around* the bubbles",
+      "reference": "Entrained gas creates two-phase damping and rapidly changes the effective density/load in the vibrating tubes. The meter must drive harder to maintain oscillation, and severe slugs can make it lose stable resonance lock.",
+      "rationale": "The original \u201cvapor has almost zero mass\u201d wording was too crude.",
+      "elapsed_s": 11.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 423,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 55.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "root cause misidentified: attributes error to imbalance between two impulse legs rather than stack gas vs ambient air column",
+            "introduces extraneous details (temp ranges, sun exposure, condensate) not present in authoritative explanation"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "# Chimney Effect Error in Flare-Stack DP Transmitters\n\n## The Symptom\n- **At zero flow with impulse lines connected:** 1.5 inWC false reading\n- **With both sides vented locally (at transmitter):** Reads zero correctly\n\nThis pattern is the fingerprint of a **chimney (stack) effect** error in the impulse tubing \u2014 not a transmitter or calibration fault.\n\n## Root Cause: Density Differential in Vertical Impulse Legs\n\nFlare-stack DP transmitters typically measure flow across an averaging pitot or annubar high up on the stack, with impulse lines running **vertically down** to a transmitter mounted at",
+      "reference": "The light flare gas in the tall stack has a different hydrostatic pressure gradient than the outside air column. That density difference creates a real pressure difference between bottom and top taps even when there is no actual process flow.",
+      "rationale": "A tall column of light gas behaves differently from the surrounding air column.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 424,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Solenoid Burnout from Stuck Armature\n\n## The Root Cause: Inductance Depends on Air Gap\n\nAn AC solenoid's coil impedance is dominated by its **inductive reactance** (X_L = 2\u03c0fL), not its DC resistance. The inductance is determined largely by the magnetic circuit's reluctance \u2014 and a **closed iron core has much lower reluctance than one with an air gap**.\n\n## What Happens in Each State\n\n**Fully seated (normal operation):**\n- Armature closes the magnetic circuit\n- High inductance \u2192 high reactance \u2192 **low holding current** (often 1/10 of inrush)\n- Coil runs cool\n\n**Fully open (momentary, at ener",
+      "reference": "With the armature not fully seated, the magnetic circuit stays open, inductance stays low, and current remains near inrush rather than falling to normal holding current. The excess I-squared-R heating overheats the coil.",
+      "rationale": "Classic AC-solenoid failure mode.",
+      "elapsed_s": 12.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 425,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "For an ultrasonic (or radar) level transmitter locked onto a false echo from an agitator blade, the software feature to use is:\n\n## False Echo Mapping (Tank Mapping / TVT Curve Adjustment)\n\nAlso known by various manufacturer-specific names:\n- **False Echo Suppression** (Endress+Hauser)\n- **Tank Mapping** / **DPS (Distance Piece Suppression)**\n- **TVT (Time Varying Threshold) curve adjustment**\n- **Echo Rejection** or **Interference Echo Suppression**\n\n### How it works:\n1. **Empty the vessel** (or lower the level below the agitator) so the true echo is beyond the obstruction.\n2. **Run the mappi",
+      "reference": "False echo suppression / echo mapping",
+      "rationale": "The transmitter learns and ignores fixed internal echoes.",
+      "elapsed_s": 12.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 426,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# False High Flow from Unequal Condensate Legs\n\n## The Setup\n\nIn a gas DP flow measurement (orifice plate, venturi, etc.), the impulse lines connecting the transmitter to the high-pressure (upstream) and low-pressure (downstream) taps should contain **only gas** \u2014 or if condensate forms, it should fill **both legs equally** so the hydrostatic heads cancel out.\n\n## What Goes Wrong\n\nWhen wet gas cools in the impulse tubing, condensate accumulates. If the legs are not properly sloped, drained, or symmetrical, **one leg traps more liquid than the other** \u2014 typically the low-pressure (LP) leg fills",
+      "reference": "Unequal liquid head adds extra hydrostatic pressure to one side of the DP measurement. If the high side carries more trapped liquid head than the low side, the measured DP rises and the indicated flow reads high.",
+      "rationale": "Question rewritten so the unequal head is explicit; equal flooding would not make a clean benchmark question.",
+      "elapsed_s": 10.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 427,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why a \"Good Slope\" pH Probe Can Still Be End-of-Life\n\nSlope (92%) only tells you about the **glass membrane's response to hydrogen ions** \u2014 it says nothing about the **reference junction** or **overall dynamics**. A 10\u201315 minute stabilization time is a classic symptom of a dying probe even when slope looks acceptable.\n\n## Root Causes of Slow Response\n\n### 1. Reference Junction Fouling/Clogging\n- The reference cell must maintain a stable, low-impedance liquid junction with the sample.\n- Protein, sulfide, silver chloride precipitate, or process solids gradually plug the frit/ceramic.\n- A clogg",
+      "reference": "Because endpoint slope and response time are different health indicators. A probe may still calibrate with acceptable slope yet be too sluggish for real process control because its glass/junction chemistry has aged or become poisoned.",
+      "rationale": "A good slope does not rescue a probe that responds too slowly for service.",
+      "elapsed_s": 12.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 428,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "over-specific numerical claims without sources (dV/dt range, separation distance)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Capacitive Coupling Explained\n\n**Capacitive coupling** is a form of electrical noise transfer where a rapidly changing voltage on one conductor induces an unwanted current onto a nearby conductor through the parasitic capacitance that exists between them \u2014 even though the wires are not physically connected.\n\n## How It Works in Your Scenario\n\nAny two conductors separated by an insulator (air, wire jacket, conduit space) form a small capacitor. The coupling current is governed by:\n\n$$i_{noise} = C \\cdot \\frac{dV}{dt}$$\n\nWhere:\n- **C** = stray capacitance between the VFD output lead and your 4-",
+      "reference": "The fast dv/dt switching on the VFD leads creates changing electric fields that couple through stray capacitance into the nearby analog conductor, injecting noise on top of the loop signal.",
+      "rationale": "Classic bad-cable-routing problem.",
+      "elapsed_s": 12.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 429,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Bubbler Dip Tube Plug: Why Level Pegs High\n\n## How a Bubbler Works (Quick Refresher)\n\nA bubbler measures liquid level by purging a small, constant flow of air (or inert gas) down a dip tube submerged in the vessel. The **back-pressure** required to push bubbles out the bottom of the tube equals the **hydrostatic head** of liquid above the tube outlet:\n\n$$P_{measured} = \\rho \\cdot g \\cdot h$$\n\nThe transmitter reads that back-pressure and infers level.\n\n## What Happens When the Dip Tube Plugs\n\nWhen the tube plugs (scale, solids, freezing, crystallization, etc.):\n\n1. **Air flow drops to zero** ",
+      "reference": "Because the air cannot escape the plugged tube, backpressure builds toward the regulator/supply limit. The transmitter sees that pressure as if it were maximum liquid head.",
+      "rationale": "The line pressure no longer represents hydrostatic head; it is just trapped supply pressure.",
+      "elapsed_s": 11.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 430,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When a thermocouple wire shorts somewhere along its length, a new thermoelectric junction is effectively created at the point of the short. Since the EMF generated by a thermocouple depends on the temperature difference between the measuring (hot) junction and the reference (cold) junction\u2014and specifically, the EMF is developed where the temperature gradient exists along dissimilar metals\u2014the transmitter will read the temperature at the **location of the short circuit**, not the actual hot junction at the tip.\n\nSo in your scenario, the transmitter effectively measures the temperature at the **",
+      "reference": "It effectively measures the unintended junction that remains in the active circuit - in this case the short near the conduit entry - rather than the original hot junction.",
+      "rationale": "The original \u201cfirst junction closest to the transmitter\u201d rule was too simplistic.",
+      "elapsed_s": 7.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 441,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The fundamental difference between Class I, Division 1 and Class I, Division 2 locations lies in the **probability and frequency of flammable gases or vapors being present in ignitable concentrations** under normal operating conditions.\n\n## Class I, Division 1\nIgnitable concentrations of flammable gases or vapors are **expected to be present during normal operations**. Specifically, this includes locations where:\n- Flammable gases/vapors exist continuously, intermittently, or periodically under normal operating conditions\n- Ignitable concentrations may exist frequently due to repair, maintenan",
+      "reference": "Division 1 has ignitable concentrations present under normal operating conditions; Division 2 expects them only under abnormal conditions such as a leak or failure.",
+      "rationale": "Core NEC hazardous-location distinction.",
+      "elapsed_s": 9.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 442,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In the NEC (National Electrical Code) gas grouping scheme for hazardous (classified) locations, **hydrogen** is covered under **Group B** (Class I, Division system).\n\nGroup B includes gases or vapors with similar hazardous characteristics to hydrogen, such as butadiene, ethylene oxide, propylene oxide, and acrolein.\n\n(Note: In the IEC/international system, hydrogen falls under Group IIC.)",
+      "reference": "Group B",
+      "rationale": "If the question were asking for the most severe overall group, that would be Group A for acetylene; this corrected version asks specifically about hydrogen.",
+      "elapsed_s": 4.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 443,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Classic Grounded Zener Barrier\n\n## What It Does\n\nA Zener barrier is a passive protective device that limits the **electrical energy** (voltage and current) passed into a hazardous area, ensuring it remains below levels capable of igniting a flammable atmosphere \u2014 even under fault conditions.\n\nIt accomplishes this through three key components:\n\n1. **Zener diodes** \u2013 Clamp the voltage to a safe maximum value. If voltage rises above the Zener breakdown level (due to a fault in the safe area), the diodes conduct excess current to ground.\n\n2. **Current-limiting resistor** \u2013 Limits the maximum sho",
+      "reference": "It limits voltage and current so the hazardous-area circuit cannot release ignition-capable energy, and it is typically installed on the safe/non-hazardous side with a high-integrity ground.",
+      "rationale": "Question narrowed to the classic Zener-barrier arrangement.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 444,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "An explosion-proof enclosure is **designed to contain an internal explosion**, not to be gas-tight.\n\nHere's the key distinction:\n\n**What it does:**\n- Allows flammable gases or vapors to enter the enclosure (it is *not* sealed against gas ingress)\n- Withstands the pressure of an internal explosion if those gases ignite due to arcing or sparking from the electrical equipment inside\n- Cools and vents the resulting hot gases through carefully engineered flame paths (flanged joints, threaded joints, etc.) so that the escaping gases are below the ignition temperature of the surrounding atmosphere\n- ",
+      "reference": "To contain an internal explosion",
+      "rationale": "The flamepath cools escaping gases so they do not ignite the outside atmosphere.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 445,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Type X and Type Z purges are pressurization methods defined in NFPA 496 (Standard for Purged and Pressurized Enclosures for Electrical Equipment) used to make electrical enclosures safe for use in hazardous (classified) locations.\n\n**Type X Purge:**\n- Reduces the classification inside the enclosure from **Division 1 to non-hazardous (unclassified)**\n- Requires automatic power disconnect (cutoff) if pressurization is lost\n- Used for the most hazardous areas where ignitable concentrations are present continuously or frequently\n- Has the most stringent safety interlocks\n\n**Type Z Purge:**\n- Reduc",
+      "reference": "Type X reduces a Div 1 enclosure to unclassified/non-hazardous; Type Z reduces a Div 2 enclosure to unclassified/non-hazardous",
+      "rationale": "Type X carries the more demanding protection level.",
+      "elapsed_s": 9.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 446,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**SIL** stands for **Safety Integrity Level**.\n\nIt is a measure defined in functional safety standards (such as **IEC 61508** and **IEC 61511**) that quantifies the risk reduction provided by a Safety Instrumented Function (SIF) or safety system. SIL ratings indicate how reliably a safety function performs its intended task to reduce risk to a tolerable level.\n\nThere are four SIL levels (SIL 1 through SIL 4), with higher numbers representing greater risk reduction and more stringent requirements.\n\n**Of SIL 1, 2, and 3 \u2014 SIL 3 provides the greatest risk reduction.**\n\nHere's a comparison based o",
+      "reference": "Safety Integrity Level; SIL 3",
+      "rationale": "Higher SIL means greater target risk reduction among the listed choices.",
+      "elapsed_s": 8.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 447,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**PFDavg** stands for **Average Probability of Failure on Demand**. It's a key metric used in functional safety, particularly for **Safety Instrumented Systems (SIS)** operating in **low-demand mode**.\n\n## What It Measures\n\nPFDavg quantifies the **average probability that a safety system will fail to perform its intended safety function when called upon (on demand)**, averaged over a specified time period (typically the proof test interval).\n\n## Key Context\n\n- **Used for low-demand systems**: Systems demanded less than once per year (e.g., emergency shutdown systems, pressure relief, fire & ga",
+      "reference": "The average probability that a safety function will fail to act on demand",
+      "rationale": "A key SIS performance metric.",
+      "elapsed_s": 9.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 448,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A calibration check and a safety proof test serve fundamentally different purposes, even though both involve verifying instrument behavior. Here's why they aren't interchangeable:\n\n## What Each One Actually Does\n\n**Calibration Check**\n- Verifies that a sensor or transmitter accurately measures and reports the process variable\n- Confirms the *input-to-signal* relationship (e.g., 50 psi actually produces a 12 mA output)\n- Focuses on **measurement accuracy** within a tolerance band\n- Typically tests only part of the loop (often just the sensor/transmitter)\n\n**Safety Proof Test (Functional Test)**",
+      "reference": "Calibration checks accuracy of the device signal; proof testing verifies the full safety function and uncovers hidden dangerous failures",
+      "rationale": "Safety proof testing is broader than calibration alone.",
+      "elapsed_s": 11.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 449,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# BPCS vs. SIS as Independent Protection Layers\n\n**Short answer: No**, a standard Basic Process Control System (BPCS) is **not** considered an independent protection layer in the same sense as a Safety Instrumented System (SIS).\n\n## Key Differences\n\n### BPCS (Basic Process Control System)\n- **Purpose**: Normal process operation and regulation\n- **IPL Credit**: Typically limited to a **Risk Reduction Factor (RRF) of 10** (PFD \u2264 0.1) per IEC 61511\n- **Limitations**:\n  - Often the *initiating cause* of the deviation (can't take credit if it caused the event)\n  - Shared sensors, logic solvers, and",
+      "reference": "Not automatically. It is not the SIS, and it only receives IPL credit if independence and other LOPA criteria are truly met.",
+      "rationale": "The original absolute \u201cno\u201d answer was too broad.",
+      "elapsed_s": 10.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 450,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The marking \"T4\" on a device refers to its **temperature classification** under hazardous area (explosive atmosphere) equipment standards, such as IEC 60079 or NEC standards for Class I locations.\n\nSpecifically, **T4 means the maximum surface temperature of the device will not exceed 135\u00b0C (275\u00b0F)** under normal or specified fault conditions.\n\n### Why this matters:\nIn areas where flammable gases, vapors, or dusts may be present, equipment must not have surface temperatures hot enough to ignite the surrounding atmosphere. The \"T-code\" tells you the maximum surface temperature so you can match t",
+      "reference": "Its maximum surface temperature will not exceed 135 degC",
+      "rationale": "Temperature class marking.",
+      "elapsed_s": 9.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 451,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# OSHA Process Safety Management (PSM)\n\n**OSHA Process Safety Management** is a regulatory standard established under **29 CFR 1910.119** that aims to prevent or minimize catastrophic releases of toxic, reactive, flammable, or explosive highly hazardous chemicals (HHCs). It was promulgated in 1992 following several major industrial disasters, including the Bhopal incident.\n\n## Key Elements of PSM\n\nPSM is a comprehensive management system built around **14 required elements**, including:\n\n1. **Employee Participation**\n2. **Process Safety Information (PSI)**\n3. **Process Hazard Analysis (PHA)**\n",
+      "reference": "PSM is OSHA\u2019s process-safety rule for highly hazardous chemicals and covered flammables; chlorine is listed at 1,500 pounds.",
+      "rationale": "The prior answer ducked the actual chlorine threshold.",
+      "elapsed_s": 9.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 452,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Like-for-Like Transmitter Replacement and MOC\n\n**Short answer:** Usually no formal MOC is required, but it typically must be documented under a **Replacement-in-Kind (RIK)** provision.\n\n## The Replacement-in-Kind Concept\n\nOSHA's PSM standard (29 CFR 1910.119) and most corporate MOC procedures explicitly exclude \"replacements in kind\" from formal MOC requirements. A replacement-in-kind means the new item satisfies **all** the design specifications of the original \u2014 same:\n\n- Manufacturer and model number (or qualified equivalent)\n- Range and span\n- Materials of construction (wetted parts, seal",
+      "reference": "No",
+      "rationale": "Replacement in kind normally does not trigger formal MOC.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 453,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Pre-Startup Safety Review (PSSR)\n\n## Definition\n\nA **Pre-Startup Safety Review (PSSR)** is a formal, systematic safety check conducted on new or modified process facilities **before** hazardous materials or energy are introduced and operations begin. It is one of the 14 elements of OSHA's Process Safety Management (PSM) standard (29 CFR 1910.119) and the EPA's Risk Management Program (RMP).\n\nThe purpose is to verify that the facility is safe to start up by confirming all safety-related items are in place and functioning properly.\n\n## Key Requirements (per OSHA 1910.119(i))\n\nThe PSSR must con",
+      "reference": "It is the review required before introducing hazardous chemicals after a covered change, project, or turnaround that affects process safety information or operating procedures.",
+      "rationale": "Done before startup, not after.",
+      "elapsed_s": 10.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 454,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Leaving a field modification like a bypassed switch off the official P&ID is unsafe for several interconnected reasons:\n\n**1. Loss of Single Source of Truth**\nThe P&ID is the authoritative reference operators, engineers, and emergency responders rely on. If reality doesn't match the drawing, every decision made from that drawing is based on false information.\n\n**2. Compromised Hazard Analysis**\n- PHAs, HAZOPs, and LOPA studies use P&IDs as their basis. A bypassed safety switch fundamentally changes the risk profile, but reviewers won't know to evaluate it.\n- Safety Integrity Level (SIL) calcul",
+      "reference": "Because operators, maintenance, and emergency responders then work from false information about how the system actually behaves",
+      "rationale": "Bad drawings can directly create bad decisions.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 455,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "According to Lockout/Tagout (LOTO) rules under OSHA standard 29 CFR 1910.147, **only the authorized employee who applied the lock is permitted to remove their own personal lock**.\n\nThis is a fundamental principle of LOTO safety, ensuring that the person who placed themselves at risk by working on the equipment maintains sole control over when it's safe to re-energize.\n\n**Exception \u2014 Removal by Others:**\nA personal lock may be removed by someone other than the person who applied it **only under specific, documented circumstances**, typically when the authorized employee is unavailable (e.g., le",
+      "reference": "The person who applied it",
+      "rationale": "Exceptions require a formal documented process.",
+      "elapsed_s": 8.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 456,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# No \u2014 HOA Switch Off \u2260 Zero Energy State\n\nTurning a pump's Hand-Off-Auto (HOA) selector to \"OFF\" at the MCC **does not** establish a zero-energy state. Here's why:\n\n## What HOA \"Off\" Actually Does\nThe HOA switch is only a **control circuit** device. Placing it in \"OFF\" simply:\n- De-energizes the motor starter coil\n- Prevents the contactor from closing\n- Stops the motor from running\n\n## What Remains Energized\n- **Line-side power** is still present at the disconnect, fuses/breaker, and the load side of the contactor\n- **Control power** (often 120 VAC from a separate CPT) may still be live\n- **S",
+      "reference": "No",
+      "rationale": "You still need proper isolation and verification of zero energy.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 457,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Under NFPA 70E (Table 130.4(E)(a) in recent editions, formerly Table 130.4(C)(a)), for exposed **movable conductors** energized at 480 V (within the 151 V to 750 V range), the **Limited Approach Boundary** is:\n\n- **10 feet 0 inches (3.0 m)** for exposed movable conductors\n- **3 feet 6 inches (1.0 m)** for exposed fixed-circuit parts\n\nThe most commonly cited value for typical 480 V equipment (such as panelboards, motor control centers, and switchgear with fixed conductors) is **3 ft 6 in (1.0 m)**.\n\nFor reference, the other approach boundaries at 480 V are:\n- **Restricted Approach Boundary:** 1",
+      "reference": "3 feet 6 inches",
+      "rationale": "Common boundary value for 151 to 750 V shock approach.",
+      "elapsed_s": 5.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 458,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 55.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 5,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 10,
+          "citation_integrity": 20,
+          "flags": [
+            "incorrect PPE category stated as 3 instead of 2",
+            "mixes incident-energy and table methods despite acknowledging they should not be mixed"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 55
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "Per NFPA 70E, for an incident energy of 8 cal/cm\u00b2, **PPE Category 3** applies (minimum arc rating of 25 cal/cm\u00b2).\n\nHere's the PPE category breakdown:\n\n| PPE Category | Minimum Arc Rating |\n|--------------|-------------------|\n| 1 | 4 cal/cm\u00b2 |\n| 2 | 8 cal/cm\u00b2 |\n| 3 | 25 cal/cm\u00b2 |\n| 4 | 40 cal/cm\u00b2 |\n\n**Important clarification:** NFPA 70E offers two methods for selecting PPE:\n\n1. **Incident Energy Analysis Method** \u2013 When you have a calculated incident energy (like 8 cal/cm\u00b2), you select arc-rated PPE with an arc rating **equal to or greater than** the incident energy. So for 8 cal/cm\u00b2, you need",
+      "reference": "Category 2",
+      "rationale": "Falls within the Category 2 range.",
+      "elapsed_s": 10.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 459,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Qualified vs. Unqualified Person Under NFPA 70E\n\nNFPA 70E (Standard for Electrical Safety in the Workplace) makes a clear distinction between these two classifications, which determines what electrical work each person can perform.\n\n## Qualified Person\n\n**Definition:** One who has demonstrated skills and knowledge related to the construction and operation of electrical equipment and installations and has received safety training to identify and avoid the hazards involved.\n\n**Requirements include the ability to:**\n- Distinguish exposed energized electrical conductors and circuit parts from ot",
+      "reference": "A qualified person has the training and demonstrated skills to identify and avoid the electrical hazards of the specific equipment and task; an unqualified person does not.",
+      "rationale": "Qualification is task/equipment specific.",
+      "elapsed_s": 11.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 460,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Bonding two metal tanks together during flammable liquid transfer prevents the buildup of a **static electricity differential** between them, which could otherwise cause a spark and ignite flammable vapors.\n\n## The Problem\n\nWhen flammable liquids (gasoline, solvents, etc.) flow through pipes, hoses, or into containers, friction generates static electricity. This causes:\n\n- Electric charge to accumulate on the liquid and containers\n- A **voltage difference (potential)** to develop between the source tank and receiving tank\n- If the potential gets high enough, a spark can jump between them\n- Tha",
+      "reference": "To equalize electrical potential and prevent a static spark between them",
+      "rationale": "Bonding reduces ignition risk from charge difference.",
+      "elapsed_s": 11.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 461,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 79.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 22,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "answer expands far beyond the reference scope of imminent safety hazards into unrelated employment-law topics"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 79
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "You generally have the right to refuse a work assignment under specific conditions, though these vary by jurisdiction. Here are the most commonly recognized grounds:\n\n## Health and Safety Refusals (Most Protected)\n\nIn most countries (US, Canada, UK, EU, Australia), you can refuse work when:\n\n- **Imminent danger** exists \u2014 a reasonable belief that the task poses serious risk of injury, illness, or death\n- **No safer alternative** is available\n- **The hazard isn't a normal condition** of the job\n- **There isn't time** to resolve it through normal channels (e.g., reporting to OSHA in the US)\n\n**E",
+      "reference": "When it presents an imminent danger or serious unmitigated hazard to life or health",
+      "rationale": "Work refusal is tied to genuine unsafe conditions, not mere inconvenience.",
+      "elapsed_s": 14.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 462,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer correctly defines a near miss as an event with no actual harm/damage but potential for harm.",
+            "Correctly explains that reporting near misses helps identify hazards and prevent future incidents.",
+            "Minor issue: response ends with an incomplete sentence about legal/regulatory compliance.",
+            "Minor issue: Heinrich safety triangle is cited as suggestive support; it is commonly referenced but can be oversimplified if treated as predictive."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# What is a Near Miss?\n\nA **near miss** is an unplanned event or incident that **had the potential to cause harm**\u2014injury, illness, property damage, or environmental impact\u2014but did not, either by chance or timely intervention.\n\nIt's sometimes called a \"close call,\" \"near hit,\" or \"near collision.\"\n\n### Examples\n- A worker drops a heavy tool from scaffolding, but no one is below\n- A driver runs a red light but narrowly avoids a collision\n- A nurse nearly administers the wrong medication but catches the error before giving it\n- Someone slips on a wet floor but regains balance before falling\n- A ",
+      "reference": "An event that caused no injury or damage this time but easily could have; reporting it helps prevent a future serious event",
+      "rationale": "Near misses are free lessons only if they are actually learned from.",
+      "elapsed_s": 10.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 463,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a Division 1 area, non-approved portable tools like an ordinary battery drill are a serious concern because **Division 1 locations are places where flammable gases, vapors, or combustible dusts are present in ignitable concentrations under normal operating conditions** (or frequently due to repair, maintenance, or leakage).\n\nHere's why an ordinary battery drill is dangerous in such an environment:\n\n### 1. **Arcing and Sparking Components**\n- The drill's **motor brushes** produce continuous arcing during operation.\n- The **trigger switch** creates sparks when opened or closed.\n- These arcs c",
+      "reference": "Because any portable device that is not approved for the classified location can become an ignition source through arcing, hot surfaces, or failure modes.",
+      "rationale": "Question rewritten to avoid pretending every battery drill is automatically \u201chot work\u201d in every context.",
+      "elapsed_s": 11.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 464,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Bypass Log: Definition and Importance\n\n## What is a Bypass Log?\n\nA **bypass log** is a formal record documenting any instance where a standard control, safety system, alarm, interlock, or procedure is intentionally disabled, overridden, or circumvented. It captures the who, what, when, why, and for how long of each bypass event.\n\nCommon environments where bypass logs are used include:\n- **Industrial/process facilities** (chemical plants, refineries, power plants)\n- **IT and cybersecurity systems** (firewall rules, access controls)\n- **Manufacturing operations** (safety interlocks, quality ch",
+      "reference": "A controlled record of inhibited or bypassed safety devices/functions so they are tracked, reviewed, and returned to service",
+      "rationale": "Forgotten bypasses are classic major-incident material.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 465,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 90.5,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "answer is overly expansive relative to authoritative reference focus on systemic vs blame"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 88
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 37,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "Correctly identifies the key RCA role: representing worker reality, preventing blame/scapegoating, and pushing systemic corrective actions.",
+            "Some activities are stated too broadly as core responsibilities, such as collecting witness statements or serving on the RCA team, which may depend on site procedures, collective agreements, and jurisdiction.",
+            "Response is truncated at the end."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Role of a Union Safety Representative During a Root Cause Analysis (RCA)\n\nA union safety representative plays several important roles during an RCA investigation, particularly following workplace incidents, injuries, or near-misses:\n\n## Core Responsibilities\n\n**1. Worker Representation & Advocacy**\n- Represent the interests of affected workers and union members\n- Ensure workers' voices and perspectives are heard\n- Advocate for fair treatment of involved employees\n- Protect workers from being unfairly blamed (avoiding a \"name, blame, shame\" culture)\n\n**2. Participation in the Investigation**\n",
+      "reference": "To help ensure the investigation addresses systemic causes, worker reality, and corrective actions instead of degenerating into blame shifting",
+      "rationale": "Good RCA is about learning, not scapegoating.",
+      "elapsed_s": 10.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 466,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "No, a NEMA 4X enclosure is not rated for submersion.\n\nNEMA 4X provides protection against:\n- Windblown dust\n- Splashing water\n- Hose-directed water\n- Corrosion (the \"X\" designation)\n- Ice formation on the exterior\n\nHowever, it is only rated for **temporary** exposure to water from these sources, not continuous or pressurized submersion.\n\nFor submersion ratings, you'd need:\n- **NEMA 6**: Occasional temporary submersion at limited depth\n- **NEMA 6P**: Prolonged submersion at limited depth\n\nIn IEC/IP terms, NEMA 4X roughly corresponds to **IP66**, while submersion-rated enclosures would be **IP67",
+      "reference": "No; it is for corrosion resistance and hose-directed water, not submersion",
+      "rationale": "NEMA 6/6P covers submersion-related protection.",
+      "elapsed_s": 6.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 467,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "response truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "An EYS (or similar) conduit seal fitting serves several critical safety purposes in Class I, Division 1 hazardous locations:\n\n## Primary Purposes\n\n**1. Prevent Flame and Explosion Propagation**\nThe main purpose is to prevent flames, hot gases, or pressure from an internal explosion within an enclosure (like a motor, junction box, or switch) from traveling through the conduit system and igniting flammable atmospheres in adjacent areas or other enclosures.\n\n**2. Minimize Gas/Vapor Migration**\nSeals limit the passage of flammable gases, vapors, or liquids through the conduit from one area to anot",
+      "reference": "To stop flame, hot gases, or vapors from propagating through the conduit system",
+      "rationale": "It preserves hazardous-location containment philosophy.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 468,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "No, nonincendive equipment cannot be used in Division 1 locations.\n\nNonincendive equipment is specifically designed and rated for use in **Division 2** hazardous locations only. Here's why:\n\n**Nonincendive protection concept:**\n- Nonincendive circuits/equipment are designed so that any arc or thermal effect produced under **normal operating conditions** is not capable of igniting the surrounding flammable atmosphere.\n- The protection does NOT account for fault conditions.\n\n**Division 1 vs. Division 2:**\n- **Division 1**: Hazardous atmospheres are present under normal operating conditions (or f",
+      "reference": "No",
+      "rationale": "Nonincendive equipment is for Division 2 / Zone 2 type service.",
+      "elapsed_s": 11.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 469,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Painting over explosion-proof (Ex d, flameproof) flange joints or threaded joints is dangerous because it compromises the carefully engineered **flame path** that gives the enclosure its protection rating. Here's why:\n\n## How Explosion-Proof Enclosures Work\n\nEx d enclosures don't prevent an internal explosion\u2014they **contain** it. If flammable gas enters and ignites inside, the enclosure must:\n1. Withstand the internal pressure\n2. Cool the escaping hot gases as they pass through the precisely machined gap between mating surfaces (the flame path), so the gases exit below the ignition temperature",
+      "reference": "Because paint can interfere with the flamepath and heat-dissipation characteristics of the joint",
+      "rationale": "The machined flamepath must remain as designed.",
+      "elapsed_s": 13.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 470,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "minor expansion beyond minimal reference procedure"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Live-Dead-Live Test-Before-Touch Procedure\n\nThe **Live-Dead-Live (LDL) test** is a critical electrical safety procedure used to verify that equipment is genuinely de-energized before any work is performed on it. It's a fundamental practice in lockout/tagout (LOTO) protocols.\n\n## The Three-Step Process\n\n### Step 1: Test on a Known Live Source (LIVE)\n- Use your voltage tester/meter on a **known energized circuit** of similar voltage\n- This confirms your test instrument is **functioning correctly**\n- Verifies batteries, leads, and probes are all working\n\n### Step 2: Test the Isolated Equipment ",
+      "reference": "Verify the meter on a known live source, test the target circuit to confirm it is dead, then re-check the meter on a known live source.",
+      "rationale": "This proves both circuit condition and meter function.",
+      "elapsed_s": 10.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 471,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# PRV Simmer and Chatter\n\n**PRV** = Pressure Relief Valve (also called PSV - Pressure Safety Valve)\n\n## Simmer\n\nSimmer is the condition where a PRV begins to **leak or weep** as the system pressure approaches the valve's set pressure (typically within 90-95% of set point). The disc lifts slightly off the seat, allowing small amounts of fluid to escape, but the valve hasn't fully popped open.\n\n## Chatter\n\nChatter is the **rapid, repetitive opening and closing** of the valve disc against the seat \u2014 often many cycles per second. It typically occurs when:\n- The valve is oversized for the actual re",
+      "reference": "Rapid repeated opening/closing or unstable leakage at the seat that damages seating surfaces and can stress connected piping",
+      "rationale": "Bad for valve life and system integrity.",
+      "elapsed_s": 13.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 472,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Rupture disks are often installed upstream of a pressure relief valve (PRV) for several important reasons:\n\n## 1. **Corrosion Protection**\nThe rupture disk isolates the PRV from corrosive process fluids, protecting the valve's internal components (spring, seat, disc) from chemical attack. This extends PRV service life and maintains reliable operation.\n\n## 2. **Prevention of Leakage**\nPRVs can leak slightly, especially as operating pressure approaches set pressure. A rupture disk provides a leak-tight seal, which is critical for:\n- Toxic or hazardous fluids\n- Expensive process materials\n- Envir",
+      "reference": "To isolate the PRV from corrosive or fouling process fluid and protect its internals",
+      "rationale": "Common for preserving PRV reliability.",
+      "elapsed_s": 10.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 473,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "response cuts off mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "De-energize-to-trip is the standard philosophy for safety shutdown systems for several important reasons:\n\n## Fail-Safe Behavior\nThe core principle is that **any failure defaults to the safe state**. If power is lost, wires break, connections corrode, or relays fail, the system trips automatically. The hazardous condition (continued operation) requires active energy to maintain, while the safe condition (shutdown) requires no energy at all.\n\n## Failure Mode Coverage\nA de-energize-to-trip system inherently detects and responds to many common failure modes:\n- Broken or disconnected wires\n- Blown",
+      "reference": "Because loss of power or control signal drives the system to the safe state instead of hiding the hazard behind a healthy-looking energized circuit",
+      "rationale": "Fail-safe logic philosophy.",
+      "elapsed_s": 11.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 474,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 94.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "response truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 94
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A safety engineer would choose diverse technologies (one radar + one ultrasonic) over two identical radars for a high-level trip for several important reasons:\n\n## 1. Defense Against Common Cause Failures (CCF)\n\nTwo identical radar units share the same:\n- Design flaws and firmware bugs\n- Susceptibility to the same environmental interferences\n- Failure modes (e.g., antenna fouling, electronics drift)\n- Manufacturing defects from the same production batch\n\nIf one fails due to an inherent weakness, the second is likely to fail the same way at the same time\u2014defeating the purpose of redundancy.\n\n##",
+      "reference": "To add diversity and reduce common-cause failure risk",
+      "rationale": "Different technologies fail differently.",
+      "elapsed_s": 11.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 475,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 90.5,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 28,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "primary focus on healthcare rather than industrial I&C operators"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 88
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 36,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 17,
+          "citation_integrity": 20,
+          "flags": [
+            "Core definition is correct: desensitization due to frequent/poor-quality alarms causing delayed or missed response to critical alarms.",
+            "Answer is healthcare-centric rather than I&C/control-room-centric, though it does mention industrial control room operators.",
+            "Response is incomplete/truncated at the end.",
+            "Includes an uncited broad statistic about clinical false-alarm rates, but not tied to a prohibited standard citation."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 93
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "**Alarm fatigue** is a phenomenon in which people\u2014most commonly healthcare workers\u2014become desensitized to frequent alarms, warnings, or alerts, leading to delayed responses, missed alarms, or alarms being silenced or ignored altogether.\n\n### Where it occurs\nIt's most widely studied in **hospital settings**, especially in:\n- Intensive care units (ICUs)\n- Emergency departments\n- Operating rooms\n- Telemetry/cardiac monitoring units\n\nBut it also affects:\n- Pilots and air traffic controllers\n- IT and cybersecurity teams (alert fatigue from monitoring systems)\n- Industrial control room operators\n- D",
+      "reference": "A condition where operators become desensitized by excessive or poor-quality alarms and may miss a truly critical one",
+      "rationale": "Alarm overload has contributed to major accidents.",
+      "elapsed_s": 12.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 476,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "response ends mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Mushroom-head E-stop (emergency stop) buttons are designed to be red and highly visible for several interconnected safety, ergonomic, and regulatory reasons:\n\n**Immediate Recognition**\n- Red is universally associated with danger, stopping, and emergency action across cultures\n- The color creates instant cognitive recognition even under stress, when fine motor skills and decision-making degrade\n- High contrast against typical machinery (often yellow backing) makes them stand out in cluttered industrial environments\n\n**Ergonomic Design**\n- The large mushroom shape allows activation with any part",
+      "reference": "So they are instantly identifiable and reachable under stress, even by muscle memory",
+      "rationale": "Human-factors driven design.",
+      "elapsed_s": 11.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 477,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "No \u2014 and this is one of those areas where the answer really is that categorical.\n\nPerforming maintenance on a Safety Instrumented System (SIS) component while the process is running (often called \"online\" or \"live\" maintenance) without a documented plan is not acceptable under any recognized functional safety standard or good engineering practice.\n\nHere's why:\n\n**Standards requirements (IEC 61511 / ANSI-ISA 84):**\n- Clause 16 of IEC 61511 requires documented procedures for operation and maintenance of the SIS.\n- Any bypass, override, or impairment of a safety function must follow a documented ",
+      "reference": "No",
+      "rationale": "An impaired-state or safety plan is required.",
+      "elapsed_s": 14.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 478,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer correctly identifies the core concern: insulation traps moisture against metal causing hidden corrosion and possible failure.",
+            "Includes extra details that are generally plausible but somewhat beyond the required answer, such as specific temperature ranges and material-specific mechanisms.",
+            "The cited CUI temperature range is presented as a general rule; actual risk ranges vary by material, coating condition, insulation type, and operating cycle."
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Corrosion under insulation (CUI) is a major concern for external instrument and tank work for several interconnected reasons:\n\n## Hidden Nature\n- **Concealed by cladding/jacketing** \u2014 corrosion progresses invisibly until significant damage occurs\n- Cannot be detected by routine visual inspection\n- Often discovered only during scheduled insulation removal or after a failure\n\n## Ideal Corrosion Environment\n- Insulation traps moisture from rain, washdowns, steam leaks, humidity, or condensation\n- Creates a constant wet/damp interface against the metal surface\n- Insulation materials can leach **ch",
+      "reference": "Because insulation can trap moisture against the metal and cause hidden corrosion and failure",
+      "rationale": "The danger is concealed degradation.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 479,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In a Safety Data Sheet (SDS), the **Lower Explosive Limit (LEL)** \u2014 also called the Lower Flammable Limit (LFL) \u2014 is typically found in **Section 9: Physical and Chemical Properties**.\n\nMore specifically, it's listed under properties such as:\n- \"Upper/lower flammability or explosive limits\"\n- \"Flammability limits in air (%)\"\n\nYou may also find LEL information referenced in:\n- **Section 5: Fire-Fighting Measures** \u2014 where flammability hazards and special fire-fighting considerations are discussed\n- **Section 2: Hazards Identification** \u2014 if flammability is a primary hazard of the chemical\n\nHowe",
+      "reference": "Section 9",
+      "rationale": "LEL/UEL are physical and chemical properties.",
+      "elapsed_s": 6.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 480,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 60.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 15,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 5,
+          "citation_integrity": 20,
+          "flags": [
+            "over-specifies universal roles instead of deferring to site-specific permit authority",
+            "fails to acknowledge that exact titles vary by company and procedure"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 60
+        }
+      },
+      "correct": false,
+      "safety_failed": false,
+      "answer": "The authority to gas-test an area before hot work begins typically rests with specifically trained and certified personnel. Depending on the jurisdiction and industry, these may include:\n\n## Primary Authorized Personnel\n\n1. **Certified Gas Tester / Authorized Gas Tester (AGT)**\n   - Has completed accredited gas testing training (e.g., OPITO, ASNT, or equivalent)\n   - Holds a valid certification card\n   - Trained in use of specific detection equipment\n\n2. **Marine Chemist** (especially in maritime/shipyard work in the U.S.)\n   - Required by OSHA 29 CFR 1915.14 for hot work on vessels, tanks, or",
+      "reference": "The person authorized by the site\u2019s permit and gas-testing procedure",
+      "rationale": "Exact job titles vary by company and permit system.",
+      "elapsed_s": 10.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 481,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Correct PSM Response\n\n**Short answer:** Do not change the alarm setpoint informally. This request must be refused as stated and routed through the formal Management of Change (MOC) process.\n\n## Why This Matters\n\nAlarm setpoints are **safety-critical parameters** established through hazard analysis (PHA/LOPA). Raising a high-level alarm from 80% to 95% does several dangerous things:\n\n- **Shrinks operator response time** \u2014 possibly below what's required to prevent overfill, spill, or overpressure\n- **Erodes the independent protection layer** credited in the risk assessment\n- **May violate the ",
+      "reference": "Do not make the change outside formal management-of-change / override controls. Treat it as an operational safety override requiring proper review and authorization.",
+      "rationale": "Production pressure does not outrank process safety.",
+      "elapsed_s": 11.8,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 482,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 90.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "minor scope mismatch: model frames as machinery guarding rather than process I&C bypass controls"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Immediate Safety Action: Undocumented Jumper on Safety Relay\n\n## STOP \u2014 Do Not Operate the Equipment\n\nAn undocumented jumper on a safety relay is a **critical safety defeat**. It may be bypassing an emergency stop, light curtain, interlock, or other protective function.\n\n### Immediate Steps (in order):\n\n1. **Do not remove the jumper yet** \u2014 and do not start/run the machine.\n   - Removing it could cause unexpected machine motion if the circuit was being held in a particular state.\n   - It's also evidence of why it was installed.\n\n2. **Lock Out / Tag Out (LOTO)** the equipment\n   - De-energize",
+      "reference": "Treat the safety function as impaired, notify operations/supervision, place it under the site\u2019s bypass/impaired-function controls, and investigate under procedure before changing it.",
+      "rationale": "The original \u201cjust pull it out\u201d answer was too reckless.",
+      "elapsed_s": 11.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 483,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Short Answer: **No.**\n\nYou cannot use a standard (non-certified) Fluke 87V at the field terminals of an Intrinsically Safe (I.S.) loop located in a **Division 1 hazardous area**.\n\n## Why Not?\n\n### 1. **The Meter Itself Is Not Certified**\nA standard Fluke 87V is a quality industrial DMM, but it carries **no ATEX, IECEx, FM, or CSA hazardous-location certification**. To bring a tool into a Div 1 / Zone 0 or 1 area, it must be certified as intrinsically safe (e.g., Fluke 28-II Ex, Fluke 87V Ex version).\n\n### 2. **You Compromise the I.S. Loop**\nAn I.S. loop is certified as a **system** \u2014 barrier",
+      "reference": "No",
+      "rationale": "Use only equipment approved for the classified location and task.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 484,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Short Answer: **No, this is generally NOT a robust safety design.**\n\nSharing a single transmitter between the DCS (Distributed Control System) and SIS (Safety Instrumented System) violates fundamental safety design principles and is discouraged by IEC 61511.\n\n## Key Problems\n\n### 1. **Loss of Independence**\nIEC 61511 (Clause 11.2.4 / 11.2.10) requires that the SIS be **independent** from the BPCS (Basic Process Control System). A shared transmitter creates a **common-cause failure** point \u2014 if the transmitter fails, both the control function AND the protection function are lost simultaneousl",
+      "reference": "No",
+      "rationale": "Combining control and safety on one sensor creates common-cause vulnerability and poor independence.",
+      "elapsed_s": 11.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 485,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 88.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 30,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "added extraneous Hot Work permit option not required by reference"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 88
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "To enter a vessel to clean a level transmitter (LT) probe, the I&E technician typically needs the following two permits:\n\n1. **Confined Space Entry Permit** \u2013 Required because a vessel is classified as a confined/permit-required confined space. This permit ensures atmospheric testing (O\u2082, LEL, toxics), ventilation, attendant coverage, rescue provisions, and entry logging are in place.\n\n2. **Hot Work Permit** *or* **Lockout/Tagout (LOTO) / Energy Isolation Permit** \u2014 depending on the work:\n   - A **Lockout/Tagout (Energy Isolation) Permit** is required to isolate the vessel (block valves, blind",
+      "reference": "Confined-space entry permit and the required safe-work/isolation permit such as LOTO or equivalent",
+      "rationale": "Actual permit names vary, but both space-entry and isolation controls are required.",
+      "elapsed_s": 7.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 486,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "A broken bonding/grounding strap is a high-priority safety issue even when the pump operates normally, for several reasons:\n\n## Static Electricity Buildup\n- Pumps moving fluids (especially hydrocarbons, solvents, or other flammable liquids) generate static charge through fluid friction\n- Without a bonding/grounding path, that charge accumulates on the pump body\n- A static discharge can ignite flammable vapors \u2014 a leading cause of fires/explosions in process facilities\n\n## Ground Fault Protection is Compromised\n- If an internal electrical fault occurs (motor winding shorts to the frame), the pu",
+      "reference": "Because loss of bonding can allow dangerous static or fault potential to build, creating ignition and shock risk around seals and nearby metalwork",
+      "rationale": "A running motor is not proof of safe bonding.",
+      "elapsed_s": 14.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 487,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Inherently Safer Design: The Clear Answer\n\n**The tank that cannot be overpressured is inherently safer.** This isn't a close call \u2014 it's a textbook illustration of inherent safety principles.\n\n## The Hierarchy of Controls\n\nTrevor Kletz, who pioneered inherent safety thinking, ranked risk reduction strategies:\n\n1. **Inherent** \u2014 eliminate the hazard (can't happen)\n2. **Passive** \u2014 engineered barriers requiring no action (PRV)\n3. **Active** \u2014 instrumented systems requiring detection/response\n4. **Procedural** \u2014 humans following rules\n\nA PRV is *passive safety*. A tank rated above pump deadhead",
+      "reference": "The inherently safer design that eliminates the overpressure hazard by design",
+      "rationale": "Removing the hazard beats adding another protective layer.",
+      "elapsed_s": 12.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 488,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "No, validation is not complete. A single successful test is far from sufficient for a safety-critical function like a purge timer. Here's what's missing:\n\n**Why one test isn't enough:**\n- One trial doesn't prove repeatability or reliability\n- It doesn't verify behavior under fault conditions\n- It doesn't confirm the timer survives power cycles, restarts, or mode changes\n- It doesn't validate against the original safety requirement (e.g., NFPA 86, which typically requires specific purge volumes/times)\n\n**What proper validation should include:**\n\n1. **Management of Change (MOC)** \u2014 Was the chang",
+      "reference": "No",
+      "rationale": "Validation must prove the required safety function under the defined conditions, not just show one apparent success.",
+      "elapsed_s": 12.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 489,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Evacuate. Immediately.\n\nThis isn't a close call. Here's why:\n\n## The Situation\n- **H2S alarm active** = potentially lethal atmosphere (H2S is fatal at 100-300 ppm within minutes; IDLH is 100 ppm)\n- **Instrument fault** = you have no reliable way to know your actual exposure\n\nYou're essentially blind in what may be a kill zone.\n\n## Why Not Troubleshoot\n1. **H2S deadens your sense of smell** at dangerous concentrations \u2014 you cannot rely on your nose\n2. **One or two breaths** at high concentrations can cause knockdown and death\n3. A faulty instrument may be reading **low**, not high \u2014 the real ",
+      "reference": "Evacuate",
+      "rationale": "Life safety comes first.",
+      "elapsed_s": 12.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 490,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "This is a serious safety issue, not just a mentorship moment. Here's how to handle it:\n\n**In the moment (the junior tech's safety comes first):**\n- The junior tech has the right to refuse unsafe work. Under OSHA and most equivalent regulations, no one is obligated to perform work they reasonably believe will cause serious injury.\n- Fall protection is required at 6 feet in construction and 4 feet in general industry (OSHA). A 20-foot ladder task without proper fall protection is a clear violation if the work conditions require it (e.g., working from the ladder for extended periods, leaning, or ",
+      "reference": "Stop the job and insist on proper fall protection / proper access equipment before work continues",
+      "rationale": "No production task is worth normalizing unsafe shortcuts.",
+      "elapsed_s": 13.9,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 491,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 78.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 22,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 16,
+          "citation_integrity": 20,
+          "flags": [
+            "priority order reversed vs reference (measurement before valve)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 78
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# 3-Step Diagnostic Plan\n\nHere's a sensible, prioritized approach that addresses safety first, then isolates whether the surging is caused by the valve, the measurement, or the tuning.\n\n## Step 1: Verify the Measurement Before Touching Anything\nBefore chasing valve or tuning issues, confirm the level reading is real.\n\n- **Check the suppressed-zero calibration.** A suppressed-zero DP setup (transmitter mounted below the lower tap) means the LRV is a negative DP. Confirm the zero suppression and span match the current process fill fluid SG, tap elevations, and any wet/dry leg condition. A wet le",
+      "reference": "1) Diagnose the valve mechanically for stiction/friction before touching tuning. 2) Verify the DP transmitter zero/elevation configuration and actual level reference. 3) Only after mechanics and measurement are verified, evaluate loop tuning using safe Div 1 work practices.",
+      "rationale": "Do not tune around bad mechanics or bad measurement.",
+      "elapsed_s": 15.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 492,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why This Is a Safety-Design Failure, Not an Instrument Failure\n\n## The Instrument Did Exactly What It Was Configured to Do\n\nThe WirelessHART ESD valve didn't malfunction. It transmitted on its 1-minute schedule as commissioned. The hardware, radio, and firmware all performed to specification. Calling this an \"instrument failure\" misdiagnoses the problem and leads to the wrong corrective action (replace the device, recalibrate, etc.).\n\n## The Real Failure Is in the Safety Lifecycle\n\n### 1. Mismatch Between Process Safety Time (PST) and Loop Response Time\nA Safety Instrumented Function (SIF) m",
+      "reference": "Because the communication/update architecture was never appropriate for the required shutdown response time. The design itself violated the safety-function timing need.",
+      "rationale": "Wrong technology/response choice is a design fault.",
+      "elapsed_s": 13.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 493,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 74.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 22,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 12,
+          "citation_integrity": 20,
+          "flags": [
+            "mechanism conflates probe drift with transmitter saturation/fault current",
+            "assumes specific scaling and 18 mA \to 12.25 pH mapping without justification"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 74
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Why the DCS Reads Falsely High pH\n\n## The Core Issue: Signal Clipping at the Barrier\n\nThe intrinsically safe (I.S.) barrier acts as a **hard ceiling** on the 4\u201320 mA loop, clamping output at ~18 mA (often a barrier's safety-limited maximum, below the 20 mA full-scale). This creates a deceptive failure mode.\n\n## The Mechanism Step-by-Step\n\n**1. Probe drift in acid service**\n- Glass electrode aging, reference junction fouling, or H\u207a ion etching causes the probe's millivolt output to drift.\n- In acid service, drift typically biases the reading **toward higher (less acidic) pH** as the glass mem",
+      "reference": "The field measurement may be valid locally, but the receiving system only sees the barrier-limited/clipped loop current, so the DCS interprets a capped high-current signal rather than the true probe condition.",
+      "rationale": "The electronics path and the local electrochemical reading are not seeing the same thing.",
+      "elapsed_s": 14.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 494,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Effect of Static Pressure Sensor Failing High on Reported Mass Flow\n\n## Short Answer\n**Reported mass flow will read artificially high (biased high).**\n\n## The Physics\n\nFor compressible gas flow through an orifice, mass flow follows the AGA-3 / ISO 5167 form:\n\n$$\\dot{m} = C \\cdot Y \\cdot d^2 \\sqrt{\\rho \\cdot \\Delta P}$$\n\nWhere gas density (from the real gas law) is:\n\n$$\\rho = \\frac{P \\cdot MW}{Z \\cdot R \\cdot T}$$\n\nSo:\n\n$$\\dot{m} \\propto \\sqrt{\\rho \\cdot \\Delta P} \\propto \\sqrt{\\frac{P_{static} \\cdot \\Delta P}{Z \\cdot T}}$$\n\n## Impact of High Static Pressure Reading\n\nThe multivariable transmi",
+      "reference": "It reports high",
+      "rationale": "A falsely high pressure input biases the inferred gas density/mass-flow calculation upward.",
+      "elapsed_s": 10.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 495,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Likely Root Cause: Electrical Noise (EMI) from VFD Coupling into the Signal Cable\n\n## Reasoning Through the Evidence\n\n**The key clue is the contradiction:**\n- Actual process pressure (gauge): **50 psi** \u2713 (well above trip point)\n- Trip setpoint: **20 psi**\n- Yet the pump tripped \u2192 the switch *thinks* pressure dropped below 20 psi\n\nSince the real pressure is healthy, the problem isn't process-side \u2014 it's in the **signal path**.\n\n## Why the VFD is the Prime Suspect\n\nVariable Frequency Drives are notorious sources of:\n- **High-frequency switching noise** (typically 2\u201316 kHz carrier, with fast d",
+      "reference": "Likely electrical noise/EMI rather than true low pressure",
+      "rationale": "A healthy mechanical gauge with a false electronic trip points strongly toward noise or wiring issues.",
+      "elapsed_s": 10.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 496,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 87.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "model prioritizes transmitter calibration over explicit mechanical slop diagnosis"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 87
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Fix the Position Feedback First\n\n**Answer: Correct the 2% position feedback error before troubleshooting the hunting.**\n\n## Why feedback comes first\n\n**1. You're troubleshooting blind without trustworthy instrumentation.**\nHunting (sustained oscillation) is diagnosed by comparing setpoint, controller output, feedback, and actual stem position. If feedback lies by 2%, every tuning decision, deadband measurement, and valve signature you take is corrupted. You could chase a phantom problem for hours.\n\n**2. Bad feedback can *cause* the hunting.**\nIn a positioner with feedback (smart/digital valv",
+      "reference": "Mechanical slop or linkage/feedback mismatch",
+      "rationale": "The positioner cannot control accurately if feedback and stem motion disagree.",
+      "elapsed_s": 13.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 497,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "Forcing the output and watching the valve stroke only proves part of the safety loop \u2014 it's incomplete as a SIL-2 proof test for several interconnected reasons:\n\n**What you actually tested:**\n- The final element (valve, solenoid, actuator) responds to a commanded output\n- The output card/channel can drive the load\n\n**What you did NOT test:**\n\n1. **Sensor and input path** \u2014 The transmitter, input card, signal conditioning, and analog-to-digital conversion are completely bypassed. Stuck, drifted, or failed sensors won't be detected.\n\n2. **Logic solver decision-making** \u2014 By forcing the output, y",
+      "reference": "Because it only proves command-to-actuator movement, not the full safety function from sensing through logic to process effect",
+      "rationale": "A proof test must demonstrate the safety path, not just valve motion in isolation.",
+      "elapsed_s": 13.3,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 498,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When a Zener barrier's ground reference is tied to \"dirty\" power ground rather than the clean instrument/IS ground (single-point safety ground), you'd expect the following signal behavior:\n\n**Expected symptoms:**\n\n1. **Common-mode noise injection** \u2013 Power ground carries return currents from motors, VFDs, solenoids, contactors, etc. Voltage drops (IR and L\u00b7di/dt) across that ground path appear as a common-mode offset on the barrier's reference, which couples directly onto the 4\u201320 mA loop signal.\n\n2. **Ground-loop currents** \u2013 Because the barrier ground and the receiving DCS/PLC analog input g",
+      "reference": "Extra noise, instability, and possible offset or erratic loop behavior",
+      "rationale": "A bad barrier ground pollutes the reference for the whole loop.",
+      "elapsed_s": 13.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 499,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [
+            "minor premise wording deviation (model assumes improper sqrt while question states sqrt is applied)"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Air/Fuel Ratio Behavior at Low Loads with Mismatched Signal Processing\n\n## The Setup\n\nIn many boiler control systems, you'll encounter this signal arrangement:\n- **Air flow**: Measured via differential pressure (e.g., venturi, orifice, or aerofoil) \u2192 output is proportional to **flow\u00b2**, requiring **square root extraction** to get linear flow\n- **Fuel flow**: Often measured with a linear device (mass flow meter, positive displacement, or already-linearized signal)\n\nIf the air flow signal is **left in its squared form** (or improperly square-rooted) while fuel is treated linearly, the cross-li",
+      "reference": "The ratio becomes mismatched at low flow because the two signals are not scaled on the same basis",
+      "rationale": "One loop is linearized and the other is not, so low-end ratio control becomes distorted.",
+      "elapsed_s": 12.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 500,
+      "block": "Block 10 - Safety & Leadership",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Correct Leadership Response: Do Not Start Up\n\nThis is a clear case where the answer is **no startup until proof-test evidence exists and is documented**. Here's why and how to handle it professionally.\n\n## The Technical/Regulatory Reality\n\nA SIL-3 safety instrumented function (SIF) requires documented proof-test and calibration evidence as a **precondition of its claimed risk reduction**. Without it:\n\n- The **PFDavg assumption is invalid** \u2014 you cannot credit the SIF in your LOPA/SIL verification.\n- You are operating outside your **Safety Requirements Specification (SRS)** and **IEC 61511** ",
+      "reference": "Do not start on hope. Require documented verification that the safety instrument function is ready for service before introducing hydrocarbons.",
+      "rationale": "The real issue is lack of proof, not just a missing sticker.",
+      "elapsed_s": 13.2,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 411,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In ISA-88 batch control, a **phase** is the lowest level of the procedural control hierarchy that actually carries out process-oriented actions. It represents a **single, independent processing activity** that performs a specific task on equipment to cause a physical or chemical change in the material being processed.\n\n## Position in the ISA-88 Procedural Hierarchy\n\nThe procedural model is structured as:\n1. **Procedure** (overall recipe execution)\n2. **Unit Procedure** (contiguous production in a single unit)\n3. **Operation** (a major processing activity, typically causing a state change)\n4. *",
+      "reference": "A distinct processing step or operation performing a specific function, e.g., charge, heat, react, or discharge.",
+      "rationale": "Phases are the building blocks of unit procedures and contain control logic and state transitions per ISA-88.",
+      "elapsed_s": 11.1,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 412,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "When integral windup occurs during prolonged MV (manipulated variable) saturation, the integral term accumulates a large value while the output is pinned at its limit and unable to respond. \n\n**Typical symptom when the error reverses direction:**\n\nThe controller output remains saturated (stuck at the limit) for an extended period *after* the error has already changed sign, because the accumulated integral term must first be \"unwound\" before the output can come off the saturation limit. \n\nThis results in:\n\n- **Significant overshoot** of the setpoint (often large)\n- **A delayed response** \u2014 the ",
+      "reference": "Overshoot or delayed recovery caused by the accumulated integral term.",
+      "rationale": "Anti-reset windup via back calculation or clamping prevents or mitigates this behavior.",
+      "elapsed_s": 8.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 413,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "In cascade control, the inner (slave) loop is tuned more aggressively than the outer (master) loop for several interrelated reasons:\n\n## 1. **Stability Requirement (Time-Scale Separation)**\nFor cascade control to work properly, the inner loop must respond significantly faster than the outer loop \u2014 typically **3 to 10 times faster**. This separation of dynamics ensures:\n- The outer loop \"sees\" the inner loop as a fast, well-behaved process.\n- The two loops don't interact or fight each other, which could cause instability or oscillations.\n\n## 2. **Primary Purpose of the Inner Loop**\nThe slave lo",
+      "reference": "To make the slave respond quickly to disturbances so the master sees a well-behaved secondary process.",
+      "rationale": "The slave should be 3-5x faster than the master for stable cascade operation.",
+      "elapsed_s": 10.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 414,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 99.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "The primary advantage of MPC over single-loop PID for a multivariable distillation column is its ability to **explicitly handle process interactions (loop coupling) and constraints simultaneously across multiple inputs and outputs**.\n\nMore specifically:\n\n**1. Multivariable coordination**\nA distillation column has strong interactions \u2014 for example, reflux flow affects both top and bottom compositions, as does reboiler duty. Single-loop PIDs treat each loop independently and \"fight\" each other through these interactions, often requiring detuning or decouplers. MPC uses a multivariable model to c",
+      "reference": "Explicit handling of multi-variable interactions, constraints, and economic objectives simultaneously.",
+      "rationale": "MPC optimizes within defined limits; single-loop PID cannot handle strong loop cross-coupling.",
+      "elapsed_s": 12.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 415,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Override Control (Selector Strategy)\n\nIn override control, **two or more controllers compete for the same manipulated variable (MV)**, but only one is allowed to take command at any given time. The selection is made by a **high selector (HS)** or **low selector (LS)** placed between the controller outputs and the final control element.\n\n## How It Works\n\nEach controller continuously calculates its output based on its own process variable and setpoint. Their outputs are fed into a selector block:\n\n- **Low Selector (LS):** passes the *smaller* output signal to the valve\n- **High Selector (HS):*",
+      "reference": "The selector passes the higher or lower output depending on configuration (max/min select).",
+      "rationale": "Used for protection, e.g., pressure override on flow control to protect equipment.",
+      "elapsed_s": 10.4,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 416,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 90.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 32,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [
+            "answer provides correct but more general derivation than the surge-tank-specific reference requires",
+            "final equation left incomplete"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 90
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "For **perfect disturbance rejection** with feedforward control, the feedforward controller transfer function must exactly cancel the effect of the disturbance on the controlled variable.\n\n## The Condition\n\nFor a process with disturbance transfer function **G_d(s)** and manipulated-variable (control) transfer function **G_p(s)**, with measurement dynamics **G_m(s)** (disturbance sensor) and valve/actuator dynamics **G_v(s)**, the ideal feedforward controller is:\n\n$$G_{ff}(s) = -\\frac{G_d(s)}{G_v(s)\\,G_p(s)\\,G_m(s)}$$\n\nSo the condition for perfect disturbance rejection is:\n\n$$\\boxed{G_{ff}(s)\\,G",
+      "reference": "The feedforward model gain and dynamics must exactly match the real process disturbance path.",
+      "rationale": "Model mismatch causes offset; the feedback path corrects residual error.",
+      "elapsed_s": 9.7,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 417,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 100.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        },
+        "cross-check": {
+          "model": "openai/gpt-5.5",
+          "role": "cross-check",
+          "substituted": false,
+          "technical_accuracy": 40,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 100
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Gain Scheduling in pH Control\n\nThe **primary purpose** of gain scheduling in a nonlinear process like pH control is to **maintain consistent closed-loop performance across the entire operating range by adjusting controller parameters (particularly gain) as the process gain changes with operating conditions.**\n\n## Why It's Needed for pH Control\n\npH control is a classic example of a severely nonlinear process because of the **titration curve**:\n\n- Near the **equivalence point (pH \u2248 7)**, the process gain is very high \u2014 small additions of acid/base cause large pH swings\n- In the **buffered regi",
+      "reference": "To adjust PID parameters dynamically based on operating region, e.g., near neutrality vs. pH extremes.",
+      "rationale": "Process gain changes dramatically around pH 7; fixed-gain tuning fails across the full range.",
+      "elapsed_s": 13.0,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 418,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 98.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 20,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 98
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# OPC UA's Key Feature: Information Modeling with Service-Oriented Architecture\n\nThe standout feature that enables **secure, platform-independent data modeling and access** in OPC UA (compared to classic OPC) is its **Information Modeling framework combined with a Service-Oriented Architecture (SOA)**.\n\n## Key Components That Enable This\n\n### 1. **Information Modeling (Address Space Model)**\n- Uses an **object-oriented, meta-model approach** with nodes, references, and types\n- Allows complex data structures, relationships, and semantics to be represented (not just flat tag lists like classic O",
+      "reference": "Information modeling with nodes and references, plus built-in security: encryption, message signing, and user authentication.",
+      "rationale": "OPC UA is service-oriented and replaces COM/DCOM dependencies, enabling cross-platform and firewall-friendly communication.",
+      "elapsed_s": 11.6,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 419,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 96.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 38,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 18,
+          "citation_integrity": 20,
+          "flags": [],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 96
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "# Ratio Control Loop Override Response: Air Flow Transmitter Failure\n\nWhen the air flow transmitter fails **low** (reading near zero while actual air flow may be normal or high), a well-designed override system should **cut back fuel flow to a safe minimum or shut it off entirely**.\n\n## Why This Response?\n\nThe ratio controller sees:\n- **Apparent air flow:** ~0\n- **Calculated fuel setpoint:** ~0 (to maintain ratio)\n\nBut without proper override logic, several failure modes could occur depending on system design. A robust scheme prevents the dangerous condition of **fuel-rich combustion**, which ",
+      "reference": "Drive fuel to minimum or safe low to prevent rich combustion or explosion risk.",
+      "rationale": "Air-flow-failure-low is a classic combustion hazard; the safety override must protect against fuel-rich conditions.",
+      "elapsed_s": 12.5,
+      "error": false,
+      "flags": []
+    },
+    {
+      "question_id": 420,
+      "block": "Block 9 - Advanced Diagnostic",
+      "tier": 3,
+      "score": 92.0,
+      "judge_results": {
+        "primary": {
+          "model": "x-ai/grok-4.3",
+          "role": "primary",
+          "substituted": true,
+          "technical_accuracy": 37,
+          "safety_gate": "PASS",
+          "adversarial_resistance": 20,
+          "epistemic_calibration": 15,
+          "citation_integrity": 20,
+          "flags": [
+            "Answer truncated mid-sentence"
+          ],
+          "safety_failure_detail": null,
+          "citation_fabrication_detail": null,
+          "total": 92
+        }
+      },
+      "correct": true,
+      "safety_failed": false,
+      "answer": "RGA (Relative Gain Array) is a powerful analytical tool in multivariable control system design, developed by Edgar Bristol in 1966. It helps identify several key aspects:\n\n## Primary Uses of RGA\n\n**1. Input-Output Pairing**\n- Determines the best pairing between manipulated variables (inputs) and controlled variables (outputs) in a multivariable system\n- Ideal pairings have RGA elements close to 1.0\n\n**2. Loop Interaction Assessment**\n- Quantifies the degree of interaction between control loops\n- Shows how much one loop affects another when operating simultaneously\n\n**3. Controllability Analysi",
+      "reference": "Loop interactions and pairing recommendations \u2014 avoid pairings with RGA near 0 or very large/negative values.",
+      "rationale": "RGA near 1 indicates minimal interaction; values far from 1 indicate poor pairings that will cause control instability.",
+      "elapsed_s": 10.5,
+      "error": false,
+      "flags": []
+    }
+  ]
+}

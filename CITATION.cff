@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: "IUK: Instrumentation Universal Knowledge — A Tiered Adversarial Benchmark for AI Competency in Industrial Instrumentation and Controls"
+message: "If you use this benchmark, please cite it."
+type: dataset
+authors:
+  - family-names: Anderson
+    given-names: Ryan
+    affiliation: "RelayForge / Dawes Einstein Engine"
+    orcid: ""
+abstract: >-
+  IUK is a 1,547-question adversarial evaluation for AI model competency in
+  industrial instrumentation and controls. Five human-difficulty tiers
+  (Technician through AI Ceiling) anchored to real human performance baselines.
+  Embedded hallucination traps for known industrial standards, an independent
+  binary safety gate, and verified citation integrity scoring. Results are
+  reported across technical accuracy, safety performance, adversarial
+  resistance, epistemic calibration, and citation integrity.
+keywords:
+  - benchmark
+  - llm-evaluation
+  - industrial-ai
+  - instrumentation-and-controls
+  - process-safety
+  - i&c
+  - isa-18.2
+  - iec-61511
+  - sis
+  - sif
+version: "1.5"
+date-released: "2026-05-26"
+url: "https://github.com/relayforge-ai/dawes-benchmarking"
+license: CC-BY-4.0
