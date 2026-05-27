@@ -2,6 +2,24 @@
 
 All notable changes to the IUK benchmark are documented here.
 
+## [v1.5.1] — 2026-05-27 — Two-axis reframe (IUK knowledge ceiling + MANDOS operational ceiling)
+
+Methodology and README updated to articulate that AI competence in industrial settings is two-dimensional, not one. IUK measures the knowledge axis (recall + isolated-question reasoning, T1–T4). MANDOS measures the operational axis (cascading decision quality, authority resistance, field-exposure judgment) and is domain-portable beyond I&C.
+
+### Added
+
+- **Two-axis framing in methodology and README.** Explicit distinction between knowledge ceiling (IUK) and operational ceiling (MANDOS), with the dual frontier as the actual deployment-readiness signal.
+- **8 ANOR-derived T5 bridge candidates** (IUK-T5-ANOR-001 through 008) lifted from SYNTH-001/002/003/004 decision nodes. Each retains operational-judgment character (evidence integration, instrument illusion, authority pressure) but loses the cascade.
+- **Mission statement** in both README and methodology — make industry safer, accelerate safe AI adoption, augment workers to insulate from job loss.
+- **Three-path T5 sourcing model** — T4 promotion, ANOR derivation, novel SME authoring.
+
+### Changed
+
+- T5 reframed from "empty pending SME authoring" to "bridge tier between knowledge and operational axes." Pool grew from 0 to 8 (draft).
+- Total bank size: 1,547 → 1,555.
+- Grade label "Passing — AI Ceiling" split into IUK-only (knowledge ceiling) and Dual (with MANDOS pass rate ≥60%) — the latter is the real deployment-readiness signal.
+- MANDOS sibling benchmark referenced as the home for full operational cascade evaluation.
+
 ## [Unreleased] — preparing v1.5 run
 
 - 5-model warm pass against v1.5 banks (Claude Opus 4.7, Sonnet 4.6, GPT-5.5, Grok 4.3, Grok 3 Mini)

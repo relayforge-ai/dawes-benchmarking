@@ -18,7 +18,7 @@ IUK is a **1,547-question** benchmark designed to measure whether an AI model ca
 | **T2 Engineer** | PE or senior I&C engineer | 515 | 2.0× | ≥75% |
 | **T3 Specialist** | PhD-level or 20-yr SME | 425 | 3.5× | ≥65% (adv ≥60%) |
 | **T4 Expert+** | Panel of 3 SMEs w/ standards access | 406 | 5.0× | ≥55% |
-| **T5 AI Ceiling** | No individual human passes consistently | 0 *(authoring)* | 7.0× | ≥40% |
+| **T5 AI Ceiling (bridge)** | Operational snapshots from ANOR scenarios | 8 (draft) | 7.0× | ≥40% |
 
 Beyond accuracy, the benchmark enforces three binary gates:
 - **Safety gate** — a model that enables an unsafe industrial action fails regardless of technical score.
@@ -26,6 +26,25 @@ Beyond accuracy, the benchmark enforces three binary gates:
 - **Epistemic calibration** — confidence must roughly match accuracy.
 
 Full design rationale: [`methodology/IUK_Benchmark_Methodology_v1.5.md`](methodology/IUK_Benchmark_Methodology_v1.5.md).
+
+### Two axes, not one — IUK + MANDOS
+
+AI competence in industrial settings is **two-dimensional**, not a single line of difficulty:
+
+- **IUK** measures the **knowledge ceiling** — depth of standards recall and isolated-question reasoning. T1–T4 cover this rigorously.
+- **MANDOS** (companion benchmark, under construction) measures the **operational ceiling** — decision quality under cascading evidence, organizational pressure, instrument illusion, and authority gradient. The same failure-mode taxonomy (FAIL-05 Expert Exclusion, FAIL-06 Procedural Deficiency, FAIL-07 Instrument Over-Reliance, FAIL-08 MOC Deflection, FAIL-09 Field Exposure Escalation) is **domain-portable** to aviation, healthcare, power-grid, and trading-floor operational settings.
+
+A model can ace IUK T1–T4 (knows every ISA standard cold) and still fail an ANOR scenario by deferring to authority pressure when a chemist warns of a hazard. And vice versa. Industrial deployment readiness requires **both**: knowledge depth AND operational judgment.
+
+T5 in IUK is reframed as the **bridge tier** — 8 operational snapshots derived from ANOR scenarios that retain evidence integration and authority pressure but lose the cascade. Full operational evaluation lives in the MANDOS sibling benchmark.
+
+### Mission
+
+This benchmark exists in service of three operating principles:
+
+1. **Make industry safer.** Catch dangerous AI failure modes before deployment, not after.
+2. **Accelerate safe AI adoption.** Make rigorous evaluation cheap and credible enough that operators can deploy AI with confidence.
+3. **Augment workers, don't replace them.** AI as force multiplier for the technician on the plant floor — not a layoff lever.
 
 ---
 
@@ -104,7 +123,7 @@ Models that have been fine-tuned on Tony Kuphaldt's INST-series lecture material
 We document gaps openly rather than hiding them.
 
 1. **Visual reasoning is out of scope.** I&C is heavy on schematics, P&IDs, and annotated drawings. We rewrote diagram-dependent questions into text-only form using a vision-capable model (Gemini 2.5 Flash) with verbal diagram descriptions. Models that can read drawings natively are **not** being measured on that capability here. See [`docs/textualization_caveat.md`](docs/textualization_caveat.md).
-2. **T5 is currently empty.** 40 promotion candidates are queued for SME review; promotion is gated on real-world incident provenance + multi-step reasoning + safety consequence. AI is not authorized to author T5 questions.
+2. **T5 is small and intentionally bridge-tier.** 8 ANOR-derived operational snapshots are in draft form. Full operational evaluation lives in the MANDOS companion benchmark (under construction). T5 here is not "harder T4 recall" — it's the bridge between the knowledge axis (IUK) and the operational axis (MANDOS).
 3. **10 of 200 T1 questions retain `[DRAFT]` placeholder distractors** (Block 4 Networking, IDs 046–050) — flagged for SME completion before the v1.5 production run.
 4. **5 of 360 upgrade questions** are noted at SME-review level rather than published as final — accuracy is high but not field-validated.
 
@@ -148,6 +167,7 @@ We **do not** accept AI-generated questions for T4 or T5. Wrong-answer distracto
 ## Related work
 
 - **Dawes Program** — RelayForge's industrial-I&C AI lab. This benchmark is one part of a broader training and evaluation effort.
+- **MANDOS** — the operational-ceiling companion benchmark. Multi-node decision scenarios that test integration, authority pressure resistance, and field-exposure judgment. Domain-portable failure taxonomy. Under construction; public repo forthcoming.
 - **Tony Kuphaldt's LIII archive** — a primary source for foundational I&C content (CC-licensed). Used as training material, not as benchmark questions.
 - **CSB incident reports** — used as seed material for safety-gate and T5 candidate questions.
 
