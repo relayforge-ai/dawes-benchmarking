@@ -1,0 +1,25 @@
+name: Dawes Benchmarking CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  data-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python syntax check
+        run: python -m compileall -q tools
+
+      - name: Validate benchmark data
+        run: python tools/validate_benchmark_data.py
