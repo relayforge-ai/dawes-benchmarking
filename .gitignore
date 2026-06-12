@@ -20,8 +20,10 @@ _local_scratch/
 __pycache__/
 *.py[cod]
 *.egg-info/
+.pytest_cache/
 .venv/
 .venv-training/
+venv/
 
 # OS detritus
 .DS_Store
